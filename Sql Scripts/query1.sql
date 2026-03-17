@@ -25,3 +25,18 @@ WITH (
 );
 SELECT * FROM FLMaintenance_info;
 SELECT COUNT(*) AS TotalRecords FROM FLMaintenance_info;
+select distinct(WorkshopName) into Workshop_info from FLMaintenance_info;
+
+alter table Workshop_info 
+add WorkshopID int identity(1,1) primary key;
+
+select distinct(MaintenanceType) into Maintenance_info from FLMaintenance_info;
+
+alter table Maintenance_info 
+add MaintenanceID int identity(1,1) primary key;
+
+alter table FLMaintenance_info
+add ID int identity(1,1) primary key;
+
+alter table FLMaintenance_info
+add WorkshopID int ;
