@@ -40,3 +40,41 @@ add ID int identity(1,1) primary key;
 
 alter table FLMaintenance_info
 add WorkshopID int ;
+EXEC sp_pkeys 'FLMaintenance_info';
+select name from sys.tables
+select * from Maintenance_info;
+select * from FLMaintenance_info;
+select * from Workshop_info;
+begin
+CREATE PROCEDURE total_maintenance_cost1
+AS begin
+    SELECT SUM(MaintenanceCost) AS TotalMaintenanceCost
+    FROM FLMaintenance_info;
+END;
+
+
+update FLMaintenance_info
+set WorkshopID = w.WorkshopID
+from FLMaintenance_info m
+join Workshop_info w on m.WorkshopName = w.WorkshopName;
+
+alter table FLMaintenance_info
+add MaintenanceTypeID int ;
+update FLMaintenance_info
+set MaintenanceTypeID = i.MaintenanceID
+from FLMaintenance_info m
+join Maintenance_info i on m.MaintenanceType = i.MaintenanceType;
+
+alter table FLMaintenance_info
+add constraint FK_WorkshopID foreign key (WorkshopID) references Workshop_info(WorkshopID);
+alter table FLMaintenance_info
+add constraint FK_MaintenanceTypeID foreign key (MaintenanceTypeID) references Maintenance_info(MaintenanceID);
+
+SELECT TABLE_NAME 
+FROM INFORMATION_SCHEMA.TABLES
+WHERE TABLE_CATALOG = 'FleetManagementDB';
+
+SELECT TABLE_NAME, COLUMN_NAME, CONSTRAINT_NAME
+FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE
+WHERE CONSTRAINT_NAME LIKE 'pK%'
+AND TABLE_CATALOG = 'FleetManagementDB';
