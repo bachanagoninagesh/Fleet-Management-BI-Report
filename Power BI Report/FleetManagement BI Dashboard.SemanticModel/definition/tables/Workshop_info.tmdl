@@ -1,0 +1,35 @@
+table Workshop_info
+	lineageTag: 4c30a850-7a25-4277-a3ee-8e9dff80dec0
+
+	column WorkshopName
+		dataType: string
+		lineageTag: ba031e84-9d3c-4b42-970e-8cec2d557610
+		summarizeBy: none
+		sourceColumn: WorkshopName
+
+		annotation SummarizationSetBy = Automatic
+
+	column WorkshopID
+		dataType: int64
+		formatString: 0
+		lineageTag: c2664261-f9bf-4a83-8e93-3da7df5fd7b8
+		summarizeBy: none
+		sourceColumn: WorkshopID
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Workshop_info = m
+		mode: dual
+		source =
+				let
+				    Source = Sql.Databases("NAGESH\SQLEXPRESS"),
+				    FleetManagementDB = Source{[Name="FleetManagementDB"]}[Data],
+				    dbo_Workshop_info = FleetManagementDB{[Schema="dbo",Item="Workshop_info"]}[Data],
+				    #"Removed Columns" = Table.RemoveColumns(dbo_Workshop_info,{"FLMaintenance_info"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

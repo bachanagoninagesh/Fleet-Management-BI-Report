@@ -1,0 +1,45 @@
+relationship 185c2e44-d6c4-46dd-a1b0-c1c0f7dbbda5
+	fromColumn: FLMaintenance_info.MaintenanceTypeID
+	toColumn: Maintenance_info.MaintenanceID
+
+	annotation PBI_IsFromSource = FS
+
+relationship 9363e74b-375c-4afc-9caf-102667e3a9f9
+	fromColumn: FLMaintenance_info.WorkshopID
+	toColumn: Workshop_info.WorkshopID
+
+	annotation PBI_IsFromSource = FS
+
+relationship 107b4cd7-afdd-a902-7617-91bdab7a5825
+	fromColumn: Fleet_Maintenance_Info(XL).Vehicle_Name
+	toColumn: Vehicle_Info.Vehicle_Name
+
+relationship 5d20ad82-e81a-d2de-1d95-9cfda9b8a28b
+	fromColumn: FLMaintenance_info.Vehicle_Name
+	toColumn: Vehicle_Info.Vehicle_Name
+
+relationship fc3f6ae9-31dd-b4c1-1f40-5f77702f4007
+	fromColumn: Fleet_SharePoint_Trips_2020_2022.Vehicle_Name
+	toColumn: Vehicle_Info.Vehicle_Name
+
+relationship 05c0f885-d279-0350-7c12-b6dd52184905
+	fromColumn: Fleet_Maintenance_Info(XL).WorkshopName
+	toColumn: Workshop_info.WorkshopName
+
+relationship 69ef8bb6-cc2c-47d3-87f1-0030beb2e525
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Date_Table.Date
+	toColumn: LocalDateTable_dae4be3b-bf5c-4b1c-915d-0ea18ead9e90.Date
+
+relationship 319a740d-71c5-65f7-3d08-9f64a377d2b9
+	fromColumn: FLMaintenance_info.MaintenanceDate
+	toColumn: Date_Table.Date
+
+relationship b853151e-3862-dd86-8285-88b3999997a8
+	fromColumn: Fleet_Maintenance_Info(XL).WorkshopDate
+	toColumn: Date_Table.Date
+
+relationship d41e15d5-8fab-73d9-38d9-7687b3b63491
+	fromColumn: Fleet_SharePoint_Trips_2020_2022.TripDate
+	toColumn: Date_Table.Date
+

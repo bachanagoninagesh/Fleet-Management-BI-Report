@@ -1,0 +1,27 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		fastCombine
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["FLMaintenance_info","Maintenance_info","Workshop_info","Fleet_SharePoint_Trips_2020_2022","Fleet_Maintenance_Info(XL)","Vehicle_Info"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table FLMaintenance_info
+ref table Maintenance_info
+ref table Workshop_info
+ref table Fleet_Maintenance_Info(XL)
+ref table Fleet_SharePoint_Trips_2020_2022
+ref table DateTableTemplate_84128746-1c13-420f-bfeb-42df6b11812f
+ref table Vehicle_Info
+ref table Date_Table
+ref table LocalDateTable_dae4be3b-bf5c-4b1c-915d-0ea18ead9e90
+
+ref cultureInfo en-US
+

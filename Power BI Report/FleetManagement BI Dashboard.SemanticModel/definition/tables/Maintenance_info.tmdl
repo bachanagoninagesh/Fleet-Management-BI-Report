@@ -1,0 +1,35 @@
+table Maintenance_info
+	lineageTag: b0eb6128-02f2-43bc-a255-edb4cd4212a8
+
+	column MaintenanceType
+		dataType: string
+		lineageTag: 75ee1cdd-f174-4d6d-b802-0fd94c1dbf0e
+		summarizeBy: none
+		sourceColumn: MaintenanceType
+
+		annotation SummarizationSetBy = Automatic
+
+	column MaintenanceID
+		dataType: int64
+		formatString: 0
+		lineageTag: d77c24c6-729d-4756-bb7f-d428ac844c5e
+		summarizeBy: none
+		sourceColumn: MaintenanceID
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Maintenance_info = m
+		mode: dual
+		source =
+				let
+				    Source = Sql.Databases("NAGESH\SQLEXPRESS"),
+				    FleetManagementDB = Source{[Name="FleetManagementDB"]}[Data],
+				    dbo_Maintenance_info = FleetManagementDB{[Schema="dbo",Item="Maintenance_info"]}[Data],
+				    #"Removed Columns" = Table.RemoveColumns(dbo_Maintenance_info,{"FLMaintenance_info"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

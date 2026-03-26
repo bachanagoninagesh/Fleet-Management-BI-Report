@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "FleetManagement BI Dashboard"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "58153cb0-0435-466d-a1e8-69d191b7f7f9"
+  }
+}

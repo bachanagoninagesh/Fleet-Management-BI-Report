@@ -1,0 +1,113 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "nodeIndex": "Maintenance_info",
+          "nodeLineageTag": "b0eb6128-02f2-43bc-a255-edb4cd4212a8",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 564.56510917734181
+          },
+          "nodeIndex": "Workshop_info",
+          "nodeLineageTag": "4c30a850-7a25-4277-a3ee-8e9dff80dec0",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 5
+        },
+        {
+          "location": {
+            "x": 980.36163941535983,
+            "y": 235.66249631621736
+          },
+          "nodeIndex": "Fleet_SharePoint_Trips_2020_2022",
+          "nodeLineageTag": "693bf5ed-450c-4a5f-997d-7bf491e62f57",
+          "size": {
+            "height": 336,
+            "width": 234
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 176.18475118062986,
+            "y": 158
+          },
+          "nodeIndex": "FLMaintenance_info",
+          "nodeLineageTag": "b124cf18-cd67-496f-8661-cb6d7e248561",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 6
+        },
+        {
+          "location": {
+            "x": 454.36163941535983,
+            "y": 393
+          },
+          "nodeIndex": "Fleet_Maintenance_Info(XL)",
+          "nodeLineageTag": "bebbe09b-e069-4ed0-bb9d-9bdac948a404",
+          "size": {
+            "height": 280,
+            "width": 234
+          },
+          "zIndex": 7
+        },
+        {
+          "location": {
+            "x": 611.17688823473009,
+            "y": 0
+          },
+          "nodeIndex": "Vehicle_Info",
+          "nodeLineageTag": "f1a77952-4d99-4805-a93a-63de87318127",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 719.36163941535983,
+            "y": 225.28255458867091
+          },
+          "nodeIndex": "Date_Table",
+          "nodeLineageTag": "721b4c24-f256-4050-8ec6-55d4099f3f63",
+          "size": {
+            "height": 200,
+            "width": 180
+          },
+          "zIndex": 1
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

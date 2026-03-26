@@ -1,0 +1,124 @@
+table FLMaintenance_info
+	lineageTag: b124cf18-cd67-496f-8661-cb6d7e248561
+
+	column MaintenanceID
+		dataType: int64
+		formatString: 0
+		lineageTag: 061b25b0-d3d2-45c0-9e91-a14f52efe83e
+		summarizeBy: count
+		sourceColumn: MaintenanceID
+
+		annotation SummarizationSetBy = Automatic
+
+	column WorkshopName
+		dataType: string
+		lineageTag: 080ea55a-3109-4e45-b1b3-5fb9fdd201c1
+		summarizeBy: none
+		sourceColumn: WorkshopName
+
+		annotation SummarizationSetBy = Automatic
+
+	column MaintenanceType
+		dataType: string
+		lineageTag: cf36a2fe-6e96-43d9-8428-618b76093227
+		summarizeBy: none
+		sourceColumn: MaintenanceType
+
+		annotation SummarizationSetBy = Automatic
+
+	column IssueCategory
+		dataType: string
+		lineageTag: 823f13db-964e-4f3b-9c87-eba7e979911b
+		summarizeBy: none
+		sourceColumn: IssueCategory
+
+		annotation SummarizationSetBy = Automatic
+
+	column DowntimeHours
+		dataType: int64
+		formatString: 0
+		lineageTag: 547e916f-f367-405e-ba09-045220fdae42
+		summarizeBy: sum
+		sourceColumn: DowntimeHours
+
+		annotation SummarizationSetBy = Automatic
+
+	column MaintenanceCost
+		dataType: int64
+		formatString: 0
+		lineageTag: 561c933a-e695-4227-9d19-55006d3db567
+		summarizeBy: sum
+		sourceColumn: MaintenanceCost
+
+		annotation SummarizationSetBy = Automatic
+
+	column MaintenanceDate
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: f566aa82-2f72-4aa1-81f0-5c14541048bf
+		summarizeBy: none
+		sourceColumn: MaintenanceDate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: d56c7cf9-172a-4f30-a27d-480f19fa2a20
+		summarizeBy: sum
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 0184dba7-fdfd-4b93-90fe-1f89be988909
+		summarizeBy: count
+		sourceColumn: ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column WorkshopID
+		dataType: int64
+		formatString: 0
+		lineageTag: 09e97488-aca1-46b8-bb9e-ac194deff99d
+		summarizeBy: none
+		sourceColumn: WorkshopID
+
+		annotation SummarizationSetBy = Automatic
+
+	column MaintenanceTypeID
+		dataType: int64
+		formatString: 0
+		lineageTag: d755e6ca-a4ef-490a-b7f8-3d50197835ca
+		summarizeBy: none
+		sourceColumn: MaintenanceTypeID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Vehicle_Name
+		dataType: string
+		lineageTag: fcb31362-15e7-40eb-9322-67e630952df3
+		summarizeBy: none
+		sourceColumn: Vehicle_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	partition FLMaintenance_info = m
+		mode: dual
+		source =
+				let
+				    Source = Sql.Databases("NAGESH\SQLEXPRESS"),
+				    FleetManagementDB = Source{[Name="FleetManagementDB"]}[Data],
+				    dbo_FLMaintenance_info = FleetManagementDB{[Schema="dbo",Item="FLMaintenance_info"]}[Data],
+				    #"Removed Columns" = Table.RemoveColumns(dbo_FLMaintenance_info,{"Maintenance_info", "Workshop_info"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

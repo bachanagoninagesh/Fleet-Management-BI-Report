@@ -1,0 +1,91 @@
+table Fleet_Maintenance_Info(XL)
+	lineageTag: bebbe09b-e069-4ed0-bb9d-9bdac948a404
+
+	column WorkshopRecordID
+		dataType: int64
+		formatString: 0
+		lineageTag: 410253e1-e055-46aa-8158-b00158be2437
+		summarizeBy: count
+		sourceColumn: WorkshopRecordID
+
+		annotation SummarizationSetBy = Automatic
+
+	column WorkshopName
+		dataType: string
+		lineageTag: c110ab50-5ca0-437d-89ad-f3dbaf5907c5
+		summarizeBy: none
+		sourceColumn: WorkshopName
+
+		annotation SummarizationSetBy = Automatic
+
+	column Technician
+		dataType: string
+		lineageTag: aeb725b0-a47a-4eb1-9ac5-44a037039724
+		summarizeBy: none
+		sourceColumn: Technician
+
+		annotation SummarizationSetBy = Automatic
+
+	column RepairTimeHours
+		dataType: int64
+		formatString: 0
+		lineageTag: 576e243b-707a-4cc5-a513-86746f1b7d05
+		summarizeBy: sum
+		sourceColumn: RepairTimeHours
+
+		annotation SummarizationSetBy = Automatic
+
+	column WorkshopDate
+		dataType: int64
+		formatString: 0
+		lineageTag: 8abc4b67-d449-405e-b90b-a921f9e8539a
+		summarizeBy: none
+		sourceColumn: WorkshopDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: d72d30dd-88a7-4a44-8698-84d0b343f750
+		summarizeBy: sum
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column Vehicle_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 8b3a906f-5b1e-47eb-8bc6-2eb5dbc2f17d
+		summarizeBy: count
+		sourceColumn: Vehicle_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Vehicle_Name
+		dataType: string
+		lineageTag: 05afc484-19b9-4bac-b378-94899e5ddda4
+		summarizeBy: none
+		sourceColumn: Vehicle_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Fleet_Maintenance_Info(XL) = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("D:\BI Projects\Fleet Management BI Report\.gitignore\Data Source\Fleet_Workshop_2020_2022.xlsx"), null, true),
+				    Sheet1_Sheet = Source{[Item="Sheet1",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(Sheet1_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"WorkshopRecordID", Int64.Type}, {"VehicleID", type text}, {"WorkshopName", type text}, {"Technician", type text}, {"RepairTimeHours", Int64.Type}, {"WorkshopDate", Int64.Type}, {"Year", Int64.Type}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type",{{"VehicleID", "Vehicle_Name"}}),
+				    #"Merged Queries" = Table.NestedJoin(#"Renamed Columns", {"Vehicle_Name"}, Vehicle_Info, {"Vehicle_Name"}, "Vehicle_Info", JoinKind.LeftOuter),
+				    #"Expanded Vehicle_Info" = Table.ExpandTableColumn(#"Merged Queries", "Vehicle_Info", {"Vehicle_ID"}, {"Vehicle_Info.Vehicle_ID"}),
+				    #"Renamed Columns1" = Table.RenameColumns(#"Expanded Vehicle_Info",{{"Vehicle_Info.Vehicle_ID", "Vehicle_ID"}})
+				in
+				    #"Renamed Columns1"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

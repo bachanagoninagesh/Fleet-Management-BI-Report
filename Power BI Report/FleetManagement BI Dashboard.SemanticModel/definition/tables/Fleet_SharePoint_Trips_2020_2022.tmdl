@@ -1,0 +1,91 @@
+table Fleet_SharePoint_Trips_2020_2022
+	lineageTag: 693bf5ed-450c-4a5f-997d-7bf491e62f57
+
+	column TripID
+		dataType: int64
+		formatString: 0
+		lineageTag: 811c272e-1b41-4201-a4a7-4a3ce3e13fd9
+		summarizeBy: count
+		sourceColumn: TripID
+
+		annotation SummarizationSetBy = Automatic
+
+	column DriverName
+		dataType: string
+		lineageTag: 3ef448fc-0ef6-45e0-85f4-3cb52db77c93
+		summarizeBy: none
+		sourceColumn: DriverName
+
+		annotation SummarizationSetBy = Automatic
+
+	column RouteName
+		dataType: string
+		lineageTag: c7b81266-d984-436d-8e4f-58979acc1c4a
+		summarizeBy: none
+		sourceColumn: RouteName
+
+		annotation SummarizationSetBy = Automatic
+
+	column DistanceKM
+		dataType: int64
+		formatString: 0
+		lineageTag: ce7cf2ce-c2c0-49e4-937d-e2d650de8832
+		summarizeBy: sum
+		sourceColumn: DistanceKM
+
+		annotation SummarizationSetBy = Automatic
+
+	column TripDate
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 2252b02c-222a-4ebe-804a-edc4dce440ac
+		summarizeBy: none
+		sourceColumn: TripDate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: b6dd35b0-314d-4e72-b8ab-4507e9d54382
+		summarizeBy: sum
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column Vehicle_ID
+		dataType: string
+		lineageTag: 3ae95da8-7f09-4a13-8c27-4b296cfb469e
+		summarizeBy: none
+		sourceColumn: Vehicle_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Vehicle_Name
+		dataType: string
+		lineageTag: 14637b1f-2b5d-4405-88a7-888218f50255
+		summarizeBy: none
+		sourceColumn: Vehicle_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Fleet_SharePoint_Trips_2020_2022 = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("D:\BI Projects\Fleet Management BI Report\.gitignore\Data Source\Fleet_SharePoint_Trips_2020_2022.csv"),[Delimiter=",", Columns=7, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"TripID", Int64.Type}, {"VehicleID", type text}, {"DriverName", type text}, {"RouteName", type text}, {"DistanceKM", Int64.Type}, {"TripDate", type date}, {"Year", Int64.Type}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type",{{"VehicleID", "Vehicle_Name"}}),
+				    #"Merged Queries" = Table.NestedJoin(#"Renamed Columns", {"Vehicle_Name"}, Vehicle_Info, {"Vehicle_Name"}, "Vehicle_Info", JoinKind.LeftOuter),
+				    #"Expanded Vehicle_Info" = Table.ExpandTableColumn(#"Merged Queries", "Vehicle_Info", {"Vehicle_ID"}, {"Vehicle_ID"}),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Expanded Vehicle_Info",{{"Vehicle_ID", type text}})
+				in
+				    #"Changed Type1"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

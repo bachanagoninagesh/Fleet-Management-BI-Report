@@ -1,0 +1,40 @@
+table Vehicle_Info
+	lineageTag: f1a77952-4d99-4805-a93a-63de87318127
+
+	column Vehicle_Name
+		dataType: string
+		lineageTag: 39fd39d7-f0f7-40d5-8a20-135c28c6da4f
+		summarizeBy: none
+		sourceColumn: Vehicle_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Vehicle_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 8f4f259f-f61f-40cf-b8c3-24e9ab4a83d5
+		summarizeBy: count
+		sourceColumn: Vehicle_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Vehicle_Info = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("D:\BI Projects\Fleet Management BI Report\.gitignore\Data Source\Fleet_Workshop_2020_2022.xlsx"), null, true),
+				    Sheet1_Sheet = Source{[Item="Sheet1",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(Sheet1_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"WorkshopRecordID", Int64.Type}, {"VehicleID", type text}, {"WorkshopName", type text}, {"Technician", type text}, {"RepairTimeHours", Int64.Type}, {"WorkshopDate", Int64.Type}, {"Year", Int64.Type}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type",{{"VehicleID", "Vehicle_Name"}}),
+				    #"Removed Other Columns" = Table.SelectColumns(#"Renamed Columns",{"Vehicle_Name"}),
+				    #"Removed Duplicates" = Table.Distinct(#"Removed Other Columns"),
+				    #"Added Index" = Table.AddIndexColumn(#"Removed Duplicates", "Index", 1, 1, Int64.Type),
+				    #"Renamed Columns1" = Table.RenameColumns(#"Added Index",{{"Index", "Vehicle_ID"}})
+				in
+				    #"Renamed Columns1"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
