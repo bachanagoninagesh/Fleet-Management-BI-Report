@@ -84,3 +84,7 @@ FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE
 WHERE CONSTRAINT_NAME LIKE 'fK%'
 AND TABLE_CATALOG = 'FleetManagementDB';
 
+
+exec sp_rename 'FLMaintenance_info.VehicleID','Vehicle_Name','column';
+
+select * from FLMaintenance_info;
