@@ -1,0 +1,74 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "4193a8cc55caf0a743f9",
+  "position": {
+    "x": 1021.2765957446809,
+    "y": 0,
+    "z": 1,
+    "height": 200.36474164133739,
+    "width": 248.0243161094225,
+    "tabOrder": 1
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FLMaintenance_info"
+                    }
+                  },
+                  "Property": "Avg Maintenance Cost"
+                }
+              },
+              "queryRef": "FLMaintenance_info.Avg Maintenance Cost",
+              "nativeQueryRef": "Avg Maintenance Cost"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "FLMaintenance_info"
+                  }
+                },
+                "Property": "Avg Maintenance Cost"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "5c03814be6bb901fefc2",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "FLMaintenance_info"
+              }
+            },
+            "Property": "Avg Maintenance Cost"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

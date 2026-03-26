@@ -75,7 +75,7 @@ table Fleet_SharePoint_Trips_2020_2022
 		mode: import
 		source =
 				let
-				    Source = Csv.Document(File.Contents("D:\BI Projects\Fleet Management BI Report\.gitignore\Data Source\Fleet_SharePoint_Trips_2020_2022.csv"),[Delimiter=",", Columns=7, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    Source = Csv.Document(File.Contents("D:\BI Projects\Fleet Management BI Report\Power BI Report\Data Source\Fleet_SharePoint_Trips_2020_2022.csv"),[Delimiter=",", Columns=7, Encoding=1252, QuoteStyle=QuoteStyle.None]),
 				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
 				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"TripID", Int64.Type}, {"VehicleID", type text}, {"DriverName", type text}, {"RouteName", type text}, {"DistanceKM", Int64.Type}, {"TripDate", type date}, {"Year", Int64.Type}}),
 				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type",{{"VehicleID", "Vehicle_Name"}}),

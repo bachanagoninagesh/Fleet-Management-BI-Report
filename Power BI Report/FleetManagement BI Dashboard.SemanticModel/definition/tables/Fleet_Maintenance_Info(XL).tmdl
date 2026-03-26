@@ -74,7 +74,7 @@ table Fleet_Maintenance_Info(XL)
 		mode: import
 		source =
 				let
-				    Source = Excel.Workbook(File.Contents("D:\BI Projects\Fleet Management BI Report\.gitignore\Data Source\Fleet_Workshop_2020_2022.xlsx"), null, true),
+				    Source = Excel.Workbook(File.Contents("D:\BI Projects\Fleet Management BI Report\Power BI Report\Data Source\Fleet_Workshop_2020_2022.xlsx"), null, true),
 				    Sheet1_Sheet = Source{[Item="Sheet1",Kind="Sheet"]}[Data],
 				    #"Promoted Headers" = Table.PromoteHeaders(Sheet1_Sheet, [PromoteAllScalars=true]),
 				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"WorkshopRecordID", Int64.Type}, {"VehicleID", type text}, {"WorkshopName", type text}, {"Technician", type text}, {"RepairTimeHours", Int64.Type}, {"WorkshopDate", Int64.Type}, {"Year", Int64.Type}}),
