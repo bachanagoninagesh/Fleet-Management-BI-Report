@@ -2,11 +2,12 @@ table Fleet_SharePoint_Trips_2020_2022
 	lineageTag: 693bf5ed-450c-4a5f-997d-7bf491e62f57
 
 	column TripID
-		dataType: int64
-		formatString: 0
+		dataType: string
 		lineageTag: 811c272e-1b41-4201-a4a7-4a3ce3e13fd9
-		summarizeBy: count
+		summarizeBy: none
 		sourceColumn: TripID
+
+		changedProperty = DataType
 
 		annotation SummarizationSetBy = Automatic
 
@@ -37,7 +38,7 @@ table Fleet_SharePoint_Trips_2020_2022
 
 	column TripDate
 		dataType: dateTime
-		formatString: Long Date
+		formatString: Short Date
 		lineageTag: 2252b02c-222a-4ebe-804a-edc4dce440ac
 		summarizeBy: none
 		sourceColumn: TripDate
@@ -45,15 +46,6 @@ table Fleet_SharePoint_Trips_2020_2022
 		annotation SummarizationSetBy = Automatic
 
 		annotation UnderlyingDateTimeDataType = Date
-
-	column Year
-		dataType: int64
-		formatString: 0
-		lineageTag: b6dd35b0-314d-4e72-b8ab-4507e9d54382
-		summarizeBy: sum
-		sourceColumn: Year
-
-		annotation SummarizationSetBy = Automatic
 
 	column Vehicle_ID
 		dataType: string
@@ -81,9 +73,10 @@ table Fleet_SharePoint_Trips_2020_2022
 				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type",{{"VehicleID", "Vehicle_Name"}}),
 				    #"Merged Queries" = Table.NestedJoin(#"Renamed Columns", {"Vehicle_Name"}, Vehicle_Info, {"Vehicle_Name"}, "Vehicle_Info", JoinKind.LeftOuter),
 				    #"Expanded Vehicle_Info" = Table.ExpandTableColumn(#"Merged Queries", "Vehicle_Info", {"Vehicle_ID"}, {"Vehicle_ID"}),
-				    #"Changed Type1" = Table.TransformColumnTypes(#"Expanded Vehicle_Info",{{"Vehicle_ID", type text}})
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Expanded Vehicle_Info",{{"Vehicle_ID", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type1",{"Year"})
 				in
-				    #"Changed Type1"
+				    #"Removed Columns"
 
 	annotation PBI_ResultType = Table
 

@@ -10,11 +10,12 @@ table Workshop_info
 		annotation SummarizationSetBy = Automatic
 
 	column WorkshopID
-		dataType: int64
-		formatString: 0
+		dataType: string
 		lineageTag: c2664261-f9bf-4a83-8e93-3da7df5fd7b8
 		summarizeBy: none
 		sourceColumn: WorkshopID
+
+		changedProperty = DataType
 
 		annotation SummarizationSetBy = Automatic
 

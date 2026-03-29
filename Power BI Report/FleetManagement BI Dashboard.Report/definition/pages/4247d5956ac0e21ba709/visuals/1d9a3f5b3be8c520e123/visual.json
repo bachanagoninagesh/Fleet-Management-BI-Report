@@ -1,0 +1,122 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "1d9a3f5b3be8c520e123",
+  "position": {
+    "x": 663.34346504559278,
+    "y": 422.12765957446811,
+    "z": 2,
+    "height": 274.28571428571428,
+    "width": 563.161094224924,
+    "tabOrder": 2
+  },
+  "visual": {
+    "visualType": "clusteredColumnChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Vehicle_Info"
+                    }
+                  },
+                  "Property": "Vehicle_Name"
+                }
+              },
+              "queryRef": "Vehicle_Info.Vehicle_Name",
+              "nativeQueryRef": "Vehicle_Name",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fleet_Maintenance_Info(XL)"
+                        }
+                      },
+                      "Property": "RepairTimeHours"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Fleet_Maintenance_Info(XL).RepairTimeHours)",
+              "nativeQueryRef": "Sum of RepairTimeHours"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "Fleet_Maintenance_Info(XL)"
+                      }
+                    },
+                    "Property": "RepairTimeHours"
+                  }
+                },
+                "Function": 0
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "67f9e9147905cd02a1b5",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Vehicle_Info"
+              }
+            },
+            "Property": "Vehicle_Name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "c5e83422b6ef3211839b",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Fleet_Maintenance_Info(XL)"
+                  }
+                },
+                "Property": "RepairTimeHours"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

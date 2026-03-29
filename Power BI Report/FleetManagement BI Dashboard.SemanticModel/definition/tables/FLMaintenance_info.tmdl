@@ -7,11 +7,12 @@ table FLMaintenance_info
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column MaintenanceID
-		dataType: int64
-		formatString: 0
+		dataType: string
 		lineageTag: 061b25b0-d3d2-45c0-9e91-a14f52efe83e
-		summarizeBy: count
+		summarizeBy: none
 		sourceColumn: MaintenanceID
+
+		changedProperty = DataType
 
 		annotation SummarizationSetBy = Automatic
 
@@ -50,16 +51,18 @@ table FLMaintenance_info
 
 	column MaintenanceCost
 		dataType: int64
-		formatString: 0
+		formatString: \$#,0;(\$#,0);\$#,0
 		lineageTag: 561c933a-e695-4227-9d19-55006d3db567
 		summarizeBy: sum
 		sourceColumn: MaintenanceCost
 
 		annotation SummarizationSetBy = Automatic
 
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
 	column MaintenanceDate
 		dataType: dateTime
-		formatString: Long Date
+		formatString: Short Date
 		lineageTag: f566aa82-2f72-4aa1-81f0-5c14541048bf
 		summarizeBy: none
 		sourceColumn: MaintenanceDate
@@ -68,39 +71,33 @@ table FLMaintenance_info
 
 		annotation UnderlyingDateTimeDataType = Date
 
-	column Year
-		dataType: int64
-		formatString: 0
-		lineageTag: d56c7cf9-172a-4f30-a27d-480f19fa2a20
-		summarizeBy: sum
-		sourceColumn: Year
-
-		annotation SummarizationSetBy = Automatic
-
 	column ID
-		dataType: int64
-		formatString: 0
+		dataType: string
 		lineageTag: 0184dba7-fdfd-4b93-90fe-1f89be988909
-		summarizeBy: count
+		summarizeBy: none
 		sourceColumn: ID
+
+		changedProperty = DataType
 
 		annotation SummarizationSetBy = Automatic
 
 	column WorkshopID
-		dataType: int64
-		formatString: 0
+		dataType: string
 		lineageTag: 09e97488-aca1-46b8-bb9e-ac194deff99d
 		summarizeBy: none
 		sourceColumn: WorkshopID
 
+		changedProperty = DataType
+
 		annotation SummarizationSetBy = Automatic
 
 	column MaintenanceTypeID
-		dataType: int64
-		formatString: 0
+		dataType: string
 		lineageTag: d755e6ca-a4ef-490a-b7f8-3d50197835ca
 		summarizeBy: none
 		sourceColumn: MaintenanceTypeID
+
+		changedProperty = DataType
 
 		annotation SummarizationSetBy = Automatic
 
@@ -119,7 +116,7 @@ table FLMaintenance_info
 				    Source = Sql.Databases("NAGESH\SQLEXPRESS"),
 				    FleetManagementDB = Source{[Name="FleetManagementDB"]}[Data],
 				    dbo_FLMaintenance_info = FleetManagementDB{[Schema="dbo",Item="FLMaintenance_info"]}[Data],
-				    #"Removed Columns" = Table.RemoveColumns(dbo_FLMaintenance_info,{"Maintenance_info", "Workshop_info"})
+				    #"Removed Columns" = Table.RemoveColumns(dbo_FLMaintenance_info,{"Maintenance_info", "Workshop_info", "Year"})
 				in
 				    #"Removed Columns"
 

@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
-  "name": "4193a8cc55caf0a743f9",
+  "name": "b15f879cfefffbb95b17",
   "position": {
-    "x": 902.613981762918,
-    "y": 15.562310030395137,
-    "z": 1,
-    "height": 106.01823708206688,
-    "width": 249.96960486322189,
-    "tabOrder": 1
+    "x": 300.54711246200611,
+    "y": 37.933130699088146,
+    "z": 6,
+    "height": 100.18237082066869,
+    "width": 243.16109422492403,
+    "tabOrder": 6
   },
   "visual": {
     "visualType": "cardVisual",
@@ -22,18 +22,17 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "FLMaintenance_info"
+                          "Entity": "Fleet_Maintenance_Info(XL)"
                         }
                       },
-                      "Property": "MaintenanceCost"
+                      "Property": "RepairTimeHours"
                     }
                   },
                   "Function": 0
                 }
               },
-              "queryRef": "Sum(FLMaintenance_info.MaintenanceCost)",
-              "nativeQueryRef": "Sum of MaintenanceCost",
-              "format": "#,0.00"
+              "queryRef": "Sum(Fleet_Maintenance_Info(XL).RepairTimeHours)",
+              "nativeQueryRef": "Sum of RepairTimeHours"
             }
           ]
         }
@@ -47,10 +46,10 @@
                   "Column": {
                     "Expression": {
                       "SourceRef": {
-                        "Entity": "FLMaintenance_info"
+                        "Entity": "Fleet_Maintenance_Info(XL)"
                       }
                     },
-                    "Property": "MaintenanceCost"
+                    "Property": "RepairTimeHours"
                   }
                 },
                 "Function": 0
@@ -67,17 +66,17 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "8502624be055b089fcec",
+        "name": "cb728edfeaa6612e5d81",
         "field": {
           "Aggregation": {
             "Expression": {
               "Column": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "FLMaintenance_info"
+                    "Entity": "Fleet_Maintenance_Info(XL)"
                   }
                 },
-                "Property": "MaintenanceCost"
+                "Property": "RepairTimeHours"
               }
             },
             "Function": 0

@@ -2,11 +2,12 @@ table Fleet_Maintenance_Info(XL)
 	lineageTag: bebbe09b-e069-4ed0-bb9d-9bdac948a404
 
 	column WorkshopRecordID
-		dataType: int64
-		formatString: 0
+		dataType: string
 		lineageTag: 410253e1-e055-46aa-8158-b00158be2437
-		summarizeBy: count
+		summarizeBy: none
 		sourceColumn: WorkshopRecordID
+
+		changedProperty = DataType
 
 		annotation SummarizationSetBy = Automatic
 
@@ -36,29 +37,25 @@ table Fleet_Maintenance_Info(XL)
 		annotation SummarizationSetBy = Automatic
 
 	column WorkshopDate
-		dataType: int64
-		formatString: 0
+		dataType: dateTime
+		formatString: Short Date
 		lineageTag: 8abc4b67-d449-405e-b90b-a921f9e8539a
 		summarizeBy: none
 		sourceColumn: WorkshopDate
 
-		annotation SummarizationSetBy = Automatic
-
-	column Year
-		dataType: int64
-		formatString: 0
-		lineageTag: d72d30dd-88a7-4a44-8698-84d0b343f750
-		summarizeBy: sum
-		sourceColumn: Year
+		changedProperty = DataType
 
 		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
 
 	column Vehicle_ID
-		dataType: int64
-		formatString: 0
+		dataType: string
 		lineageTag: 8b3a906f-5b1e-47eb-8bc6-2eb5dbc2f17d
-		summarizeBy: count
+		summarizeBy: none
 		sourceColumn: Vehicle_ID
+
+		changedProperty = DataType
 
 		annotation SummarizationSetBy = Automatic
 
@@ -81,9 +78,10 @@ table Fleet_Maintenance_Info(XL)
 				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type",{{"VehicleID", "Vehicle_Name"}}),
 				    #"Merged Queries" = Table.NestedJoin(#"Renamed Columns", {"Vehicle_Name"}, Vehicle_Info, {"Vehicle_Name"}, "Vehicle_Info", JoinKind.LeftOuter),
 				    #"Expanded Vehicle_Info" = Table.ExpandTableColumn(#"Merged Queries", "Vehicle_Info", {"Vehicle_ID"}, {"Vehicle_Info.Vehicle_ID"}),
-				    #"Renamed Columns1" = Table.RenameColumns(#"Expanded Vehicle_Info",{{"Vehicle_Info.Vehicle_ID", "Vehicle_ID"}})
+				    #"Renamed Columns1" = Table.RenameColumns(#"Expanded Vehicle_Info",{{"Vehicle_Info.Vehicle_ID", "Vehicle_ID"}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Renamed Columns1",{"Year"})
 				in
-				    #"Renamed Columns1"
+				    #"Removed Columns"
 
 	annotation PBI_ResultType = Table
 

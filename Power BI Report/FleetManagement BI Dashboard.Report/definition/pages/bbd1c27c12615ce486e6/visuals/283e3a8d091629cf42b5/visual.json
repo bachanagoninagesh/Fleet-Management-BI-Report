@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
-  "name": "4193a8cc55caf0a743f9",
+  "name": "283e3a8d091629cf42b5",
   "position": {
-    "x": 902.613981762918,
+    "x": 560.243161094225,
     "y": 15.562310030395137,
-    "z": 1,
-    "height": 106.01823708206688,
-    "width": 249.96960486322189,
-    "tabOrder": 1
+    "z": 2,
+    "height": 129.36170212765958,
+    "width": 260.66869300911856,
+    "tabOrder": 2
   },
   "visual": {
     "visualType": "cardVisual",
@@ -25,14 +25,14 @@
                           "Entity": "FLMaintenance_info"
                         }
                       },
-                      "Property": "MaintenanceCost"
+                      "Property": "DowntimeHours"
                     }
                   },
                   "Function": 0
                 }
               },
-              "queryRef": "Sum(FLMaintenance_info.MaintenanceCost)",
-              "nativeQueryRef": "Sum of MaintenanceCost",
+              "queryRef": "Sum(FLMaintenance_info.DowntimeHours)",
+              "nativeQueryRef": "Sum of DowntimeHours",
               "format": "#,0.00"
             }
           ]
@@ -50,7 +50,7 @@
                         "Entity": "FLMaintenance_info"
                       }
                     },
-                    "Property": "MaintenanceCost"
+                    "Property": "DowntimeHours"
                   }
                 },
                 "Function": 0
@@ -67,7 +67,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "8502624be055b089fcec",
+        "name": "4661b51f5b5df3642939",
         "field": {
           "Aggregation": {
             "Expression": {
@@ -77,7 +77,7 @@
                     "Entity": "FLMaintenance_info"
                   }
                 },
-                "Property": "MaintenanceCost"
+                "Property": "DowntimeHours"
               }
             },
             "Function": 0

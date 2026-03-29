@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
-  "name": "4193a8cc55caf0a743f9",
+  "name": "604ee206bbbbeff1bda4",
   "position": {
-    "x": 902.613981762918,
-    "y": 15.562310030395137,
-    "z": 1,
-    "height": 106.01823708206688,
-    "width": 249.96960486322189,
-    "tabOrder": 1
+    "x": 31.124620060790274,
+    "y": 29.179331306990882,
+    "z": 10,
+    "height": 118.66261398176292,
+    "width": 257.75075987841944,
+    "tabOrder": 10
   },
   "visual": {
     "visualType": "cardVisual",
@@ -22,18 +22,17 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "FLMaintenance_info"
+                          "Entity": "Fleet_SharePoint_Trips_2020_2022"
                         }
                       },
-                      "Property": "MaintenanceCost"
+                      "Property": "DistanceKM"
                     }
                   },
                   "Function": 0
                 }
               },
-              "queryRef": "Sum(FLMaintenance_info.MaintenanceCost)",
-              "nativeQueryRef": "Sum of MaintenanceCost",
-              "format": "#,0.00"
+              "queryRef": "Sum(Fleet_SharePoint_Trips_2020_2022.DistanceKM)",
+              "nativeQueryRef": "Sum of DistanceKM"
             }
           ]
         }
@@ -47,10 +46,10 @@
                   "Column": {
                     "Expression": {
                       "SourceRef": {
-                        "Entity": "FLMaintenance_info"
+                        "Entity": "Fleet_SharePoint_Trips_2020_2022"
                       }
                     },
-                    "Property": "MaintenanceCost"
+                    "Property": "DistanceKM"
                   }
                 },
                 "Function": 0
@@ -67,17 +66,17 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "8502624be055b089fcec",
+        "name": "7d1ae70a794d7e1c055a",
         "field": {
           "Aggregation": {
             "Expression": {
               "Column": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "FLMaintenance_info"
+                    "Entity": "Fleet_SharePoint_Trips_2020_2022"
                   }
                 },
-                "Property": "MaintenanceCost"
+                "Property": "DistanceKM"
               }
             },
             "Function": 0
