@@ -4,10 +4,10 @@
   "position": {
     "x": 235.37993920972644,
     "y": 10.699088145896656,
-    "z": 1,
+    "z": 1000,
     "height": 449.36170212765961,
     "width": 527.17325227963534,
-    "tabOrder": 1
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "clusteredColumnChart",
@@ -81,42 +81,5 @@
       }
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "8d7275d91e393beb2345",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Fleet_SharePoint_Trips_2020_2022"
-                  }
-                },
-                "Property": "DistanceKM"
-              }
-            },
-            "Function": 0
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "f0e95657f0fe116c6922",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Vehicle_Info"
-              }
-            },
-            "Property": "Vehicle_Name"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

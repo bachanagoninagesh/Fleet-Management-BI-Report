@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "7a67f07b36d5106c06bf",
   "position": {
-    "x": 15.851393188854491,
-    "y": 528.04953560371519,
-    "z": 11,
-    "height": 181.30030959752324,
-    "width": 624.14860681114556,
-    "tabOrder": 11
+    "x": 16.129612961296129,
+    "y": 526.51665166516659,
+    "z": 10000,
+    "height": 183.1863186318632,
+    "width": 637.11971197119715,
+    "tabOrder": 9000
   },
   "visual": {
     "visualType": "lineChart",
@@ -146,12 +146,80 @@
         }
       }
     },
+    "visualContainerObjects": {
+      "dropShadow": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'center'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "width": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
     "drillFilterOtherVisuals": true
   },
   "filterConfig": {
     "filters": [
       {
-        "name": "bc745da3cfc0a3d2f6ce",
+        "name": "ac310b66aa5ad6b5b27f",
         "field": {
           "HierarchyLevel": {
             "Expression": {
@@ -176,7 +244,7 @@
         "type": "Advanced"
       },
       {
-        "name": "200b0d622cf089ca5293",
+        "name": "4f27046389b787fb1d17",
         "field": {
           "HierarchyLevel": {
             "Expression": {
@@ -201,7 +269,7 @@
         "type": "Categorical"
       },
       {
-        "name": "6eb690dac676ce59c839",
+        "name": "f5435026c95dac9dc103",
         "field": {
           "HierarchyLevel": {
             "Expression": {
@@ -226,7 +294,7 @@
         "type": "Categorical"
       },
       {
-        "name": "f47eef05a8b82115dbfe",
+        "name": "587a2dcdcd03af110ce4",
         "field": {
           "HierarchyLevel": {
             "Expression": {
@@ -251,7 +319,7 @@
         "type": "Advanced"
       },
       {
-        "name": "349c7e0325a240df7834",
+        "name": "a7ba68c97abef6d80614",
         "field": {
           "Aggregation": {
             "Expression": {

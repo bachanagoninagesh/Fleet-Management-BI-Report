@@ -34,23 +34,5 @@
       }
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "1c3a74bb496b50832e18",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Vehicle_Info"
-              }
-            },
-            "Property": "Vehicle_Name"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "7760aa7762f49c6f9a04",
   "position": {
-    "x": 7.9256965944272455,
-    "y": 304.14860681114556,
-    "z": 5,
-    "height": 181.30030959752324,
-    "width": 632.07430340557278,
-    "tabOrder": 5
+    "x": 16.129612961296129,
+    "y": 314.52745274527456,
+    "z": 4000,
+    "height": 201.62016201620162,
+    "width": 637.11971197119715,
+    "tabOrder": 3000
   },
   "visual": {
     "visualType": "lineChart",
@@ -94,12 +94,80 @@
         }
       }
     },
+    "visualContainerObjects": {
+      "dropShadow": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'center'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "width": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
     "drillFilterOtherVisuals": true
   },
   "filterConfig": {
     "filters": [
       {
-        "name": "979f5a7a99280976f69c",
+        "name": "98cd835fa30f8a6d35da",
         "field": {
           "HierarchyLevel": {
             "Expression": {
@@ -124,7 +192,7 @@
         "type": "Advanced"
       },
       {
-        "name": "edb90ef242ce5d4ebb5c",
+        "name": "f84ff318fb3f63e38d86",
         "field": {
           "HierarchyLevel": {
             "Expression": {
@@ -149,7 +217,7 @@
         "type": "Categorical"
       },
       {
-        "name": "2d4fd45d5198ff7213e4",
+        "name": "c4fb838309c3876b12dd",
         "field": {
           "Aggregation": {
             "Expression": {

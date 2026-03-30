@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "b15f879cfefffbb95b17",
   "position": {
-    "x": 300.54711246200611,
-    "y": 37.933130699088146,
-    "z": 6,
-    "height": 100.18237082066869,
-    "width": 243.16109422492403,
-    "tabOrder": 6
+    "x": 209.68496849684971,
+    "y": 69.126912691269126,
+    "z": 5000,
+    "height": 103.69036903690369,
+    "width": 182.03420342034204,
+    "tabOrder": 4000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -32,7 +32,8 @@
                 }
               },
               "queryRef": "Sum(Fleet_Maintenance_Info(XL).RepairTimeHours)",
-              "nativeQueryRef": "Sum of RepairTimeHours"
+              "nativeQueryRef": "Sum of RepairTimeHours",
+              "format": "#,0.00"
             }
           ]
         }
@@ -61,12 +62,107 @@
         "isDefaultSort": true
       }
     },
+    "objects": {
+      "label": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "dropShadow": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "spacing": [
+        {
+          "properties": {
+            "verticalSpacing": {
+              "expr": {
+                "Literal": {
+                  "Value": "2D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "width": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
     "drillFilterOtherVisuals": true
   },
   "filterConfig": {
     "filters": [
       {
-        "name": "cb728edfeaa6612e5d81",
+        "name": "6242b8105c282a0c64a3",
         "field": {
           "Aggregation": {
             "Expression": {

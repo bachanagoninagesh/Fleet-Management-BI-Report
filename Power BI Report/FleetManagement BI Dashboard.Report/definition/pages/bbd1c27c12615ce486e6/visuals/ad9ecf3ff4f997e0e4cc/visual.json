@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "ad9ecf3ff4f997e0e4cc",
   "position": {
-    "x": 661.795665634675,
-    "y": 527.05882352941182,
-    "z": 4,
-    "height": 182.29102167182666,
-    "width": 576.59442724458211,
-    "tabOrder": 4
+    "x": 671.68316831683171,
+    "y": 526.51665166516659,
+    "z": 3000,
+    "height": 183.1863186318632,
+    "width": 592.18721872187223,
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "lineChart",
@@ -94,31 +94,80 @@
         }
       }
     },
+    "visualContainerObjects": {
+      "dropShadow": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'center'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "width": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
     "drillFilterOtherVisuals": true
   },
   "filterConfig": {
     "filters": [
       {
-        "name": "eadaa62c94420f1586ac",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "FLMaintenance_info"
-                  }
-                },
-                "Property": "DowntimeHours"
-              }
-            },
-            "Function": 0
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "062fd58f9c9a9d4cf2ed",
+        "name": "c33c3a58c4f126225679",
         "field": {
           "HierarchyLevel": {
             "Expression": {
@@ -143,7 +192,7 @@
         "type": "Advanced"
       },
       {
-        "name": "b01559327d58bc18548b",
+        "name": "16e8df640297f42db394",
         "field": {
           "HierarchyLevel": {
             "Expression": {
@@ -166,6 +215,25 @@
           }
         },
         "type": "Categorical"
+      },
+      {
+        "name": "e4213261c0dc1f9c3b3c",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "FLMaintenance_info"
+                  }
+                },
+                "Property": "DowntimeHours"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }

@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "f4bb5833b189ca8a948a",
   "position": {
-    "x": 661.795665634675,
-    "y": 294.2414860681115,
-    "z": 7,
-    "height": 202.10526315789477,
-    "width": 576.59442724458211,
-    "tabOrder": 7
+    "x": 671.68316831683171,
+    "y": 314.52745274527456,
+    "z": 6000,
+    "height": 201.62016201620162,
+    "width": 592.18721872187223,
+    "tabOrder": 5000
   },
   "visual": {
     "visualType": "lineChart",
@@ -94,12 +94,40 @@
         }
       }
     },
+    "visualContainerObjects": {
+      "dropShadow": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'center'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
     "drillFilterOtherVisuals": true
   },
   "filterConfig": {
     "filters": [
       {
-        "name": "87202ad98eba6cc06db1",
+        "name": "44c4899b58cc15a7f6d3",
         "field": {
           "HierarchyLevel": {
             "Expression": {
@@ -124,7 +152,7 @@
         "type": "Advanced"
       },
       {
-        "name": "330fd0986e96a0da74a6",
+        "name": "1c98e000c727edb7bf49",
         "field": {
           "HierarchyLevel": {
             "Expression": {
@@ -149,7 +177,7 @@
         "type": "Categorical"
       },
       {
-        "name": "5f3e6ef71abf21f74814",
+        "name": "574428db7ab2f1c68619",
         "field": {
           "Aggregation": {
             "Expression": {
