@@ -4,9 +4,10 @@
   "position": {
     "x": 822.61026102610265,
     "y": 69.126912691269126,
-    "z": 14000,
-    "height": 103.69036903690369,
-    "width": 215.44554455445547
+    "z": 12000,
+    "height": 103.6903690369037,
+    "width": 215,
+    "tabOrder": 16000
   },
   "visualGroup": {
     "displayName": "Reduced Vehicle Downtime",

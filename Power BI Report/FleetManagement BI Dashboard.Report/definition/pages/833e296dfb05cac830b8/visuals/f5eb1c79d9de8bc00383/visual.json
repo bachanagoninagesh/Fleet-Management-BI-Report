@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
-  "name": "b3e32853a62f48c02ce3",
+  "name": "f5eb1c79d9de8bc00383",
   "position": {
     "x": 0,
-    "y": 28.97736143637783,
-    "z": 0,
-    "height": 651.49102263856366,
-    "width": 674.47306791569088,
-    "tabOrder": 0
+    "y": 289.77361436377834,
+    "z": 4,
+    "height": 430.66354410616708,
+    "width": 797.377049180328,
+    "tabOrder": 4
   },
   "visual": {
     "visualType": "tableEx",
@@ -15,6 +15,20 @@
       "queryState": {
         "Values": {
           "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Measures For Best Performing Vehicles"
+                    }
+                  },
+                  "Property": "Cost Score"
+                }
+              },
+              "queryRef": "Measures For Best Performing Vehicles.Cost Score",
+              "nativeQueryRef": "Cost Score"
+            },
             {
               "field": {
                 "Column": {
@@ -31,41 +45,17 @@
             },
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Fleet_SharePoint_Trips_2020_2022"
-                        }
-                      },
-                      "Property": "DistanceKM"
+                    "SourceRef": {
+                      "Entity": "Measures For Best Performing Vehicles"
                     }
                   },
-                  "Function": 0
+                  "Property": "Downtime Score"
                 }
               },
-              "queryRef": "Sum(Fleet_SharePoint_Trips_2020_2022.DistanceKM)",
-              "nativeQueryRef": "Sum of DistanceKM"
-            },
-            {
-              "field": {
-                "Aggregation": {
-                  "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "FLMaintenance_info"
-                        }
-                      },
-                      "Property": "MaintenanceCost"
-                    }
-                  },
-                  "Function": 0
-                }
-              },
-              "queryRef": "Sum(FLMaintenance_info.MaintenanceCost)",
-              "nativeQueryRef": "Sum of MaintenanceCost"
+              "queryRef": "Measures For Best Performing Vehicles.Downtime Score",
+              "nativeQueryRef": "Downtime Score"
             },
             {
               "field": {
@@ -89,11 +79,11 @@
                       "Entity": "Measures For Best Performing Vehicles"
                     }
                   },
-                  "Property": "Cost Per Mile"
+                  "Property": "Performance Score"
                 }
               },
-              "queryRef": "Measures For Best Performing Vehicles.Cost Per Vehicle",
-              "nativeQueryRef": "Cost Per Mile"
+              "queryRef": "Measures For Best Performing Vehicles.Performance Score",
+              "nativeQueryRef": "Performance Score"
             }
           ]
         }
@@ -108,10 +98,10 @@
                     "Entity": "Measures For Best Performing Vehicles"
                   }
                 },
-                "Property": "Cost Per Mile"
+                "Property": "Performance Score"
               }
             },
-            "direction": "Ascending"
+            "direction": "Descending"
           }
         ]
       }
@@ -121,7 +111,21 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "abb70ee297f926c4ec45",
+        "name": "d5b5613e2933fc5062fa",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Measures For Best Performing Vehicles"
+              }
+            },
+            "Property": "Cost Score"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "d911244ec51325ae5ed9",
         "field": {
           "Column": {
             "Expression": {
@@ -135,45 +139,21 @@
         "type": "Categorical"
       },
       {
-        "name": "9f6196d4357668bcd22a",
+        "name": "dda9ba0ae0645f4fc6b5",
         "field": {
-          "Aggregation": {
+          "Measure": {
             "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Fleet_SharePoint_Trips_2020_2022"
-                  }
-                },
-                "Property": "DistanceKM"
+              "SourceRef": {
+                "Entity": "Measures For Best Performing Vehicles"
               }
             },
-            "Function": 0
+            "Property": "Downtime Score"
           }
         },
         "type": "Advanced"
       },
       {
-        "name": "32c764a8a3db8090037c",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "FLMaintenance_info"
-                  }
-                },
-                "Property": "MaintenanceCost"
-              }
-            },
-            "Function": 0
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "1c30be90f29424d4990e",
+        "name": "f4cea63f2e37b23d6292",
         "field": {
           "Measure": {
             "Expression": {
@@ -187,7 +167,7 @@
         "type": "Advanced"
       },
       {
-        "name": "7c96cb96b584a5cd1811",
+        "name": "72b72a4911cf77321df0",
         "field": {
           "Measure": {
             "Expression": {
@@ -195,7 +175,7 @@
                 "Entity": "Measures For Best Performing Vehicles"
               }
             },
-            "Property": "Cost Per Mile"
+            "Property": "Performance Score"
           }
         },
         "type": "Advanced"

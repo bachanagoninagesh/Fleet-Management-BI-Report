@@ -1,0 +1,70 @@
+table 'Measures For Best Performing Vehicles'
+	lineageTag: 2766b8f0-d850-4b83-85a9-e30365f3653d
+
+	measure 'Cost Per Mile' = DIVIDE(SUM(FLMaintenance_info[MaintenanceCost]),SUM(Fleet_SharePoint_Trips_2020_2022[DistanceKM]),0)
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: bcc47bd2-edb3-44f3-bb6f-c10c9751552d
+
+	measure Downtime/km = DIVIDE(SUM(FLMaintenance_info[DowntimeHours]),SUM(Fleet_SharePoint_Trips_2020_2022[DistanceKM]),0)
+		lineageTag: f16a3d03-4243-4867-8d63-24f5afbe4e63
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Cost Score' = ```
+			
+			var maxcost = maxx(ALL(Vehicle_Info[Vehicle_Name]),[Cost Per Mile])
+			var mincost = MINX(ALL(Vehicle_Info[Vehicle_Name]),[Cost Per Mile])
+			
+			return 
+			DIVIDE(([Cost Per Mile]-mincost),(maxcost-mincost),0)
+			
+			```
+		formatString: 0.00
+		lineageTag: 692e5377-bd6f-4f15-9ede-398dae8137b1
+
+	measure 'Downtime Score' = ```
+			
+			var maxsocre = MAXX(ALL(Vehicle_Info[Vehicle_Name]),[Downtime/km])
+			var minscore = MINX(ALL(Vehicle_Info[Vehicle_Name]),[Downtime/km])
+			return 
+			DIVIDE([Downtime/km]-minscore,maxsocre-minscore,0)
+			```
+		formatString: 0.000000
+		lineageTag: e4040b89-3f5f-4ef3-a3f8-e7ded0538e57
+
+	measure 'Performance Score' = ```
+			
+			var costweight = 0.4
+			var downtimeweight=0.3
+			var kmweight =0.3
+			
+			var KM_Score = 
+			    var maxscore = MAXX(ALL(Vehicle_Info[Vehicle_Name]),SUM(Fleet_SharePoint_Trips_2020_2022[DistanceKM]))
+			    var minscore =  MINX(ALL(Vehicle_Info[Vehicle_Name]),SUM(Fleet_SharePoint_Trips_2020_2022[DistanceKM]))
+			    return 
+			        1-DIVIDE(SUM(Fleet_SharePoint_Trips_2020_2022[DistanceKM])-minscore,maxscore-minscore,0)
+			
+			return 
+			    (costweight*[Cost Score])+(downtimeweight*[Downtime Score])+(kmweight*KM_Score)
+			```
+		lineageTag: 260c1d44-5be0-4eba-91d0-aaffca0e6d39
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Column
+		formatString: 0
+		lineageTag: e5bbc75b-36ab-4643-b5f6-8f0a07e5b236
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Column]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Measures For Best Performing Vehicles' = calculated
+		mode: import
+		source = Row("Column", BLANK())
+
+	annotation PBI_Id = 20320aa982434a4f9f4a6f3f9b889192
+
+	annotation 436ba87b-9c83-4389-a31b-ebd06a36be98 = {"Expression":""}
+

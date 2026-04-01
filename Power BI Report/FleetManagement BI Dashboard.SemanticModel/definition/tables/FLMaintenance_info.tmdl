@@ -1,11 +1,6 @@
 table FLMaintenance_info
 	lineageTag: b124cf18-cd67-496f-8661-cb6d7e248561
 
-	measure 'Avg Maintenance Cost' = AVERAGE(FLMaintenance_info[MaintenanceCost])
-		lineageTag: 81dacc12-f1a4-435d-a40a-668d60e251d3
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
 	column MaintenanceID
 		dataType: string
 		lineageTag: 061b25b0-d3d2-45c0-9e91-a14f52efe83e

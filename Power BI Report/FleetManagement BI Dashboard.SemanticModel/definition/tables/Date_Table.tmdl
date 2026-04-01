@@ -28,6 +28,9 @@ table Date_Table
 		formatString: 0.00%;-0.00%;0.00%
 		lineageTag: cf8bb6a6-89d5-418a-a0b8-5ce4d16bc758
 
+	measure 'Arrow For Vehicle DwontimeHrs' = IF(ISBLANK([reduced vehicle downtime hrs]),BLANK(),if([reduced vehicle downtime hrs]>0,"🡅","🡇"))
+		lineageTag: f27347eb-7e4d-430a-8f29-4fa121cfff44
+
 	column Date
 		formatString: Long Date
 		lineageTag: 67ebe016-a038-4a53-b8ec-16325284ddd3

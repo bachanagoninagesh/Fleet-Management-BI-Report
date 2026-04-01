@@ -1,0 +1,101 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "6351e20429965982b3d7",
+  "position": {
+    "x": 134.89461358313818,
+    "y": 20.983606557377051,
+    "z": 3,
+    "height": 149.88290398126463,
+    "width": 232.81811085089774,
+    "tabOrder": 3
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Measures For Best Performing Vehicles"
+                    }
+                  },
+                  "Property": "Cost Per Mile"
+                }
+              },
+              "queryRef": "Measures For Best Performing Vehicles.Cost Per Mile",
+              "nativeQueryRef": "Cost Per Mile"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Vehicle_Info"
+                    }
+                  },
+                  "Property": "Vehicle_Name"
+                }
+              },
+              "queryRef": "Vehicle_Info.Vehicle_Name",
+              "nativeQueryRef": "Vehicle_Name"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Measures For Best Performing Vehicles"
+                  }
+                },
+                "Property": "Cost Per Mile"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "f825530a4a4cd321bcc2",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Measures For Best Performing Vehicles"
+              }
+            },
+            "Property": "Cost Per Mile"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "ed22090a44369b5c1aaf",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Vehicle_Info"
+              }
+            },
+            "Property": "Vehicle_Name"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

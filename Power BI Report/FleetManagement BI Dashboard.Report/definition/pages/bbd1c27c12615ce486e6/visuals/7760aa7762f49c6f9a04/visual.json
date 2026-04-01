@@ -66,6 +66,32 @@
               "queryRef": "Date_Table.Date.Variation.Date Hierarchy.Quarter",
               "nativeQueryRef": "Date Quarter",
               "active": true
+            },
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "PropertyVariationSource": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Date_Table"
+                            }
+                          },
+                          "Name": "Variation",
+                          "Property": "Date"
+                        }
+                      },
+                      "Hierarchy": "Date Hierarchy"
+                    }
+                  },
+                  "Level": "Month"
+                }
+              },
+              "queryRef": "Date_Table.Date.Variation.Date Hierarchy.Month",
+              "nativeQueryRef": "Date Month",
+              "active": true
             }
           ]
         },
@@ -167,7 +193,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "98cd835fa30f8a6d35da",
+        "name": "6735813664dc8e2e49a5",
         "field": {
           "HierarchyLevel": {
             "Expression": {
@@ -192,7 +218,7 @@
         "type": "Advanced"
       },
       {
-        "name": "f84ff318fb3f63e38d86",
+        "name": "024f07ddc4fb2502d258",
         "field": {
           "HierarchyLevel": {
             "Expression": {
@@ -217,7 +243,7 @@
         "type": "Categorical"
       },
       {
-        "name": "c4fb838309c3876b12dd",
+        "name": "b79d3ac78458bff24c3e",
         "field": {
           "Aggregation": {
             "Expression": {
@@ -234,6 +260,31 @@
           }
         },
         "type": "Advanced"
+      },
+      {
+        "name": "49a2ae783471209d5e2b",
+        "field": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "PropertyVariationSource": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "Date_Table"
+                      }
+                    },
+                    "Name": "Variation",
+                    "Property": "Date"
+                  }
+                },
+                "Hierarchy": "Date Hierarchy"
+              }
+            },
+            "Level": "Month"
+          }
+        },
+        "type": "Categorical"
       }
     ]
   }

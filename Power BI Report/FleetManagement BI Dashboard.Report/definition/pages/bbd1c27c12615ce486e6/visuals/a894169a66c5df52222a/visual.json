@@ -6,7 +6,8 @@
     "y": 0,
     "z": 0,
     "height": 105.994599459946,
-    "width": 215.44554455445547
+    "width": 215.44554455445547,
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -67,6 +68,51 @@
             "id": "default"
           }
         }
+      ],
+      "outline": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ],
+      "divider": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ],
+      "fillCustom": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "visualContainerObjects": {
@@ -103,7 +149,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "397c0aac7c89718a58f8",
+        "name": "c2d39595c33bec7573cc",
         "field": {
           "Measure": {
             "Expression": {

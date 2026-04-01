@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
-  "name": "727e3e9aa409b42ef320",
+  "name": "44e97214cbf0d382dd95",
   "position": {
-    "x": 739.42232630757223,
-    "y": 217.82982045277129,
-    "z": 1000,
+    "x": 820.35909445745517,
+    "y": 18.985167837626854,
+    "z": 2001,
     "height": 307.75956284153006,
-    "width": 526.5886026541765,
-    "tabOrder": 1000
+    "width": 459.64090554254489,
+    "tabOrder": 2001
   },
   "visual": {
     "visualType": "clusteredColumnChart",
@@ -41,17 +41,17 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "Fleet_SharePoint_Trips_2020_2022"
+                          "Entity": "FLMaintenance_info"
                         }
                       },
-                      "Property": "DistanceKM"
+                      "Property": "MaintenanceCost"
                     }
                   },
                   "Function": 0
                 }
               },
-              "queryRef": "Sum(Fleet_SharePoint_Trips_2020_2022.DistanceKM)",
-              "nativeQueryRef": "Sum of DistanceKM"
+              "queryRef": "Sum(FLMaintenance_info.MaintenanceCost)",
+              "nativeQueryRef": "Sum of MaintenanceCost"
             }
           ]
         }
@@ -65,10 +65,10 @@
                   "Column": {
                     "Expression": {
                       "SourceRef": {
-                        "Entity": "Fleet_SharePoint_Trips_2020_2022"
+                        "Entity": "FLMaintenance_info"
                       }
                     },
-                    "Property": "DistanceKM"
+                    "Property": "MaintenanceCost"
                   }
                 },
                 "Function": 0
@@ -95,60 +95,31 @@
         }
       ]
     },
-    "visualContainerObjects": {
-      "title": [
-        {
-          "properties": {
-            "titleWrap": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "background": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "transparency": {
-              "expr": {
-                "Literal": {
-                  "Value": "0D"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "border": [
-        {
-          "properties": {
-            "width": {
-              "expr": {
-                "Literal": {
-                  "Value": "1D"
-                }
-              }
-            }
-          }
-        }
-      ]
-    },
     "drillFilterOtherVisuals": true
   },
   "filterConfig": {
     "filters": [
       {
-        "name": "f1d21e120c89fbb465fa",
+        "name": "3c18f39d75829d1fbfe9",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "FLMaintenance_info"
+                  }
+                },
+                "Property": "MaintenanceCost"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "76fb20b9fe2171b93138",
         "field": {
           "Column": {
             "Expression": {
@@ -160,25 +131,6 @@
           }
         },
         "type": "Categorical"
-      },
-      {
-        "name": "a3588a5f693649290db9",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Fleet_SharePoint_Trips_2020_2022"
-                  }
-                },
-                "Property": "DistanceKM"
-              }
-            },
-            "Function": 0
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

@@ -98,6 +98,30 @@
             "width": 180
           },
           "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 1264.3616394153598,
+            "y": 246.28255458867091
+          },
+          "nodeIndex": "Meassures for Best Performing Vehicles",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1548.3616394153598,
+            "y": 246.28255458867091
+          },
+          "nodeIndex": "Measures For Best Performing Vehicles",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
         }
       ],
       "name": "All tables",

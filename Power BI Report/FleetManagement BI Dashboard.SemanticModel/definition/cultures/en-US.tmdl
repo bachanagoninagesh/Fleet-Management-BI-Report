@@ -15,7 +15,7 @@ cultureInfo en-US
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "Besty Performing Vehicle By km driven": {
+			          "Best Performing Vehicle by kmdriven, maintenancecost and dwontimehrs": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",

@@ -1,16 +1,16 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
-  "name": "0db7625ec754e45a158d",
+  "name": "a473b6cc7755d7b65576",
   "position": {
-    "x": 671.68316831683171,
-    "y": 193.55535553555356,
-    "z": 7000,
-    "height": 92.169216921692168,
-    "width": 406.69666966696673,
-    "tabOrder": 6000
+    "x": 398.688524590164,
+    "y": 46.963309914129589,
+    "z": 0,
+    "height": 272.78688524590166,
+    "width": 387.69711163153789,
+    "tabOrder": 0
   },
   "visual": {
-    "visualType": "slicer",
+    "visualType": "tableEx",
     "query": {
       "queryState": {
         "Values": {
@@ -28,8 +28,21 @@
               },
               "queryRef": "Vehicle_Info.Vehicle_Name",
               "nativeQueryRef": "Best Performing Vehicle by kmdriven, maintenancecost and dwontimehrs",
-              "active": true,
               "displayName": "Best Performing Vehicle by kmdriven, maintenancecost and dwontimehrs"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Measures For Best Performing Vehicles"
+                    }
+                  },
+                  "Property": "Performance Score"
+                }
+              },
+              "queryRef": "Measures For Best Performing Vehicles.Performance Score",
+              "nativeQueryRef": "Performance Score"
             }
           ]
         }
@@ -38,64 +51,39 @@
         "sort": [
           {
             "field": {
-              "Column": {
+              "Measure": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "Vehicle_Info"
+                    "Entity": "Measures For Best Performing Vehicles"
                   }
                 },
-                "Property": "Vehicle_Name"
+                "Property": "Performance Score"
               }
             },
-            "direction": "Descending"
+            "direction": "Ascending"
           }
         ]
       }
     },
     "objects": {
-      "data": [
-        {
-          "properties": {
-            "mode": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Basic'"
-                }
-              }
-            }
-          }
-        }
-      ],
       "general": [
         {
-          "properties": {
-            "orientation": {
-              "expr": {
-                "Literal": {
-                  "Value": "1D"
-                }
-              }
-            }
-          }
+          "properties": {}
         }
       ],
-      "selection": [
+      "columnWidth": [
         {
           "properties": {
-            "selectAllCheckboxEnabled": {
+            "value": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "strictSingleSelect": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
+                  "Value": "178.1623797135957D"
                 }
               }
             }
+          },
+          "selector": {
+            "metadata": "Vehicle_Info.Vehicle_Name"
           }
         }
       ]
@@ -224,6 +212,20 @@
             }
           ]
         }
+      },
+      {
+        "name": "d0ed281f432b31f3eae7",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Measures For Best Performing Vehicles"
+              }
+            },
+            "Property": "Performance Score"
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }

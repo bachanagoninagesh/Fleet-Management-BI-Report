@@ -60,6 +60,19 @@
             }
           }
         }
+      ],
+      "header": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Best Performing Technician'"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "visualContainerObjects": {

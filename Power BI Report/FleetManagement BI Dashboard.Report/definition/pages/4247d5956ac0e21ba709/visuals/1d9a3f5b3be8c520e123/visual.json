@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "1d9a3f5b3be8c520e123",
   "position": {
-    "x": 663.34346504559278,
-    "y": 422.12765957446811,
+    "x": 809.367681498829,
+    "y": 387.69711163153789,
     "z": 2000,
-    "height": 274.28571428571428,
-    "width": 563.161094224924,
+    "height": 274.78532396565186,
+    "width": 470.63231850117097,
     "tabOrder": 2000
   },
   "visual": {
@@ -41,17 +41,17 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "Fleet_Maintenance_Info(XL)"
+                          "Entity": "FLMaintenance_info"
                         }
                       },
-                      "Property": "RepairTimeHours"
+                      "Property": "DowntimeHours"
                     }
                   },
                   "Function": 0
                 }
               },
-              "queryRef": "Sum(Fleet_Maintenance_Info(XL).RepairTimeHours)",
-              "nativeQueryRef": "Sum of RepairTimeHours"
+              "queryRef": "Sum(FLMaintenance_info.DowntimeHours)",
+              "nativeQueryRef": "Sum of DowntimeHours"
             }
           ]
         }
@@ -65,10 +65,10 @@
                   "Column": {
                     "Expression": {
                       "SourceRef": {
-                        "Entity": "Fleet_Maintenance_Info(XL)"
+                        "Entity": "FLMaintenance_info"
                       }
                     },
-                    "Property": "RepairTimeHours"
+                    "Property": "DowntimeHours"
                   }
                 },
                 "Function": 0
@@ -80,6 +80,106 @@
         "isDefaultSort": true
       }
     },
+    "objects": {
+      "labels": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "width": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "c7afb99867314da6d8ac",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Vehicle_Info"
+              }
+            },
+            "Property": "Vehicle_Name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "76cda081bb95985ddee7",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "FLMaintenance_info"
+                  }
+                },
+                "Property": "DowntimeHours"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

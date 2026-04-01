@@ -2,11 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "9479dfbb8f1c3eb64071",
   "position": {
-    "x": 129.1409217844861,
-    "y": 16.23611076621415,
+    "x": 142.958524969442,
+    "y": 15.145228126631279,
     "z": 1000,
-    "height": 74.200447567692564,
-    "width": 68.358974358974365
+    "height": 74.3357199681782,
+    "width": 68.225934765314236,
+    "tabOrder": 0
   },
   "visual": {
     "visualType": "textbox",
@@ -39,7 +40,7 @@
                       "Entity": "Date_Table"
                     }
                   },
-                  "Property": "Arrow"
+                  "Property": "Arrow For Vehicle DwontimeHrs"
                 }
               }
             },
@@ -81,7 +82,7 @@
                                       "Entity": "Date_Table"
                                     }
                                   },
-                                  "Property": "Arrow"
+                                  "Property": "Arrow For Vehicle DwontimeHrs"
                                 }
                               },
                               "Right": {
@@ -112,7 +113,7 @@
                                       "Entity": "Date_Table"
                                     }
                                   },
-                                  "Property": "Arrow"
+                                  "Property": "Arrow For Vehicle DwontimeHrs"
                                 }
                               },
                               "Right": {
