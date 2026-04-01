@@ -1,16 +1,16 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
-  "name": "64c9f77453cb979f2958",
+  "name": "cf040a2dfa9eae5ff4d8",
   "position": {
-    "x": 640.97264437689978,
-    "y": 499.93920972644378,
-    "z": 3002,
-    "height": 211.06382978723406,
-    "width": 631.24620060790278,
-    "tabOrder": 3002
+    "x": 902.613981762918,
+    "y": 291.79331306990883,
+    "z": 3009,
+    "height": 188.69300911854103,
+    "width": 362.79635258358667,
+    "tabOrder": 3009
   },
   "visual": {
-    "visualType": "clusteredColumnChart",
+    "visualType": "donutChart",
     "query": {
       "queryState": {
         "Category": {
@@ -20,15 +20,16 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Vehicle_Info"
+                      "Entity": "Fleet_SharePoint_Trips_2020_2022"
                     }
                   },
                   "Property": "Vehicle_Name"
                 }
               },
-              "queryRef": "Vehicle_Info.Vehicle_Name",
-              "nativeQueryRef": "Vehicle_Name",
-              "active": true
+              "queryRef": "Fleet_SharePoint_Trips_2020_2022.Vehicle_Name",
+              "nativeQueryRef": "VehicleName",
+              "active": true,
+              "displayName": "VehicleName"
             }
           ]
         },
@@ -36,17 +37,22 @@
           "projections": [
             {
               "field": {
-                "Measure": {
+                "Aggregation": {
                   "Expression": {
-                    "SourceRef": {
-                      "Entity": "Measures For Best Performing Vehicles"
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fleet_SharePoint_Trips_2020_2022"
+                        }
+                      },
+                      "Property": "DistanceKM"
                     }
                   },
-                  "Property": "Vehicle Performance Score"
+                  "Function": 0
                 }
               },
-              "queryRef": "Measures For Best Performing Vehicles.Vehicle Performance Score",
-              "nativeQueryRef": "Vehicle Performance Score"
+              "queryRef": "Sum(Fleet_SharePoint_Trips_2020_2022.DistanceKM)",
+              "nativeQueryRef": "Sum of DistanceKM"
             }
           ]
         }
@@ -55,34 +61,24 @@
         "sort": [
           {
             "field": {
-              "Measure": {
+              "Aggregation": {
                 "Expression": {
-                  "SourceRef": {
-                    "Entity": "Measures For Best Performing Vehicles"
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "Fleet_SharePoint_Trips_2020_2022"
+                      }
+                    },
+                    "Property": "DistanceKM"
                   }
                 },
-                "Property": "Vehicle Performance Score"
+                "Function": 0
               }
             },
             "direction": "Ascending"
           }
         ]
       }
-    },
-    "objects": {
-      "labels": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            }
-          }
-        }
-      ]
     },
     "visualContainerObjects": {
       "title": [
@@ -91,7 +87,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Top 10 worst Performing Vehicles'"
+                  "Value": "'Top 5 Most Utilized Vehicles'"
                 }
               }
             }
@@ -104,12 +100,12 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "25d4b915cf74f74457a9",
+        "name": "32ac1ab86eda96f7e305",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "Vehicle_Info"
+                "Entity": "Fleet_SharePoint_Trips_2020_2022"
               }
             },
             "Property": "Vehicle_Name"
@@ -127,13 +123,8 @@
                     "Version": 2,
                     "From": [
                       {
-                        "Name": "v",
-                        "Entity": "Vehicle_Info",
-                        "Type": 0
-                      },
-                      {
-                        "Name": "m",
-                        "Entity": "Measures For Best Performing Vehicles",
+                        "Name": "f",
+                        "Entity": "Fleet_SharePoint_Trips_2020_2022",
                         "Type": 0
                       }
                     ],
@@ -142,7 +133,7 @@
                         "Column": {
                           "Expression": {
                             "SourceRef": {
-                              "Source": "v"
+                              "Source": "f"
                             }
                           },
                           "Property": "Vehicle_Name"
@@ -152,28 +143,33 @@
                     ],
                     "OrderBy": [
                       {
-                        "Direction": 1,
+                        "Direction": 2,
                         "Expression": {
-                          "Measure": {
+                          "Aggregation": {
                             "Expression": {
-                              "SourceRef": {
-                                "Source": "m"
+                              "Column": {
+                                "Expression": {
+                                  "SourceRef": {
+                                    "Source": "f"
+                                  }
+                                },
+                                "Property": "DistanceKM"
                               }
                             },
-                            "Property": "Vehicle Performance Score"
+                            "Function": 0
                           }
                         }
                       }
                     ],
-                    "Top": 10
+                    "Top": 5
                   }
                 }
               },
               "Type": 2
             },
             {
-              "Name": "v",
-              "Entity": "Vehicle_Info",
+              "Name": "f",
+              "Entity": "Fleet_SharePoint_Trips_2020_2022",
               "Type": 0
             }
           ],
@@ -186,7 +182,7 @@
                       "Column": {
                         "Expression": {
                           "SourceRef": {
-                            "Source": "v"
+                            "Source": "f"
                           }
                         },
                         "Property": "Vehicle_Name"
@@ -205,15 +201,20 @@
         }
       },
       {
-        "name": "65aeea2d067fbb95f488",
+        "name": "56998541778771f11780",
         "field": {
-          "Measure": {
+          "Aggregation": {
             "Expression": {
-              "SourceRef": {
-                "Entity": "Measures For Best Performing Vehicles"
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Fleet_SharePoint_Trips_2020_2022"
+                  }
+                },
+                "Property": "DistanceKM"
               }
             },
-            "Property": "Vehicle Performance Score"
+            "Function": 0
           }
         },
         "type": "Advanced"

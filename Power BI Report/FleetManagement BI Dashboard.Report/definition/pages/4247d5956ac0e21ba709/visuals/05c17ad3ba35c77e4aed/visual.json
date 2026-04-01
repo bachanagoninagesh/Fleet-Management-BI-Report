@@ -1,19 +1,19 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
-  "name": "32d546069fcf0997de5f",
+  "name": "05c17ad3ba35c77e4aed",
   "position": {
-    "x": 466.86930091185411,
-    "y": 75.866261398176292,
-    "z": 3003,
-    "height": 184.80243161094225,
-    "width": 628.32826747720367,
-    "tabOrder": 3003
+    "x": 1102.9787234042553,
+    "y": 140.06079027355625,
+    "z": 3006,
+    "height": 76.838905775075986,
+    "width": 169.24012158054711,
+    "tabOrder": 3006
   },
   "visual": {
-    "visualType": "lineChart",
+    "visualType": "slicer",
     "query": {
       "queryState": {
-        "Category": {
+        "Values": {
           "projections": [
             {
               "field": {
@@ -65,7 +65,7 @@
               },
               "queryRef": "Date_Table.Date.Variation.Date Hierarchy.Quarter",
               "nativeQueryRef": "Date Quarter",
-              "active": true
+              "active": false
             },
             {
               "field": {
@@ -91,7 +91,7 @@
               },
               "queryRef": "Date_Table.Date.Variation.Date Hierarchy.Month",
               "nativeQueryRef": "Date Month",
-              "active": true
+              "active": false
             },
             {
               "field": {
@@ -120,33 +120,52 @@
               "active": false
             }
           ]
-        },
-        "Y": {
-          "projections": [
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Measures For Best Performing Vehicles"
-                    }
-                  },
-                  "Property": "Vehicle Performance Score"
-                }
-              },
-              "queryRef": "Measures For Best Performing Vehicles.Vehicle Performance Score",
-              "nativeQueryRef": "Vehicle Performance Score"
-            }
-          ]
         }
       }
+    },
+    "objects": {
+      "data": [
+        {
+          "properties": {
+            "mode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Dropdown'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "''"
+                }
+              }
+            }
+          }
+        }
+      ]
     },
     "drillFilterOtherVisuals": true
   },
   "filterConfig": {
     "filters": [
       {
-        "name": "f3487d9dbc5ef14f5d71",
+        "name": "66e75a0e3b891a712fb0",
         "field": {
           "HierarchyLevel": {
             "Expression": {
@@ -171,7 +190,7 @@
         "type": "Advanced"
       },
       {
-        "name": "66a329aeb64256a9e68d",
+        "name": "5171d8d709cce3699e6a",
         "field": {
           "HierarchyLevel": {
             "Expression": {
@@ -196,7 +215,7 @@
         "type": "Categorical"
       },
       {
-        "name": "fba1e90f9ce4f022f75b",
+        "name": "cad80770b482c733ea63",
         "field": {
           "HierarchyLevel": {
             "Expression": {
@@ -221,7 +240,7 @@
         "type": "Categorical"
       },
       {
-        "name": "3b08431a1bb21b5457e8",
+        "name": "e968668da2dd084ca5b2",
         "field": {
           "HierarchyLevel": {
             "Expression": {
@@ -243,21 +262,126 @@
             "Level": "Day"
           }
         },
-        "type": "Advanced"
-      },
-      {
-        "name": "b01f62857a9d363167ee",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Measures For Best Performing Vehicles"
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "l",
+              "Entity": "LocalDateTable_dae4be3b-bf5c-4b1c-915d-0ea18ead9e90",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Not": {
+                  "Expression": {
+                    "In": {
+                      "Expressions": [
+                        {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Source": "l"
+                              }
+                            },
+                            "Property": "Day"
+                          }
+                        }
+                      ],
+                      "Values": [
+                        [
+                          {
+                            "Literal": {
+                              "Value": "null"
+                            }
+                          }
+                        ]
+                      ]
+                    }
+                  }
+                }
+              },
+              "Annotations": {
+                "filterExpressionMetadata": {
+                  "expressions": [
+                    {
+                      "HierarchyLevel": {
+                        "Expression": {
+                          "Hierarchy": {
+                            "Expression": {
+                              "PropertyVariationSource": {
+                                "Expression": {
+                                  "SourceRef": {
+                                    "Entity": "Date_Table"
+                                  }
+                                },
+                                "Name": "Variation",
+                                "Property": "Date"
+                              }
+                            },
+                            "Hierarchy": "Date Hierarchy"
+                          }
+                        },
+                        "Level": "Day"
+                      }
+                    }
+                  ],
+                  "decomposedIdentities": {
+                    "values": [
+                      [
+                        {
+                          "0": [
+                            {
+                              "Literal": {
+                                "Value": "null"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    ],
+                    "columns": [
+                      {
+                        "value": {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Entity": "LocalDateTable_dae4be3b-bf5c-4b1c-915d-0ea18ead9e90"
+                              }
+                            },
+                            "Property": "Day"
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "valueMap": [
+                    {
+                      "0": "(Blank)"
+                    }
+                  ]
+                }
               }
-            },
-            "Property": "Vehicle Performance Score"
-          }
+            }
+          ]
         },
-        "type": "Advanced"
+        "objects": {
+          "general": [
+            {
+              "properties": {
+                "isInvertedSelectionMode": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "true"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
       }
     ]
   }

@@ -25,6 +25,27 @@ cultureInfo en-US
 			          }
 			        }
 			      ]
+			    },
+			    "fleet_sharepoint_trips_2020_2022.vehicle_name": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Fleet_SharePoint_Trips_2020_2022",
+			          "ConceptualProperty": "Vehicle_Name"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "VehicleName": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
 			    }
 			  }
 			}
