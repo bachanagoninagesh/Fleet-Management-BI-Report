@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
-  "name": "f4bb5833b189ca8a948a",
+  "name": "32d546069fcf0997de5f",
   "position": {
-    "x": 663.92999204455054,
-    "y": 314.653937947494,
-    "z": 6000,
-    "height": 201.62291169451075,
-    "width": 599.77724741447889,
-    "tabOrder": 5000
+    "x": 8.99297423887588,
+    "y": 266.79156908665107,
+    "z": 3003,
+    "height": 184.85558157689306,
+    "width": 1263.0132708821234,
+    "tabOrder": 3003
   },
   "visual": {
     "visualType": "lineChart",
@@ -92,6 +92,32 @@
               "queryRef": "Date_Table.Date.Variation.Date Hierarchy.Month",
               "nativeQueryRef": "Date Month",
               "active": true
+            },
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "PropertyVariationSource": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Date_Table"
+                            }
+                          },
+                          "Name": "Variation",
+                          "Property": "Date"
+                        }
+                      },
+                      "Hierarchy": "Date Hierarchy"
+                    }
+                  },
+                  "Level": "Day"
+                }
+              },
+              "queryRef": "Date_Table.Date.Variation.Date Hierarchy.Day",
+              "nativeQueryRef": "Date Day",
+              "active": false
             }
           ]
         },
@@ -99,61 +125,28 @@
           "projections": [
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Fleet_Maintenance_Info(XL)"
-                        }
-                      },
-                      "Property": "RepairTimeHours"
+                    "SourceRef": {
+                      "Entity": "Measures For Best Performing Vehicles"
                     }
                   },
-                  "Function": 0
+                  "Property": "Vehicle Performance Score"
                 }
               },
-              "queryRef": "Sum(Fleet_Maintenance_Info(XL).RepairTimeHours)",
-              "nativeQueryRef": "Sum of RepairTimeHours"
+              "queryRef": "Measures For Best Performing Vehicles.Vehicle Performance Score",
+              "nativeQueryRef": "Vehicle Performance Score"
             }
           ]
         }
       }
-    },
-    "visualContainerObjects": {
-      "dropShadow": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "title": [
-        {
-          "properties": {
-            "alignment": {
-              "expr": {
-                "Literal": {
-                  "Value": "'center'"
-                }
-              }
-            }
-          }
-        }
-      ]
     },
     "drillFilterOtherVisuals": true
   },
   "filterConfig": {
     "filters": [
       {
-        "name": "921008295c8360ed3ffa",
+        "name": "f3487d9dbc5ef14f5d71",
         "field": {
           "HierarchyLevel": {
             "Expression": {
@@ -178,7 +171,7 @@
         "type": "Advanced"
       },
       {
-        "name": "9a248942316822e095af",
+        "name": "66a329aeb64256a9e68d",
         "field": {
           "HierarchyLevel": {
             "Expression": {
@@ -203,26 +196,7 @@
         "type": "Categorical"
       },
       {
-        "name": "9b19c80c13a001584c1f",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Fleet_Maintenance_Info(XL)"
-                  }
-                },
-                "Property": "RepairTimeHours"
-              }
-            },
-            "Function": 0
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "931fb99afe098cd219b1",
+        "name": "fba1e90f9ce4f022f75b",
         "field": {
           "HierarchyLevel": {
             "Expression": {
@@ -245,6 +219,45 @@
           }
         },
         "type": "Categorical"
+      },
+      {
+        "name": "3b08431a1bb21b5457e8",
+        "field": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "PropertyVariationSource": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "Date_Table"
+                      }
+                    },
+                    "Name": "Variation",
+                    "Property": "Date"
+                  }
+                },
+                "Hierarchy": "Date Hierarchy"
+              }
+            },
+            "Level": "Day"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "b01f62857a9d363167ee",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Measures For Best Performing Vehicles"
+              }
+            },
+            "Property": "Vehicle Performance Score"
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }

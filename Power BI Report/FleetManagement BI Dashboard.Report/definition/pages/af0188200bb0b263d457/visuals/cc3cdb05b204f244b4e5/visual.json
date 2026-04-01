@@ -48,37 +48,5 @@
       }
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "c86531bbee30d24926a8",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Vehicle_Info"
-              }
-            },
-            "Property": "Vehicle_Name"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "50a5398abb576698b27d",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Fleet_SharePoint_Trips_2020_2022"
-              }
-            },
-            "Property": "Vehicle_Name"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

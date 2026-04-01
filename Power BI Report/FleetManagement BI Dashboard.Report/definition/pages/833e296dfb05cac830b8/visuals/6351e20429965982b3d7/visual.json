@@ -4,10 +4,10 @@
   "position": {
     "x": 134.89461358313818,
     "y": 20.983606557377051,
-    "z": 3,
+    "z": 2000,
     "height": 149.88290398126463,
     "width": 232.81811085089774,
-    "tabOrder": 3
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "tableEx",
@@ -65,37 +65,5 @@
       }
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "f825530a4a4cd321bcc2",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Measures For Best Performing Vehicles"
-              }
-            },
-            "Property": "Cost Per Mile"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "ed22090a44369b5c1aaf",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Vehicle_Info"
-              }
-            },
-            "Property": "Vehicle_Name"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

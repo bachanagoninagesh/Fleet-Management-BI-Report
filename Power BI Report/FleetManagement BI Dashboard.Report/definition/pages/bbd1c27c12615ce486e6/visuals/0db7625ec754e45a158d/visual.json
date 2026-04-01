@@ -173,7 +173,7 @@
                     ],
                     "OrderBy": [
                       {
-                        "Direction": 1,
+                        "Direction": 2,
                         "Expression": {
                           "Measure": {
                             "Expression": {
@@ -181,7 +181,7 @@
                                 "Source": "m"
                               }
                             },
-                            "Property": "Performance Score"
+                            "Property": "Vehicle Performance Score"
                           }
                         }
                       }

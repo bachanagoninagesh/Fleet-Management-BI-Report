@@ -2,15 +2,15 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "257708e189ad7646960c",
   "position": {
-    "x": 896,
-    "y": 184,
-    "z": 5,
-    "height": 485,
-    "width": 178,
-    "tabOrder": 5
+    "x": 896.29976580796256,
+    "y": 183.85636221701796,
+    "z": 4000,
+    "height": 112.91178766588604,
+    "width": 177.86104605776737,
+    "tabOrder": 4000
   },
   "visual": {
-    "visualType": "tableEx",
+    "visualType": "slicer",
     "query": {
       "queryState": {
         "Values": {
@@ -38,18 +38,76 @@
                 }
               },
               "queryRef": "Date_Table.Date.Variation.Date Hierarchy.Year",
-              "nativeQueryRef": "Date Year"
+              "nativeQueryRef": "Date Year",
+              "active": true
             }
           ]
         }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "HierarchyLevel": {
+                "Expression": {
+                  "Hierarchy": {
+                    "Expression": {
+                      "PropertyVariationSource": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Date_Table"
+                          }
+                        },
+                        "Name": "Variation",
+                        "Property": "Date"
+                      }
+                    },
+                    "Hierarchy": "Date Hierarchy"
+                  }
+                },
+                "Level": "Year"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ],
+        "isDefaultSort": true
       }
+    },
+    "objects": {
+      "data": [
+        {
+          "properties": {
+            "mode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Basic'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "orientation": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ]
     },
     "drillFilterOtherVisuals": true
   },
   "filterConfig": {
     "filters": [
       {
-        "name": "cc30cdc3bc8b0e7b3ead",
+        "name": "f53e0d41e6a7b4eb26c8",
         "field": {
           "HierarchyLevel": {
             "Expression": {

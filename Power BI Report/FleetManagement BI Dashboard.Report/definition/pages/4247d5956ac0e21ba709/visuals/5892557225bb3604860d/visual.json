@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
-  "name": "5ab875dbebf2530c39b1",
+  "name": "5892557225bb3604860d",
   "position": {
-    "x": 630.50741608118665,
-    "y": 82.9352068696331,
-    "z": 1000,
-    "height": 553.56752537080411,
-    "width": 487.61904761904765,
-    "tabOrder": 1000
+    "x": 769,
+    "y": 13,
+    "z": 3005,
+    "height": 236,
+    "width": 503,
+    "tabOrder": 3005
   },
   "visual": {
     "visualType": "tableEx",
@@ -20,20 +20,6 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Fleet_Maintenance_Info(XL)"
-                    }
-                  },
-                  "Property": "Vehicle_Name"
-                }
-              },
-              "queryRef": "Fleet_Maintenance_Info(XL).Vehicle_Name",
-              "nativeQueryRef": "Vehicle_Name"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
                       "Entity": "Vehicle_Info"
                     }
                   },
@@ -41,12 +27,30 @@
                 }
               },
               "queryRef": "Vehicle_Info.Vehicle_Name",
-              "nativeQueryRef": "Vehicle_Name1"
+              "nativeQueryRef": "Vehicle_Name"
             }
           ]
         }
       }
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "6228d46a517eaf0d5988",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Vehicle_Info"
+              }
+            },
+            "Property": "Vehicle_Name"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

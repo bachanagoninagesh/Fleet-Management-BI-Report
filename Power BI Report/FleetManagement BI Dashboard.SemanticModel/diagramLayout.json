@@ -19,7 +19,7 @@
             "height": 128,
             "width": 234
           },
-          "zIndex": 4
+          "zIndex": 5
         },
         {
           "location": {
@@ -32,12 +32,12 @@
             "height": 128,
             "width": 234
           },
-          "zIndex": 5
+          "zIndex": 6
         },
         {
           "location": {
-            "x": 980.36163941535983,
-            "y": 235.66249631621736
+            "x": 999.36163941535983,
+            "y": 239.66249631621736
           },
           "nodeIndex": "Fleet_SharePoint_Trips_2020_2022",
           "nodeLineageTag": "693bf5ed-450c-4a5f-997d-7bf491e62f57",
@@ -58,7 +58,7 @@
             "height": 300,
             "width": 234
           },
-          "zIndex": 6
+          "zIndex": 7
         },
         {
           "location": {
@@ -71,7 +71,7 @@
             "height": 280,
             "width": 234
           },
-          "zIndex": 7
+          "zIndex": 4
         },
         {
           "location": {
@@ -84,12 +84,12 @@
             "height": 128,
             "width": 234
           },
-          "zIndex": 2
+          "zIndex": 8
         },
         {
           "location": {
-            "x": 719.36163941535983,
-            "y": 225.28255458867091
+            "x": 677.36163941535983,
+            "y": 163.28255458867091
           },
           "nodeIndex": "Date_Table",
           "nodeLineageTag": "721b4c24-f256-4050-8ec6-55d4099f3f63",
@@ -97,31 +97,20 @@
             "height": 200,
             "width": 180
           },
-          "zIndex": 1
+          "zIndex": 9
         },
         {
           "location": {
-            "x": 1264.3616394153598,
-            "y": 246.28255458867091
-          },
-          "nodeIndex": "Meassures for Best Performing Vehicles",
-          "size": {
-            "height": 200,
-            "width": 234
-          },
-          "zIndex": 0
-        },
-        {
-          "location": {
-            "x": 1548.3616394153598,
-            "y": 246.28255458867091
+            "x": 957.36163941535983,
+            "y": 0
           },
           "nodeIndex": "Measures For Best Performing Vehicles",
+          "nodeLineageTag": "2766b8f0-d850-4b83-85a9-e30365f3653d",
           "size": {
             "height": 200,
             "width": 234
           },
-          "zIndex": 0
+          "zIndex": 2
         }
       ],
       "name": "All tables",

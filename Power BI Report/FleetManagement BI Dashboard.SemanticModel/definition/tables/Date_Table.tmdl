@@ -1,11 +1,17 @@
 table Date_Table
 	lineageTag: 721b4c24-f256-4050-8ec6-55d4099f3f63
 
-	measure 'sameperiodlastyear repair time hrs' = if (ISFILTERED(Date_Table[Date].[Month])|| ISFILTERED(Date_Table[Date].[Quarter])||ISFILTERED(Date_Table[Date].[Year]) || ISFILTERED(Date_Table[Date].[Day]),CALCULATE(SUM('Fleet_Maintenance_Info(XL)'[RepairTimeHours]), SAMEPERIODLASTYEAR(Date_Table[Date])),BLANK())
+	measure 'sameperiodlastyear repair time hrs' = ```
+			
+			 if (ISFILTERED(Date_Table[Date].[Month])|| ISFILTERED(Date_Table[Date].[Quarter])||ISFILTERED(Date_Table[Date].[Year]) || ISFILTERED(Date_Table[Date].[Day]),CALCULATE(SUM('Fleet_Maintenance_Info(XL)'[RepairTimeHours]), SAMEPERIODLASTYEAR(Date_Table[Date])),BLANK())
+			```
 		formatString: 0
 		lineageTag: 2a9019f9-14e5-4bab-a9df-f5e22dcb4843
 
-	measure 'workshop efficiency in hrs' = if ((ISFILTERED(Date_Table[Date].[Month])|| ISFILTERED(Date_Table[Date].[Quarter])||ISFILTERED(Date_Table[Date].[Year])||ISFILTERED(Date_Table[Date].[Day])),IF(ISBLANK([sameperiodlastyear repair time hrs]),BLANK(), [sameperiodlastyear repair time hrs]-SUM('Fleet_Maintenance_Info(XL)'[RepairTimeHours])),BLANK())
+	measure 'workshop efficiency in hrs' = ```
+			
+			 if ((ISFILTERED(Date_Table[Date].[Month])|| ISFILTERED(Date_Table[Date].[Quarter])||ISFILTERED(Date_Table[Date].[Year])||ISFILTERED(Date_Table[Date].[Day])),IF(ISBLANK([sameperiodlastyear repair time hrs]),BLANK(), [sameperiodlastyear repair time hrs]-SUM('Fleet_Maintenance_Info(XL)'[RepairTimeHours])),BLANK())
+			```
 		formatString: 0
 		lineageTag: 1216efcf-0a3d-4298-8935-e0a8cf7a2a39
 
@@ -16,7 +22,9 @@ table Date_Table
 	measure Arrow = IF(ISBLANK([workshop efficiency in hrs]),BLANK(),if([workshop efficiency in hrs]>0,"🡅","🡇"))
 		lineageTag: 98946d1e-a38e-41b1-95e6-befb6c8abc5b
 
-	measure 'sameperiodlast yr downtimehrs' = IF(ISFILTERED(Date_Table[Date].[Day])||ISFILTERED(Date_Table[Date].[Month])||ISFILTERED(Date_Table[Date].[Quarter])||ISFILTERED(Date_Table[Date].[Year]),CALCULATE(SUM(FLMaintenance_info[DowntimeHours]),SAMEPERIODLASTYEAR(Date_Table[Date])),BLANK())
+	measure 'sameperiodlast yr downtimehrs' =
+			
+			IF(ISFILTERED(Date_Table[Date].[Day])||ISFILTERED(Date_Table[Date].[Month])||ISFILTERED(Date_Table[Date].[Quarter])||ISFILTERED(Date_Table[Date].[Year]),CALCULATE(SUM(FLMaintenance_info[DowntimeHours]),SAMEPERIODLASTYEAR(Date_Table[Date])),BLANK())
 		formatString: 0
 		lineageTag: 86e52178-c092-4b6f-84a6-afe5847c72a1
 

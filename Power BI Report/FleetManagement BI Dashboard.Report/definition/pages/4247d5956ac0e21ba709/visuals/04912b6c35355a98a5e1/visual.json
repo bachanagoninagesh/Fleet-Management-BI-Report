@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
-  "name": "727e3e9aa409b42ef320",
+  "name": "04912b6c35355a98a5e1",
   "position": {
-    "x": 739.42232630757223,
-    "y": 217.82982045277129,
-    "z": 1000,
-    "height": 307.75956284153006,
-    "width": 526.5886026541765,
-    "tabOrder": 1000
+    "x": 99.921935987509769,
+    "y": 12.989851678376269,
+    "z": 3004,
+    "height": 246.80718188914912,
+    "width": 437.65807962529277,
+    "tabOrder": 3004
   },
   "visual": {
     "visualType": "clusteredColumnChart",
@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Vehicle_Info"
+                      "Entity": "FLMaintenance_info"
                     }
                   },
-                  "Property": "Vehicle_Name"
+                  "Property": "IssueCategory"
                 }
               },
-              "queryRef": "Vehicle_Info.Vehicle_Name",
-              "nativeQueryRef": "Vehicle_Name",
+              "queryRef": "FLMaintenance_info.IssueCategory",
+              "nativeQueryRef": "IssueCategory",
               "active": true
             }
           ]
@@ -41,17 +41,17 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "Fleet_SharePoint_Trips_2020_2022"
+                          "Entity": "FLMaintenance_info"
                         }
                       },
-                      "Property": "DistanceKM"
+                      "Property": "Vehicle_Name"
                     }
                   },
-                  "Function": 0
+                  "Function": 5
                 }
               },
-              "queryRef": "Sum(Fleet_SharePoint_Trips_2020_2022.DistanceKM)",
-              "nativeQueryRef": "Sum of DistanceKM"
+              "queryRef": "Count(FLMaintenance_info.Vehicle_Name)",
+              "nativeQueryRef": "Count of Vehicle_Name"
             }
           ]
         }
@@ -65,13 +65,13 @@
                   "Column": {
                     "Expression": {
                       "SourceRef": {
-                        "Entity": "Fleet_SharePoint_Trips_2020_2022"
+                        "Entity": "FLMaintenance_info"
                       }
                     },
-                    "Property": "DistanceKM"
+                    "Property": "Vehicle_Name"
                   }
                 },
-                "Function": 0
+                "Function": 5
               }
             },
             "direction": "Descending"
@@ -95,87 +95,39 @@
         }
       ]
     },
-    "visualContainerObjects": {
-      "title": [
-        {
-          "properties": {
-            "titleWrap": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "background": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "transparency": {
-              "expr": {
-                "Literal": {
-                  "Value": "0D"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "border": [
-        {
-          "properties": {
-            "width": {
-              "expr": {
-                "Literal": {
-                  "Value": "1D"
-                }
-              }
-            }
-          }
-        }
-      ]
-    },
     "drillFilterOtherVisuals": true
   },
   "filterConfig": {
     "filters": [
       {
-        "name": "f1d21e120c89fbb465fa",
+        "name": "f416451552f214dee98e",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "Vehicle_Info"
+                "Entity": "FLMaintenance_info"
               }
             },
-            "Property": "Vehicle_Name"
+            "Property": "IssueCategory"
           }
         },
         "type": "Categorical"
       },
       {
-        "name": "a3588a5f693649290db9",
+        "name": "3dee813284065fc75d97",
         "field": {
           "Aggregation": {
             "Expression": {
               "Column": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "Fleet_SharePoint_Trips_2020_2022"
+                    "Entity": "FLMaintenance_info"
                   }
                 },
-                "Property": "DistanceKM"
+                "Property": "Vehicle_Name"
               }
             },
-            "Function": 0
+            "Function": 5
           }
         },
         "type": "Advanced"

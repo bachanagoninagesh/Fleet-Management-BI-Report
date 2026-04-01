@@ -10,44 +10,80 @@ table 'Measures For Best Performing Vehicles'
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	measure 'Cost Score' = ```
-			
-			var maxcost = maxx(ALL(Vehicle_Info[Vehicle_Name]),[Cost Per Mile])
-			var mincost = MINX(ALL(Vehicle_Info[Vehicle_Name]),[Cost Per Mile])
-			
-			return 
-			DIVIDE(([Cost Per Mile]-mincost),(maxcost-mincost),0)
-			
-			```
-		formatString: 0.00
-		lineageTag: 692e5377-bd6f-4f15-9ede-398dae8137b1
-
-	measure 'Downtime Score' = ```
-			
-			var maxsocre = MAXX(ALL(Vehicle_Info[Vehicle_Name]),[Downtime/km])
-			var minscore = MINX(ALL(Vehicle_Info[Vehicle_Name]),[Downtime/km])
-			return 
-			DIVIDE([Downtime/km]-minscore,maxsocre-minscore,0)
-			```
-		formatString: 0.000000
-		lineageTag: e4040b89-3f5f-4ef3-a3f8-e7ded0538e57
-
-	measure 'Performance Score' = ```
+	measure 'Vehicle Performance Score' = ```
 			
 			var costweight = 0.4
 			var downtimeweight=0.3
 			var kmweight =0.3
-			
-			var KM_Score = 
-			    var maxscore = MAXX(ALL(Vehicle_Info[Vehicle_Name]),SUM(Fleet_SharePoint_Trips_2020_2022[DistanceKM]))
-			    var minscore =  MINX(ALL(Vehicle_Info[Vehicle_Name]),SUM(Fleet_SharePoint_Trips_2020_2022[DistanceKM]))
+			-- calculating vehicle downtime score
+			var Downtime_Score = 
+			    var max_socre = MAXX(ALL(Vehicle_Info[Vehicle_Name]),[Downtime/km])
+			    var min_score = MINX(ALL(Vehicle_Info[Vehicle_Name]),[Downtime/km])
 			    return 
-			        1-DIVIDE(SUM(Fleet_SharePoint_Trips_2020_2022[DistanceKM])-minscore,maxscore-minscore,0)
+			        1-DIVIDE([Downtime/km]-min_score,max_socre-min_score,0)
+			-- calculating vehicle maintenance cost score
+			var Cost_Score = 
+			    var maxcost = maxx(ALL(Vehicle_Info[Vehicle_Name]),[Cost Per Mile])
+			    var mincost = MINX(ALL(Vehicle_Info[Vehicle_Name]),[Cost Per Mile])
+			
+			    return 
+			        1-DIVIDE(([Cost Per Mile]-mincost),(maxcost-mincost),0)
+			-- calculating vehicle km driven score and also inverting the final score since best km is the best performing score
+			var KM_Score = 
+			    var maxscore = MAXX(ALL(Vehicle_Info[Vehicle_Name]),CALCULATE(SUM(Fleet_SharePoint_Trips_2020_2022[DistanceKM])))
+			    var minscore =  MINX(ALL(Vehicle_Info[Vehicle_Name]),CALCULATE(SUM(Fleet_SharePoint_Trips_2020_2022[DistanceKM])))
+			    return 
+			        DIVIDE(SUM(Fleet_SharePoint_Trips_2020_2022[DistanceKM])-minscore,maxscore-minscore,0)
 			
 			return 
-			    (costweight*[Cost Score])+(downtimeweight*[Downtime Score])+(kmweight*KM_Score)
+			    (costweight*Cost_Score)+(downtimeweight*Downtime_Score)+(kmweight*KM_Score)
 			```
+		formatString: 0.00
 		lineageTag: 260c1d44-5be0-4eba-91d0-aaffca0e6d39
+
+	measure datacheck = ```
+			
+			var hasdwthrs = NOT(ISBLANK(SUM(FLMaintenance_info[DowntimeHours])))
+			var hasmatcost = NOT(ISBLANK(SUM(FLMaintenance_info[MaintenanceCost])))
+			var kmdrven =NOT(ISBLANK(SUM(Fleet_SharePoint_Trips_2020_2022[DistanceKM])))
+			
+			return 
+			    if (hasdwthrs&&hasmatcost&&kmdrven ,"completed","notcompletd")
+			    
+			```
+		lineageTag: 57dfe6a2-dbc9-4675-84c9-f65ba27ddb5c
+
+	measure Cost_Score = ```
+			
+			    var maxcost = maxx(ALL(Vehicle_Info[Vehicle_Name]),[Cost Per Mile])
+			    var mincost = MINX(ALL(Vehicle_Info[Vehicle_Name]),[Cost Per Mile])
+			
+			    return 
+			        1-DIVIDE(([Cost Per Mile]-mincost),(maxcost-mincost),0)
+			```
+		lineageTag: b91d9469-0d53-4c64-bf57-3d9f816b7af9
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Downtime_Score = ```
+			
+			    var maxsocre = MAXX(ALL(Vehicle_Info[Vehicle_Name]),[Downtime/km])
+			    var minscore = MINX(ALL(Vehicle_Info[Vehicle_Name]),[Downtime/km])
+			    return 
+			        1-DIVIDE([Downtime/km]-minscore,maxsocre-minscore,0)
+			```
+		lineageTag: 2393f7fb-71cc-40f7-8ce8-e5237a29d988
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure KM_Score = ```
+			
+			    var maxscore = MAXX(ALL(Vehicle_Info[Vehicle_Name]),CALCULATE(SUM(Fleet_SharePoint_Trips_2020_2022[DistanceKM])))
+			    var minscore =  MINX(ALL(Vehicle_Info[Vehicle_Name]),CALCULATE(SUM(Fleet_SharePoint_Trips_2020_2022[DistanceKM])))
+			    return 
+			        DIVIDE(SUM(Fleet_SharePoint_Trips_2020_2022[DistanceKM])-minscore,maxscore-minscore,0)
+			```
+		lineageTag: cd29ce3f-9d16-417b-a0a5-4db35630d020
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 

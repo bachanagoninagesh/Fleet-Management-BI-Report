@@ -1,19 +1,19 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
-  "name": "a473b6cc7755d7b65576",
+  "name": "29d5fcaf780b14f4ad26",
   "position": {
-    "x": 242.81030444964873,
-    "y": 222.82591725214678,
-    "z": 0,
-    "height": 431.66276346604218,
-    "width": 387.69711163153789,
-    "tabOrder": 0
+    "x": 8.99297423887588,
+    "y": 470.63231850117097,
+    "z": 3001,
+    "height": 235.81576893052303,
+    "width": 616.51834504293527,
+    "tabOrder": 3001
   },
   "visual": {
-    "visualType": "tableEx",
+    "visualType": "clusteredColumnChart",
     "query": {
       "queryState": {
-        "Values": {
+        "Category": {
           "projections": [
             {
               "field": {
@@ -27,9 +27,13 @@
                 }
               },
               "queryRef": "Vehicle_Info.Vehicle_Name",
-              "nativeQueryRef": "Best Performing Vehicle by kmdriven, maintenancecost and dwontimehrs",
-              "displayName": "Best Performing Vehicle by kmdriven, maintenancecost and dwontimehrs"
-            },
+              "nativeQueryRef": "Vehicle_Name",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
             {
               "field": {
                 "Measure": {
@@ -41,8 +45,8 @@
                   "Property": "Vehicle Performance Score"
                 }
               },
-              "queryRef": "Measures For Best Performing Vehicles.Performance Score",
-              "nativeQueryRef": "Performance Score"
+              "queryRef": "Measures For Best Performing Vehicles.Vehicle Performance Score",
+              "nativeQueryRef": "Vehicle Performance Score"
             }
           ]
         }
@@ -60,36 +64,13 @@
                 "Property": "Vehicle Performance Score"
               }
             },
-            "direction": "Ascending"
+            "direction": "Descending"
           }
         ]
       }
     },
     "objects": {
-      "general": [
-        {
-          "properties": {}
-        }
-      ],
-      "columnWidth": [
-        {
-          "properties": {
-            "value": {
-              "expr": {
-                "Literal": {
-                  "Value": "178.1623797135957D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "Vehicle_Info.Vehicle_Name"
-          }
-        }
-      ]
-    },
-    "visualContainerObjects": {
-      "dropShadow": [
+      "labels": [
         {
           "properties": {
             "show": {
@@ -103,17 +84,27 @@
         }
       ]
     },
-    "syncGroup": {
-      "groupName": "Vehicle_Name",
-      "fieldChanges": true,
-      "filterChanges": true
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Top 10 Best Performing Vehicles'"
+                }
+              }
+            }
+          }
+        }
+      ]
     },
     "drillFilterOtherVisuals": true
   },
   "filterConfig": {
     "filters": [
       {
-        "name": "5c08c13df2882d9d546a",
+        "name": "5f2e0406141a4d768cc7",
         "field": {
           "Column": {
             "Expression": {
@@ -161,7 +152,7 @@
                     ],
                     "OrderBy": [
                       {
-                        "Direction": 1,
+                        "Direction": 2,
                         "Expression": {
                           "Measure": {
                             "Expression": {
@@ -174,7 +165,7 @@
                         }
                       }
                     ],
-                    "Top": 5
+                    "Top": 10
                   }
                 }
               },
@@ -214,7 +205,7 @@
         }
       },
       {
-        "name": "d9e560ad65f09f57a87b",
+        "name": "9ba3acacb58deb289c53",
         "field": {
           "Measure": {
             "Expression": {
