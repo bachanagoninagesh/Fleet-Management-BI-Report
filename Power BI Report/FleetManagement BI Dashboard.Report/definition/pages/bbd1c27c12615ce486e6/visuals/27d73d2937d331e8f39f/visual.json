@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
-  "name": "c21d158489dfa6204733",
+  "name": "27d73d2937d331e8f39f",
   "position": {
-    "x": 234.86146095717882,
+    "x": 652.896725440806,
     "y": 145.088161209068,
-    "z": 16000,
+    "z": 18000,
     "height": 28.110831234256924,
     "width": 132.39294710327454,
-    "tabOrder": 14000
+    "tabOrder": 16000
   },
   "visual": {
     "visualType": "textbox",
@@ -19,7 +19,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Repair Time Hrs."
+                    "value": "Maintenance Cost"
                   }
                 ],
                 "horizontalTextAlignment": "center"

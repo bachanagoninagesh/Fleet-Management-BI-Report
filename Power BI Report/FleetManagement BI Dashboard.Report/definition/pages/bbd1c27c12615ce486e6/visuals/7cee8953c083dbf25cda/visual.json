@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
-  "name": "c21d158489dfa6204733",
+  "name": "7cee8953c083dbf25cda",
   "position": {
-    "x": 234.86146095717882,
-    "y": 145.088161209068,
-    "z": 16000,
+    "x": 1063.6775818639799,
+    "y": 145.99496221662469,
+    "z": 20000,
     "height": 28.110831234256924,
-    "width": 132.39294710327454,
-    "tabOrder": 14000
+    "width": 184.98740554156171,
+    "tabOrder": 18000
   },
   "visual": {
     "visualType": "textbox",
@@ -19,7 +19,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Repair Time Hrs."
+                    "value": "Workshop Efficiency %"
                   }
                 ],
                 "horizontalTextAlignment": "center"

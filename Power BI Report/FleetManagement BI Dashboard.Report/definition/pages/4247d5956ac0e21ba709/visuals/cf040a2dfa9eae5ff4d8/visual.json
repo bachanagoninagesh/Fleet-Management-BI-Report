@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "cf040a2dfa9eae5ff4d8",
   "position": {
-    "x": 496.42585551330797,
-    "y": 74.950570342205324,
+    "x": 460.06079027355628,
+    "y": 52.52279635258359,
     "z": 8000,
-    "height": 188.83650190114068,
-    "width": 376.69961977186313,
+    "height": 188.69300911854103,
+    "width": 414.34650455927056,
     "tabOrder": 8000
   },
   "visual": {
@@ -88,6 +88,66 @@
               "expr": {
                 "Literal": {
                   "Value": "'Top 5 Most Utilized Vehicles'"
+                }
+              }
+            },
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'center'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "width": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "dropShadow": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
                 }
               }
             }

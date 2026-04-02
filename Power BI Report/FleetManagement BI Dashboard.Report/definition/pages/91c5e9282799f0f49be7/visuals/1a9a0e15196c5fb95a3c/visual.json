@@ -6,7 +6,7 @@
     "y": 172.15805471124619,
     "z": 0,
     "height": 262.61398176291794,
-    "width": 724.62006079027356,
+    "width": 476.59574468085111,
     "tabOrder": 0
   },
   "visual": {
@@ -29,7 +29,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "1. Improve the vehicle performance",
+                    "value": "1.Give the business insights",
                     "textStyle": {
                       "fontSize": "18pt"
                     }
@@ -39,7 +39,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "2. improve the workshop efficiency",
+                    "value": "2.Improve the vehicle performance",
                     "textStyle": {
                       "fontSize": "18pt"
                     }
@@ -49,7 +49,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "3.Give the business insights",
+                    "value": "3. improve the workshop efficiency",
                     "textStyle": {
                       "fontSize": "18pt"
                     }

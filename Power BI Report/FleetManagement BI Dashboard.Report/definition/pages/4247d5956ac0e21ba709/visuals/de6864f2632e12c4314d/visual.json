@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "de6864f2632e12c4314d",
   "position": {
-    "x": 65.216730038022817,
-    "y": 74.950570342205324,
+    "x": 8.7537993920972657,
+    "y": 52.52279635258359,
     "z": 9000,
-    "height": 188.83650190114068,
-    "width": 401.03422053231941,
+    "height": 188.69300911854103,
+    "width": 438.66261398176295,
     "tabOrder": 9000
   },
   "visual": {
@@ -88,6 +88,26 @@
               "expr": {
                 "Literal": {
                   "Value": "'Vehicle Maintenance Repair count'"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'center'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "dropShadow": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
                 }
               }
             }

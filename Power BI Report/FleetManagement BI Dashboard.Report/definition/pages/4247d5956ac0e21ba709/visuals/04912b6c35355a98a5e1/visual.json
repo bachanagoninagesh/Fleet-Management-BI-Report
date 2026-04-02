@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "04912b6c35355a98a5e1",
   "position": {
-    "x": 41.855513307984793,
-    "y": 514.92015209125475,
+    "x": 8.7537993920972657,
+    "y": 493.13069908814595,
     "z": 3000,
-    "height": 205.38403041825094,
-    "width": 475.01140684410649,
+    "height": 219.81762917933131,
+    "width": 511.61094224924017,
     "tabOrder": 3000
   },
   "visual": {
@@ -80,8 +80,61 @@
         "isDefaultSort": true
       }
     },
-    "objects": {
-      "labels": [
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'center'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "width": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "dropShadow": [
         {
           "properties": {
             "show": {

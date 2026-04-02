@@ -46,14 +46,14 @@ table FLMaintenance_info
 
 	column MaintenanceCost
 		dataType: int64
-		formatString: \$#,0;(\$#,0);\$#,0
+		formatString: "₹"#,0.0;-"₹"#,0.0;"₹"#,0.0
 		lineageTag: 561c933a-e695-4227-9d19-55006d3db567
 		summarizeBy: sum
 		sourceColumn: MaintenanceCost
 
 		annotation SummarizationSetBy = Automatic
 
-		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+		annotation PBI_FormatHint = {"currencyCulture":"bho-Deva-IN"}
 
 	column MaintenanceDate
 		dataType: dateTime

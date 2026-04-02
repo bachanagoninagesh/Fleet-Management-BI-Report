@@ -1,35 +1,71 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
-  "name": "7200ea3d3db1e0051a99",
+  "name": "c2ead6c3300c44523456",
   "position": {
-    "x": 888.02431610942256,
-    "y": 52.52279635258359,
-    "z": 7000,
-    "height": 188.69300911854103,
-    "width": 384.19452887537994,
-    "tabOrder": 7000
+    "x": 10.699088145896656,
+    "y": 279.14893617021278,
+    "z": 5000,
+    "height": 200,
+    "width": 579.69604863221889,
+    "tabOrder": 5000
   },
   "visual": {
-    "visualType": "donutChart",
+    "visualType": "lineChart",
     "query": {
       "queryState": {
         "Category": {
           "projections": [
             {
               "field": {
-                "Column": {
+                "HierarchyLevel": {
                   "Expression": {
-                    "SourceRef": {
-                      "Entity": "Fleet_SharePoint_Trips_2020_2022"
+                    "Hierarchy": {
+                      "Expression": {
+                        "PropertyVariationSource": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Date_Table"
+                            }
+                          },
+                          "Name": "Variation",
+                          "Property": "Date"
+                        }
+                      },
+                      "Hierarchy": "Date Hierarchy"
                     }
                   },
-                  "Property": "Vehicle_Name"
+                  "Level": "Year"
                 }
               },
-              "queryRef": "Fleet_SharePoint_Trips_2020_2022.Vehicle_Name",
-              "nativeQueryRef": "VehicleName",
-              "active": true,
-              "displayName": "VehicleName"
+              "queryRef": "Date_Table.Date.Variation.Date Hierarchy.Year",
+              "nativeQueryRef": "Date Year",
+              "active": true
+            },
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "PropertyVariationSource": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Date_Table"
+                            }
+                          },
+                          "Name": "Variation",
+                          "Property": "Date"
+                        }
+                      },
+                      "Hierarchy": "Date Hierarchy"
+                    }
+                  },
+                  "Level": "Month"
+                }
+              },
+              "queryRef": "Date_Table.Date.Variation.Date Hierarchy.Month",
+              "nativeQueryRef": "Date Month",
+              "active": true
             }
           ]
         },
@@ -42,55 +78,26 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "Fleet_SharePoint_Trips_2020_2022"
+                          "Entity": "Fleet_Maintenance_Info(XL)"
                         }
                       },
-                      "Property": "DistanceKM"
+                      "Property": "Vehicle_Name"
                     }
                   },
-                  "Function": 0
+                  "Function": 5
                 }
               },
-              "queryRef": "Sum(Fleet_SharePoint_Trips_2020_2022.DistanceKM)",
-              "nativeQueryRef": "Sum of DistanceKM"
+              "queryRef": "CountNonNull(Fleet_Maintenance_Info(XL).Vehicle_Name)",
+              "nativeQueryRef": "Count of Vehicle_Name"
             }
           ]
         }
-      },
-      "sortDefinition": {
-        "sort": [
-          {
-            "field": {
-              "Aggregation": {
-                "Expression": {
-                  "Column": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "Fleet_SharePoint_Trips_2020_2022"
-                      }
-                    },
-                    "Property": "DistanceKM"
-                  }
-                },
-                "Function": 0
-              }
-            },
-            "direction": "Ascending"
-          }
-        ]
       }
     },
     "visualContainerObjects": {
       "title": [
         {
           "properties": {
-            "text": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Top 5 Least Utilized Vehicles'"
-                }
-              }
-            },
             "titleWrap": {
               "expr": {
                 "Literal": {
@@ -160,12 +167,12 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "0c048ee4f72ae1983b8e",
+        "name": "7003569880452cc00cd0",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "Fleet_SharePoint_Trips_2020_2022"
+                "Entity": "FLMaintenance_info"
               }
             },
             "Property": "Vehicle_Name"
@@ -184,7 +191,7 @@
                     "From": [
                       {
                         "Name": "f",
-                        "Entity": "Fleet_SharePoint_Trips_2020_2022",
+                        "Entity": "FLMaintenance_info",
                         "Type": 0
                       }
                     ],
@@ -203,7 +210,7 @@
                     ],
                     "OrderBy": [
                       {
-                        "Direction": 1,
+                        "Direction": 2,
                         "Expression": {
                           "Aggregation": {
                             "Expression": {
@@ -213,15 +220,15 @@
                                     "Source": "f"
                                   }
                                 },
-                                "Property": "DistanceKM"
+                                "Property": "IssueCategory"
                               }
                             },
-                            "Function": 0
+                            "Function": 5
                           }
                         }
                       }
                     ],
-                    "Top": 5
+                    "Top": 20
                   }
                 }
               },
@@ -229,7 +236,7 @@
             },
             {
               "Name": "f",
-              "Entity": "Fleet_SharePoint_Trips_2020_2022",
+              "Entity": "FLMaintenance_info",
               "Type": 0
             }
           ],
@@ -258,7 +265,8 @@
               }
             }
           ]
-        }
+        },
+        "howCreated": "User"
       }
     ]
   }

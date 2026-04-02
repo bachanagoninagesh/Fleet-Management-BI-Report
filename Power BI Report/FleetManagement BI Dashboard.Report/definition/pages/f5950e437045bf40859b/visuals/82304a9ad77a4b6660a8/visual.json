@@ -2,18 +2,18 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "82304a9ad77a4b6660a8",
   "position": {
-    "x": 53.536121673003805,
-    "y": 124.59315589353612,
-    "z": 4,
-    "height": 203.43726235741445,
-    "width": 365.01901140684413,
-    "tabOrder": 4
+    "x": 10.699088145896656,
+    "y": 56.413373860182375,
+    "z": 3000,
+    "height": 214.95440729483283,
+    "width": 396.838905775076,
+    "tabOrder": 3000
   },
   "visual": {
-    "visualType": "slicer",
+    "visualType": "donutChart",
     "query": {
       "queryState": {
-        "Values": {
+        "Category": {
           "projections": [
             {
               "field": {
@@ -31,50 +31,123 @@
               "active": true
             }
           ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "FLMaintenance_info"
+                        }
+                      },
+                      "Property": "IssueCategory"
+                    }
+                  },
+                  "Function": 5
+                }
+              },
+              "queryRef": "CountNonNull(FLMaintenance_info.IssueCategory)",
+              "nativeQueryRef": "Count of IssueCategory"
+            }
+          ]
         }
       },
       "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "FLMaintenance_info"
+                      }
+                    },
+                    "Property": "IssueCategory"
+                  }
+                },
+                "Function": 5
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
         "isDefaultSort": true
       }
     },
-    "objects": {
-      "data": [
+    "visualContainerObjects": {
+      "title": [
         {
           "properties": {
-            "mode": {
+            "titleWrap": {
               "expr": {
                 "Literal": {
-                  "Value": "'Basic'"
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'center'"
                 }
               }
             }
           }
         }
       ],
-      "general": [
+      "background": [
         {
-          "properties": {}
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "width": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "dropShadow": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
         }
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "cca1559755029f3236cf",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "FLMaintenance_info"
-              }
-            },
-            "Property": "IssueCategory"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

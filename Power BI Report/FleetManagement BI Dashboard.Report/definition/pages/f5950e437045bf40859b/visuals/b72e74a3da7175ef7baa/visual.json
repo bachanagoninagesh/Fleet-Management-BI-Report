@@ -1,35 +1,57 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
-  "name": "0db7625ec754e45a158d",
+  "name": "b72e74a3da7175ef7baa",
   "position": {
-    "x": 671.68316831683171,
-    "y": 193.55535553555356,
-    "z": 7000,
-    "height": 92.169216921692168,
-    "width": 406.69666966696673,
-    "tabOrder": 6000
+    "x": 855.92705167173256,
+    "y": 56.413373860182375,
+    "z": 8000,
+    "height": 214.95440729483283,
+    "width": 413.37386018237083,
+    "tabOrder": 8000
   },
   "visual": {
-    "visualType": "slicer",
+    "visualType": "donutChart",
     "query": {
       "queryState": {
-        "Values": {
+        "Category": {
           "projections": [
             {
               "field": {
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Vehicle_Info"
+                      "Entity": "Fleet_Maintenance_Info(XL)"
                     }
                   },
-                  "Property": "Vehicle_Name"
+                  "Property": "Technician"
                 }
               },
-              "queryRef": "Vehicle_Info.Vehicle_Name",
-              "nativeQueryRef": "Best Performing Vehicle by kmdriven, maintenancecost and dwontimehrs",
-              "active": true,
-              "displayName": "Best Performing Vehicle by kmdriven, maintenancecost and dwontimehrs"
+              "queryRef": "Fleet_Maintenance_Info(XL).Technician",
+              "nativeQueryRef": "Technician",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fleet_Maintenance_Info(XL)"
+                        }
+                      },
+                      "Property": "Vehicle_Name"
+                    }
+                  },
+                  "Function": 5
+                }
+              },
+              "queryRef": "CountNonNull(Fleet_Maintenance_Info(XL).Vehicle_Name)",
+              "nativeQueryRef": "Count of Vehicle_Name"
             }
           ]
         }
@@ -38,38 +60,70 @@
         "sort": [
           {
             "field": {
-              "Column": {
+              "Aggregation": {
                 "Expression": {
-                  "SourceRef": {
-                    "Entity": "Vehicle_Info"
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "Fleet_Maintenance_Info(XL)"
+                      }
+                    },
+                    "Property": "Vehicle_Name"
                   }
                 },
-                "Property": "Vehicle_Name"
+                "Function": 5
               }
             },
-            "direction": "Descending"
+            "direction": "Ascending"
           }
         ]
       }
     },
-    "objects": {
-      "data": [
+    "visualContainerObjects": {
+      "title": [
         {
           "properties": {
-            "mode": {
+            "titleWrap": {
               "expr": {
                 "Literal": {
-                  "Value": "'Basic'"
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'center'"
                 }
               }
             }
           }
         }
       ],
-      "general": [
+      "background": [
         {
           "properties": {
-            "orientation": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "width": {
               "expr": {
                 "Literal": {
                   "Value": "1D"
@@ -79,48 +133,6 @@
           }
         }
       ],
-      "selection": [
-        {
-          "properties": {
-            "selectAllCheckboxEnabled": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "strictSingleSelect": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "header": [
-        {
-          "properties": {
-            "text": {
-              "expr": {
-                "Literal": {
-                  "Value": "''"
-                }
-              }
-            },
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          }
-        }
-      ]
-    },
-    "visualContainerObjects": {
       "dropShadow": [
         {
           "properties": {
@@ -133,61 +145,22 @@
             }
           }
         }
-      ],
-      "title": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "text": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Best Performing Vehicle'"
-                }
-              }
-            },
-            "alignment": {
-              "expr": {
-                "Literal": {
-                  "Value": "'center'"
-                }
-              }
-            },
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "12D"
-                }
-              }
-            }
-          }
-        }
       ]
-    },
-    "syncGroup": {
-      "groupName": "Vehicle_Name",
-      "fieldChanges": true,
-      "filterChanges": true
     },
     "drillFilterOtherVisuals": true
   },
   "filterConfig": {
     "filters": [
       {
-        "name": "5c08c13df2882d9d546a",
+        "name": "c49602a72788b32009d5",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "Vehicle_Info"
+                "Entity": "Fleet_Maintenance_Info(XL)"
               }
             },
-            "Property": "Vehicle_Name"
+            "Property": "Technician"
           }
         },
         "type": "TopN",
@@ -202,13 +175,8 @@
                     "Version": 2,
                     "From": [
                       {
-                        "Name": "v",
-                        "Entity": "Vehicle_Info",
-                        "Type": 0
-                      },
-                      {
-                        "Name": "m",
-                        "Entity": "Measures to calculate Performing Vehicles",
+                        "Name": "f",
+                        "Entity": "Fleet_Maintenance_Info(XL)",
                         "Type": 0
                       }
                     ],
@@ -217,38 +185,43 @@
                         "Column": {
                           "Expression": {
                             "SourceRef": {
-                              "Source": "v"
+                              "Source": "f"
                             }
                           },
-                          "Property": "Vehicle_Name"
+                          "Property": "Technician"
                         },
                         "Name": "field"
                       }
                     ],
                     "OrderBy": [
                       {
-                        "Direction": 2,
+                        "Direction": 1,
                         "Expression": {
-                          "Measure": {
+                          "Aggregation": {
                             "Expression": {
-                              "SourceRef": {
-                                "Source": "m"
+                              "Column": {
+                                "Expression": {
+                                  "SourceRef": {
+                                    "Source": "f"
+                                  }
+                                },
+                                "Property": "Vehicle_Name"
                               }
                             },
-                            "Property": "Vehicle Performance Score"
+                            "Function": 5
                           }
                         }
                       }
                     ],
-                    "Top": 5
+                    "Top": 10
                   }
                 }
               },
               "Type": 2
             },
             {
-              "Name": "v",
-              "Entity": "Vehicle_Info",
+              "Name": "f",
+              "Entity": "Fleet_Maintenance_Info(XL)",
               "Type": 0
             }
           ],
@@ -261,10 +234,10 @@
                       "Column": {
                         "Expression": {
                           "SourceRef": {
-                            "Source": "v"
+                            "Source": "f"
                           }
                         },
-                        "Property": "Vehicle_Name"
+                        "Property": "Technician"
                       }
                     }
                   ],

@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
-  "name": "5892557225bb3604860d",
+  "name": "50d0ce3d6868f08ff88f",
   "position": {
-    "x": 1102.9787234042553,
-    "y": 249.96960486322189,
-    "z": 4000,
-    "height": 71.00303951367782,
-    "width": 169.24012158054711,
-    "tabOrder": 4000
+    "x": 1122.4316109422493,
+    "y": 379.3313069908815,
+    "z": 6000,
+    "height": 98.2370820668693,
+    "width": 146.86930091185411,
+    "tabOrder": 6000
   },
   "visual": {
     "visualType": "slicer",
@@ -20,13 +20,13 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "FLMaintenance_info"
+                      "Entity": "Vehicle_Info"
                     }
                   },
                   "Property": "Vehicle_Name"
                 }
               },
-              "queryRef": "FLMaintenance_info.Vehicle_Name",
+              "queryRef": "Vehicle_Info.Vehicle_Name",
               "nativeQueryRef": "Vehicle_Name",
               "active": true
             }
@@ -64,6 +64,13 @@
       "header": [
         {
           "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'VehicleName'"
+                }
+              }
+            },
             "show": {
               "expr": {
                 "Literal": {
@@ -79,13 +86,6 @@
       "title": [
         {
           "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
             "titleWrap": {
               "expr": {
                 "Literal": {
@@ -100,17 +100,24 @@
                 }
               }
             },
-            "fontSize": {
+            "show": {
               "expr": {
                 "Literal": {
-                  "Value": "12D"
+                  "Value": "true"
                 }
               }
             },
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'VehicleName'"
+                  "Value": "'Vehicle Name'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
                 }
               }
             }
