@@ -1,0 +1,56 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "3b159ae21c6e5c2eab11",
+  "position": {
+    "x": 501.29277566539923,
+    "y": 85.657794676806077,
+    "z": 5,
+    "height": 149.90114068441065,
+    "width": 245.29277566539923,
+    "tabOrder": 5
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Vehicle_Info"
+                    }
+                  },
+                  "Property": "Vehicle_Name"
+                }
+              },
+              "queryRef": "Vehicle_Info.Vehicle_Name",
+              "nativeQueryRef": "Vehicle_Name"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "c2e7e156d50d5b5c2a20",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Vehicle_Info"
+              }
+            },
+            "Property": "Vehicle_Name"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

@@ -22,7 +22,8 @@ ref table DateTableTemplate_84128746-1c13-420f-bfeb-42df6b11812f
 ref table Vehicle_Info
 ref table Date_Table
 ref table LocalDateTable_dae4be3b-bf5c-4b1c-915d-0ea18ead9e90
-ref table 'Measures For Best Performing Vehicles'
+ref table 'Measures to calculate Performing Vehicles'
+ref table 'Measures to calculate Techinician performance'
 
 ref cultureInfo en-US
 

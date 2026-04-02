@@ -98,6 +98,19 @@
             }
           }
         }
+      ],
+      "header": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Best Performing Vehicle'"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "visualContainerObjects": {
@@ -154,7 +167,7 @@
                       },
                       {
                         "Name": "m",
-                        "Entity": "Measures For Best Performing Vehicles",
+                        "Entity": "Measures to calculate Performing Vehicles",
                         "Type": 0
                       }
                     ],

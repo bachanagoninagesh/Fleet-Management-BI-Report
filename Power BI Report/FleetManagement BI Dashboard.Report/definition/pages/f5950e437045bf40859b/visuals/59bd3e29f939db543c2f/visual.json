@@ -1,16 +1,16 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
-  "name": "de6864f2632e12c4314d",
+  "name": "59bd3e29f939db543c2f",
   "position": {
-    "x": 65.216730038022817,
-    "y": 74.950570342205324,
-    "z": 9000,
-    "height": 188.83650190114068,
-    "width": 401.03422053231941,
-    "tabOrder": 9000
+    "x": 452.62357414448667,
+    "y": 258.92015209125475,
+    "z": 6,
+    "height": 202.46387832699619,
+    "width": 660.92775665399245,
+    "tabOrder": 6
   },
   "visual": {
-    "visualType": "donutChart",
+    "visualType": "clusteredColumnChart",
     "query": {
       "queryState": {
         "Category": {
@@ -20,13 +20,13 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "FLMaintenance_info"
+                      "Entity": "Vehicle_Info"
                     }
                   },
                   "Property": "Vehicle_Name"
                 }
               },
-              "queryRef": "FLMaintenance_info.Vehicle_Name",
+              "queryRef": "Vehicle_Info.Vehicle_Name",
               "nativeQueryRef": "Vehicle_Name",
               "active": true
             }
@@ -51,7 +51,7 @@
                 }
               },
               "queryRef": "CountNonNull(FLMaintenance_info.IssueCategory)",
-              "nativeQueryRef": "Count of IssueCategory"
+              "nativeQueryRef": "IssueCategory"
             }
           ]
         }
@@ -80,32 +80,17 @@
         "isDefaultSort": true
       }
     },
-    "visualContainerObjects": {
-      "title": [
-        {
-          "properties": {
-            "text": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Vehicle Maintenance Repair count'"
-                }
-              }
-            }
-          }
-        }
-      ]
-    },
     "drillFilterOtherVisuals": true
   },
   "filterConfig": {
     "filters": [
       {
-        "name": "d3544d9c9a325694b5f2",
+        "name": "212cdb6059816b97f467",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "FLMaintenance_info"
+                "Entity": "Vehicle_Info"
               }
             },
             "Property": "Vehicle_Name"
@@ -123,6 +108,11 @@
                     "Version": 2,
                     "From": [
                       {
+                        "Name": "v",
+                        "Entity": "Vehicle_Info",
+                        "Type": 0
+                      },
+                      {
                         "Name": "f",
                         "Entity": "FLMaintenance_info",
                         "Type": 0
@@ -133,7 +123,7 @@
                         "Column": {
                           "Expression": {
                             "SourceRef": {
-                              "Source": "f"
+                              "Source": "v"
                             }
                           },
                           "Property": "Vehicle_Name"
@@ -168,8 +158,8 @@
               "Type": 2
             },
             {
-              "Name": "f",
-              "Entity": "FLMaintenance_info",
+              "Name": "v",
+              "Entity": "Vehicle_Info",
               "Type": 0
             }
           ],
@@ -182,7 +172,7 @@
                       "Column": {
                         "Expression": {
                           "SourceRef": {
-                            "Source": "f"
+                            "Source": "v"
                           }
                         },
                         "Property": "Vehicle_Name"
@@ -199,6 +189,25 @@
             }
           ]
         }
+      },
+      {
+        "name": "e0ea77b3f493a428926d",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "FLMaintenance_info"
+                  }
+                },
+                "Property": "IssueCategory"
+              }
+            },
+            "Function": 5
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }

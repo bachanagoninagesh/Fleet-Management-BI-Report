@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
-  "name": "5892557225bb3604860d",
+  "name": "82304a9ad77a4b6660a8",
   "position": {
-    "x": 1077.5361216730039,
-    "y": 293.9619771863118,
-    "z": 4000,
-    "height": 78.844106463878333,
-    "width": 169.36882129277566,
-    "tabOrder": 4000
+    "x": 53.536121673003805,
+    "y": 124.59315589353612,
+    "z": 4,
+    "height": 203.43726235741445,
+    "width": 365.01901140684413,
+    "tabOrder": 4
   },
   "visual": {
     "visualType": "slicer",
@@ -23,15 +23,18 @@
                       "Entity": "FLMaintenance_info"
                     }
                   },
-                  "Property": "Vehicle_Name"
+                  "Property": "IssueCategory"
                 }
               },
-              "queryRef": "FLMaintenance_info.Vehicle_Name",
-              "nativeQueryRef": "Vehicle_Name",
+              "queryRef": "FLMaintenance_info.IssueCategory",
+              "nativeQueryRef": "IssueCategory",
               "active": true
             }
           ]
         }
+      },
+      "sortDefinition": {
+        "isDefaultSort": true
       }
     },
     "objects": {
@@ -41,7 +44,7 @@
             "mode": {
               "expr": {
                 "Literal": {
-                  "Value": "'Dropdown'"
+                  "Value": "'Basic'"
                 }
               }
             }
@@ -50,18 +53,28 @@
       ],
       "general": [
         {
-          "properties": {
-            "selfFilterEnabled": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            }
-          }
+          "properties": {}
         }
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "cca1559755029f3236cf",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "FLMaintenance_info"
+              }
+            },
+            "Property": "IssueCategory"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

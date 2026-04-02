@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "cf040a2dfa9eae5ff4d8",
   "position": {
-    "x": 902.613981762918,
-    "y": 291.79331306990883,
-    "z": 3009,
-    "height": 188.69300911854103,
-    "width": 362.79635258358667,
-    "tabOrder": 3009
+    "x": 496.42585551330797,
+    "y": 74.950570342205324,
+    "z": 8000,
+    "height": 188.83650190114068,
+    "width": 376.69961977186313,
+    "tabOrder": 8000
   },
   "visual": {
     "visualType": "donutChart",
@@ -199,25 +199,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "56998541778771f11780",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Fleet_SharePoint_Trips_2020_2022"
-                  }
-                },
-                "Property": "DistanceKM"
-              }
-            },
-            "Function": 0
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

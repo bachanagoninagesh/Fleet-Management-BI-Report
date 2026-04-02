@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "6351e20429965982b3d7",
   "position": {
-    "x": 134.89461358313818,
-    "y": 20.983606557377051,
+    "x": 0,
+    "y": 21.414448669201519,
     "z": 2000,
-    "height": 149.88290398126463,
-    "width": 232.81811085089774,
+    "height": 266.70722433460077,
+    "width": 232.63878326996198,
     "tabOrder": 2000
   },
   "visual": {
@@ -20,7 +20,7 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Measures For Best Performing Vehicles"
+                      "Entity": "Measures to calculate Performing Vehicles"
                     }
                   },
                   "Property": "Cost Per Mile"
@@ -53,7 +53,7 @@
               "Measure": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "Measures For Best Performing Vehicles"
+                    "Entity": "Measures to calculate Performing Vehicles"
                   }
                 },
                 "Property": "Cost Per Mile"

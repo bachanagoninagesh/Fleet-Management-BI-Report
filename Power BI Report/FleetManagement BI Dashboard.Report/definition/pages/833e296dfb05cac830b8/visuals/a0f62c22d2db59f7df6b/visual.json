@@ -4,10 +4,10 @@
   "position": {
     "x": 882.31069476971118,
     "y": 390.69476971116319,
-    "z": 4001,
+    "z": 4000,
     "height": 149.88290398126463,
     "width": 299.76580796252927,
-    "tabOrder": 4001
+    "tabOrder": 4000
   },
   "visual": {
     "visualType": "tableEx",
@@ -34,23 +34,5 @@
       }
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "c236f59d9abe85611639",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Workshop_info"
-              }
-            },
-            "Property": "WorkshopName"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

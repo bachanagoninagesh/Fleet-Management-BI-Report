@@ -1,4 +1,4 @@
-table 'Measures For Best Performing Vehicles'
+table 'Measures to calculate Performing Vehicles'
 	lineageTag: 2766b8f0-d850-4b83-85a9-e30365f3653d
 
 	measure 'Cost Per Mile' = DIVIDE(SUM(FLMaintenance_info[MaintenanceCost]),SUM(Fleet_SharePoint_Trips_2020_2022[DistanceKM]),0)
@@ -96,7 +96,7 @@ table 'Measures For Best Performing Vehicles'
 
 		annotation SummarizationSetBy = Automatic
 
-	partition 'Measures For Best Performing Vehicles' = calculated
+	partition 'Measures to calculate Performing Vehicles' = calculated
 		mode: import
 		source = Row("Column", BLANK())
 

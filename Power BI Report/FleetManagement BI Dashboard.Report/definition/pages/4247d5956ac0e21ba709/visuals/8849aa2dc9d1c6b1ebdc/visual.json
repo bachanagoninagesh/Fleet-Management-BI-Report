@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "8849aa2dc9d1c6b1ebdc",
   "position": {
-    "x": 1102.9787234042553,
-    "y": 208.14589665653497,
-    "z": 3007,
-    "height": 83.647416413373861,
-    "width": 169.24012158054711,
-    "tabOrder": 3007
+    "x": 1077.5361216730039,
+    "y": 451.65019011406844,
+    "z": 6000,
+    "height": 83.711026615969587,
+    "width": 169.36882129277566,
+    "tabOrder": 6000
   },
   "visual": {
     "visualType": "slicer",
@@ -47,26 +47,13 @@
             }
           }
         }
+      ],
+      "general": [
+        {
+          "properties": {}
+        }
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "1cd9c6f3c3d41156278f",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "FLMaintenance_info"
-              }
-            },
-            "Property": "MaintenanceType"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

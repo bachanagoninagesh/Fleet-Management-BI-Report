@@ -1,16 +1,16 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
-  "name": "de6864f2632e12c4314d",
+  "name": "5127df08317fcb7afb9a",
   "position": {
-    "x": 65.216730038022817,
-    "y": 74.950570342205324,
-    "z": 9000,
-    "height": 188.83650190114068,
-    "width": 401.03422053231941,
-    "tabOrder": 9000
+    "x": 697.9163498098859,
+    "y": 424.3954372623574,
+    "z": 3,
+    "height": 289.09505703422053,
+    "width": 534.38783269961982,
+    "tabOrder": 3
   },
   "visual": {
-    "visualType": "donutChart",
+    "visualType": "clusteredColumnChart",
     "query": {
       "queryState": {
         "Category": {
@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "FLMaintenance_info"
+                      "Entity": "Fleet_Maintenance_Info(XL)"
                     }
                   },
-                  "Property": "Vehicle_Name"
+                  "Property": "Technician"
                 }
               },
-              "queryRef": "FLMaintenance_info.Vehicle_Name",
-              "nativeQueryRef": "Vehicle_Name",
+              "queryRef": "Fleet_Maintenance_Info(XL).Technician",
+              "nativeQueryRef": "Technician",
               "active": true
             }
           ]
@@ -36,22 +36,17 @@
           "projections": [
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "FLMaintenance_info"
-                        }
-                      },
-                      "Property": "IssueCategory"
+                    "SourceRef": {
+                      "Entity": "Measures to calculate Techinician performance"
                     }
                   },
-                  "Function": 5
+                  "Property": "Technician_Performance"
                 }
               },
-              "queryRef": "CountNonNull(FLMaintenance_info.IssueCategory)",
-              "nativeQueryRef": "Count of IssueCategory"
+              "queryRef": "Measures to calculate Techinician performance.Technician_Performance",
+              "nativeQueryRef": "Technician_Performance"
             }
           ]
         }
@@ -60,55 +55,34 @@
         "sort": [
           {
             "field": {
-              "Aggregation": {
+              "Measure": {
                 "Expression": {
-                  "Column": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "FLMaintenance_info"
-                      }
-                    },
-                    "Property": "IssueCategory"
+                  "SourceRef": {
+                    "Entity": "Measures to calculate Techinician performance"
                   }
                 },
-                "Function": 5
+                "Property": "Technician_Performance"
               }
             },
-            "direction": "Descending"
+            "direction": "Ascending"
           }
-        ],
-        "isDefaultSort": true
+        ]
       }
-    },
-    "visualContainerObjects": {
-      "title": [
-        {
-          "properties": {
-            "text": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Vehicle Maintenance Repair count'"
-                }
-              }
-            }
-          }
-        }
-      ]
     },
     "drillFilterOtherVisuals": true
   },
   "filterConfig": {
     "filters": [
       {
-        "name": "d3544d9c9a325694b5f2",
+        "name": "1973eeb0a23f700ecabb",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "FLMaintenance_info"
+                "Entity": "Fleet_Maintenance_Info(XL)"
               }
             },
-            "Property": "Vehicle_Name"
+            "Property": "Technician"
           }
         },
         "type": "TopN",
@@ -124,7 +98,12 @@
                     "From": [
                       {
                         "Name": "f",
-                        "Entity": "FLMaintenance_info",
+                        "Entity": "Fleet_Maintenance_Info(XL)",
+                        "Type": 0
+                      },
+                      {
+                        "Name": "m",
+                        "Entity": "Measures to calculate Techinician performance",
                         "Type": 0
                       }
                     ],
@@ -136,27 +115,22 @@
                               "Source": "f"
                             }
                           },
-                          "Property": "Vehicle_Name"
+                          "Property": "Technician"
                         },
                         "Name": "field"
                       }
                     ],
                     "OrderBy": [
                       {
-                        "Direction": 2,
+                        "Direction": 1,
                         "Expression": {
-                          "Aggregation": {
+                          "Measure": {
                             "Expression": {
-                              "Column": {
-                                "Expression": {
-                                  "SourceRef": {
-                                    "Source": "f"
-                                  }
-                                },
-                                "Property": "IssueCategory"
+                              "SourceRef": {
+                                "Source": "m"
                               }
                             },
-                            "Function": 5
+                            "Property": "Technician_Performance"
                           }
                         }
                       }
@@ -169,7 +143,7 @@
             },
             {
               "Name": "f",
-              "Entity": "FLMaintenance_info",
+              "Entity": "Fleet_Maintenance_Info(XL)",
               "Type": 0
             }
           ],
@@ -185,7 +159,7 @@
                             "Source": "f"
                           }
                         },
-                        "Property": "Vehicle_Name"
+                        "Property": "Technician"
                       }
                     }
                   ],
@@ -199,6 +173,20 @@
             }
           ]
         }
+      },
+      {
+        "name": "d2ee1d0c3999a8b8f8b4",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Measures to calculate Techinician performance"
+              }
+            },
+            "Property": "Technician_Performance"
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }

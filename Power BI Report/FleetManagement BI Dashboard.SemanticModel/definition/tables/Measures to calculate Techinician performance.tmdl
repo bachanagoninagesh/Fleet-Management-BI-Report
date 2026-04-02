@@ -1,0 +1,71 @@
+table 'Measures to calculate Techinician performance'
+	lineageTag: f53c3c16-3054-41fc-a1c2-36a272405304
+
+	measure Reparitimepervehicle = DIVIDE(SUM('Fleet_Maintenance_Info(XL)'[RepairTimeHours]),COUNT('Fleet_Maintenance_Info(XL)'[Vehicle_Name]),0)
+		lineageTag: 400b34c9-35cf-4ce9-9747-1b8d6629c97a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'count of vehicle' = COUNT('Fleet_Maintenance_Info(XL)'[Vehicle_Name])
+		formatString: 0
+		lineageTag: 091f641a-2f61-4e1a-a52a-e273bc0fb9e8
+
+	measure Vehicle_score = ```
+			
+			var minscore = MINX(ALL('Fleet_Maintenance_Info(XL)'[Technician]),[count of vehicle])
+			var maxscore = MAXX(all('Fleet_Maintenance_Info(XL)'[Technician]),[count of vehicle])
+			return 
+			    DIVIDE([count of vehicle]-minscore,maxscore-minscore,0)
+			```
+		lineageTag: 710fd2b4-95c6-4e33-ae43-dc6c6286efbb
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Repairtime_socre = ```
+			
+			var minscore = MINX(ALL('Fleet_Maintenance_Info(XL)'[Technician]),[Reparitimepervehicle])
+			var maxscore = MAXX(all('Fleet_Maintenance_Info(XL)'[Technician]),[Reparitimepervehicle])
+			return 
+			    1-DIVIDE([Reparitimepervehicle]-minscore,maxscore-minscore,0)
+			```
+		lineageTag: 0b34f80d-4354-422b-a0ac-7c2f7707fe75
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Technician_Performance = ```
+			
+			var vehiclecost = 0.6
+			var reparircost = 0.4
+			
+			var Vehicle_score = 
+			    var minscore = MINX(ALL('Fleet_Maintenance_Info(XL)'[Technician]),[count of vehicle])
+			    var maxscore = MAXX(all('Fleet_Maintenance_Info(XL)'[Technician]),[count of vehicle])
+			    return 
+			        DIVIDE([count of vehicle]-minscore,maxscore-minscore,0)
+			
+			var Repairtime_socre = 
+			    var minscore = MINX(ALL('Fleet_Maintenance_Info(XL)'[Technician]),[Reparitimepervehicle])
+			    var maxscore = MAXX(all('Fleet_Maintenance_Info(XL)'[Technician]),[Reparitimepervehicle])
+			    return 
+			        1-DIVIDE([Reparitimepervehicle]-minscore,maxscore-minscore,0)
+			RETURN
+			    (vehiclecost*Vehicle_score)+(reparircost*Repairtime_socre)
+			```
+		formatString: 0.00
+		lineageTag: 573b00c0-fc66-4982-8577-c065c79e5f50
+
+	column Column
+		formatString: 0
+		lineageTag: 224a4edc-e228-486a-b405-09caecf17e60
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Column]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Measures to calculate Techinician performance' = calculated
+		mode: import
+		source = Row("Column", BLANK())
+
+	annotation PBI_Id = 62352080bbf6442ba00e26e1d64a8e3d
+

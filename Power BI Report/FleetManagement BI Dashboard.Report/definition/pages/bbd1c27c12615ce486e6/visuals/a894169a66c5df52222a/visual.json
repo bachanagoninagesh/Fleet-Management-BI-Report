@@ -145,23 +145,5 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "527498ae5c62e46a586d",
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "fec118f45a81688a2452",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Date_Table"
-              }
-            },
-            "Property": "Workshop Efficiency in %"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
-  }
+  "parentGroupName": "527498ae5c62e46a586d"
 }

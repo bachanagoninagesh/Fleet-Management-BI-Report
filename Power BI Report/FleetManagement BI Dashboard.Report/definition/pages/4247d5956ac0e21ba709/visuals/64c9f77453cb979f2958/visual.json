@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "64c9f77453cb979f2958",
   "position": {
-    "x": 640.97264437689978,
-    "y": 499.93920972644378,
-    "z": 3002,
-    "height": 211.06382978723406,
-    "width": 631.24620060790278,
-    "tabOrder": 3002
+    "x": 539.254752851711,
+    "y": 312.45627376425858,
+    "z": 1000,
+    "height": 210.25095057034221,
+    "width": 493.50570342205322,
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "clusteredColumnChart",
@@ -39,7 +39,7 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Measures For Best Performing Vehicles"
+                      "Entity": "Measures to calculate Performing Vehicles"
                     }
                   },
                   "Property": "Vehicle Performance Score"
@@ -58,7 +58,7 @@
               "Measure": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "Measures For Best Performing Vehicles"
+                    "Entity": "Measures to calculate Performing Vehicles"
                   }
                 },
                 "Property": "Vehicle Performance Score"
@@ -133,7 +133,7 @@
                       },
                       {
                         "Name": "m",
-                        "Entity": "Measures For Best Performing Vehicles",
+                        "Entity": "Measures to calculate Performing Vehicles",
                         "Type": 0
                       }
                     ],
@@ -203,20 +203,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "65aeea2d067fbb95f488",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Measures For Best Performing Vehicles"
-              }
-            },
-            "Property": "Vehicle Performance Score"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

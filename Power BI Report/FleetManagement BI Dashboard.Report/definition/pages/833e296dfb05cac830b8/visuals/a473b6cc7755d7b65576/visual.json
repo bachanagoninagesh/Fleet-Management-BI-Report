@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "a473b6cc7755d7b65576",
   "position": {
-    "x": 242.81030444964873,
-    "y": 222.82591725214678,
+    "x": 307.58935361216732,
+    "y": 132.38022813688212,
     "z": 0,
-    "height": 431.66276346604218,
-    "width": 387.69711163153789,
+    "height": 431.20912547528519,
+    "width": 388.38022813688212,
     "tabOrder": 0
   },
   "visual": {
@@ -35,7 +35,7 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Measures For Best Performing Vehicles"
+                      "Entity": "Measures to calculate Performing Vehicles"
                     }
                   },
                   "Property": "Vehicle Performance Score"
@@ -54,7 +54,7 @@
               "Measure": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "Measures For Best Performing Vehicles"
+                    "Entity": "Measures to calculate Performing Vehicles"
                   }
                 },
                 "Property": "Vehicle Performance Score"
@@ -109,124 +109,5 @@
       "filterChanges": true
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "5c08c13df2882d9d546a",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Vehicle_Info"
-              }
-            },
-            "Property": "Vehicle_Name"
-          }
-        },
-        "type": "TopN",
-        "filter": {
-          "Version": 2,
-          "From": [
-            {
-              "Name": "subquery",
-              "Expression": {
-                "Subquery": {
-                  "Query": {
-                    "Version": 2,
-                    "From": [
-                      {
-                        "Name": "v",
-                        "Entity": "Vehicle_Info",
-                        "Type": 0
-                      },
-                      {
-                        "Name": "m",
-                        "Entity": "Measures For Best Performing Vehicles",
-                        "Type": 0
-                      }
-                    ],
-                    "Select": [
-                      {
-                        "Column": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Source": "v"
-                            }
-                          },
-                          "Property": "Vehicle_Name"
-                        },
-                        "Name": "field"
-                      }
-                    ],
-                    "OrderBy": [
-                      {
-                        "Direction": 1,
-                        "Expression": {
-                          "Measure": {
-                            "Expression": {
-                              "SourceRef": {
-                                "Source": "m"
-                              }
-                            },
-                            "Property": "Vehicle Performance Score"
-                          }
-                        }
-                      }
-                    ],
-                    "Top": 5
-                  }
-                }
-              },
-              "Type": 2
-            },
-            {
-              "Name": "v",
-              "Entity": "Vehicle_Info",
-              "Type": 0
-            }
-          ],
-          "Where": [
-            {
-              "Condition": {
-                "In": {
-                  "Expressions": [
-                    {
-                      "Column": {
-                        "Expression": {
-                          "SourceRef": {
-                            "Source": "v"
-                          }
-                        },
-                        "Property": "Vehicle_Name"
-                      }
-                    }
-                  ],
-                  "Table": {
-                    "SourceRef": {
-                      "Source": "subquery"
-                    }
-                  }
-                }
-              }
-            }
-          ]
-        }
-      },
-      {
-        "name": "d9e560ad65f09f57a87b",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Measures For Best Performing Vehicles"
-              }
-            },
-            "Property": "Vehicle Performance Score"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }
