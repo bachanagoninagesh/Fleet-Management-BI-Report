@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
-  "name": "2ed90c567de90a682f37",
+  "name": "273c746752f930873a93",
   "position": {
-    "x": 8.7537993920972657,
-    "y": 6.8085106382978724,
-    "z": 10000,
-    "height": 36.960486322188451,
-    "width": 1263.4650455927051,
-    "tabOrder": 10000
+    "x": 27.688208677543603,
+    "y": 138.27965057077014,
+    "z": 9005,
+    "height": 28.110831234256924,
+    "width": 132.39294710327454,
+    "tabOrder": 9006
   },
   "visual": {
     "visualType": "textbox",
@@ -19,11 +19,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Vehicle Performance",
-                    "textStyle": {
-                      "fontWeight": "bold",
-                      "fontSize": "14pt"
-                    }
+                    "value": "Repair Time Hrs."
                   }
                 ],
                 "horizontalTextAlignment": "center"
@@ -34,13 +30,13 @@
       ]
     },
     "visualContainerObjects": {
-      "dropShadow": [
+      "background": [
         {
           "properties": {
-            "show": {
+            "transparency": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "100D"
                 }
               }
             }

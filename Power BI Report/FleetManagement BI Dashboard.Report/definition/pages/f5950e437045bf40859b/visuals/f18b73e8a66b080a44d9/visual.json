@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
-  "name": "537c150ba6624c109d60",
+  "name": "f18b73e8a66b080a44d9",
   "position": {
-    "x": 15.851393188854491,
-    "y": 193.1888544891641,
-    "z": 13000,
-    "height": 88.1733746130031,
-    "width": 213.99380804953563,
-    "tabOrder": 11000
+    "x": 10.699088145896656,
+    "y": 182.85714285714286,
+    "z": 9001,
+    "height": 87,
+    "width": 396.838905775076,
+    "tabOrder": 9001
   },
   "visual": {
     "visualType": "slicer",
@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Workshop_info"
+                      "Entity": "Fleet_Maintenance_Info(XL)"
                     }
                   },
-                  "Property": "WorkshopName"
+                  "Property": "Technician"
                 }
               },
-              "queryRef": "Workshop_info.WorkshopName",
-              "nativeQueryRef": "WorkshopName",
+              "queryRef": "Fleet_Maintenance_Info(XL).Technician",
+              "nativeQueryRef": "Technician",
               "active": true
             }
           ]
@@ -41,7 +41,7 @@
             "mode": {
               "expr": {
                 "Literal": {
-                  "Value": "'Dropdown'"
+                  "Value": "'Basic'"
                 }
               }
             }
@@ -55,6 +55,26 @@
               "expr": {
                 "Literal": {
                   "Value": "1D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "header": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Best Performing Technician'"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }
@@ -81,13 +101,13 @@
           }
         }
       ],
-      "header": [
+      "items": [
         {
           "properties": {
-            "show": {
+            "textSize": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "9D"
                 }
               }
             }
@@ -143,7 +163,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Workshop Name'"
+                  "Value": "'Best Performing Technician'"
                 }
               }
             }
@@ -184,74 +204,108 @@
         }
       ]
     },
+    "syncGroup": {
+      "groupName": "Technician",
+      "fieldChanges": true,
+      "filterChanges": true
+    },
     "drillFilterOtherVisuals": true
   },
   "filterConfig": {
     "filters": [
       {
-        "name": "99c04ea0ffb31d902365",
+        "name": "64a274d93c92e086efc7",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "Workshop_info"
+                "Entity": "Fleet_Maintenance_Info(XL)"
               }
             },
-            "Property": "WorkshopName"
+            "Property": "Technician"
           }
         },
-        "type": "Categorical",
+        "type": "TopN",
         "filter": {
           "Version": 2,
           "From": [
             {
-              "Name": "w",
-              "Entity": "Workshop_info",
+              "Name": "subquery",
+              "Expression": {
+                "Subquery": {
+                  "Query": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "f",
+                        "Entity": "Fleet_Maintenance_Info(XL)",
+                        "Type": 0
+                      },
+                      {
+                        "Name": "m",
+                        "Entity": "Measures to calculate Techinician performance",
+                        "Type": 0
+                      }
+                    ],
+                    "Select": [
+                      {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Source": "f"
+                            }
+                          },
+                          "Property": "Technician"
+                        },
+                        "Name": "field"
+                      }
+                    ],
+                    "OrderBy": [
+                      {
+                        "Direction": 2,
+                        "Expression": {
+                          "Measure": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Source": "m"
+                              }
+                            },
+                            "Property": "Technician_Performance"
+                          }
+                        }
+                      }
+                    ],
+                    "Top": 5
+                  }
+                }
+              },
+              "Type": 2
+            },
+            {
+              "Name": "f",
+              "Entity": "Fleet_Maintenance_Info(XL)",
               "Type": 0
             }
           ],
           "Where": [
             {
               "Condition": {
-                "Not": {
-                  "Expression": {
-                    "In": {
-                      "Expressions": [
-                        {
-                          "Column": {
-                            "Expression": {
-                              "SourceRef": {
-                                "Source": "w"
-                              }
-                            },
-                            "Property": "WorkshopName"
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "f"
                           }
-                        }
-                      ],
-                      "Values": [
-                        [
-                          {
-                            "Literal": {
-                              "Value": "null"
-                            }
-                          }
-                        ]
-                      ]
+                        },
+                        "Property": "Technician"
+                      }
                     }
-                  }
-                }
-              }
-            }
-          ]
-        },
-        "objects": {
-          "general": [
-            {
-              "properties": {
-                "isInvertedSelectionMode": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "true"
+                  ],
+                  "Table": {
+                    "SourceRef": {
+                      "Source": "subquery"
                     }
                   }
                 }

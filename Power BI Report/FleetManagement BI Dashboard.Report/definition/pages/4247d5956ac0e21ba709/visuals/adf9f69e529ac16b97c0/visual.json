@@ -1,38 +1,19 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
-  "name": "82304a9ad77a4b6660a8",
+  "name": "adf9f69e529ac16b97c0",
   "position": {
-    "x": 10.699088145896656,
-    "y": 56.413373860182375,
-    "z": 3000,
-    "height": 214.95440729483283,
-    "width": 396.838905775076,
-    "tabOrder": 3000
+    "x": 8.7537993920972657,
+    "y": 52.52279635258359,
+    "z": 13001,
+    "height": 86.565349544072959,
+    "width": 195.50151975683892,
+    "tabOrder": 12001
   },
   "visual": {
-    "visualType": "donutChart",
+    "visualType": "cardVisual",
     "query": {
       "queryState": {
-        "Category": {
-          "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "FLMaintenance_info"
-                    }
-                  },
-                  "Property": "IssueCategory"
-                }
-              },
-              "queryRef": "FLMaintenance_info.IssueCategory",
-              "nativeQueryRef": "IssueCategory",
-              "active": true
-            }
-          ]
-        },
-        "Y": {
+        "Data": {
           "projections": [
             {
               "field": {
@@ -44,14 +25,15 @@
                           "Entity": "FLMaintenance_info"
                         }
                       },
-                      "Property": "IssueCategory"
+                      "Property": "MaintenanceCost"
                     }
                   },
-                  "Function": 5
+                  "Function": 0
                 }
               },
-              "queryRef": "CountNonNull(FLMaintenance_info.IssueCategory)",
-              "nativeQueryRef": "Count of IssueCategory"
+              "queryRef": "Sum(FLMaintenance_info.MaintenanceCost)",
+              "nativeQueryRef": "Sum of MaintenanceCost",
+              "format": "#,0.00"
             }
           ]
         }
@@ -68,10 +50,10 @@
                         "Entity": "FLMaintenance_info"
                       }
                     },
-                    "Property": "IssueCategory"
+                    "Property": "MaintenanceCost"
                   }
                 },
-                "Function": 5
+                "Function": 0
               }
             },
             "direction": "Descending"
@@ -80,45 +62,119 @@
         "isDefaultSort": true
       }
     },
-    "visualContainerObjects": {
-      "title": [
+    "objects": {
+      "label": [
         {
           "properties": {
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
-            },
-            "titleWrap": {
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ],
+      "outline": [
+        {
+          "properties": {
+            "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
-            },
-            "alignment": {
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ],
+      "divider": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ],
+      "fillCustom": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "value": [
+        {
+          "properties": {
+            "horizontalAlignment": {
               "expr": {
                 "Literal": {
                   "Value": "'center'"
                 }
               }
             },
-            "fontSize": {
+            "textWrap": {
               "expr": {
                 "Literal": {
-                  "Value": "12D"
-                }
-              }
-            },
-            "text": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Maintenance Issue Category Analysis'"
+                  "Value": "false"
                 }
               }
             }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "spacing": [
+        {
+          "properties": {
+            "verticalSpacing": {
+              "expr": {
+                "Literal": {
+                  "Value": "2D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
           }
         }
       ],
@@ -174,21 +230,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "5a9bc960b45b525b29b5",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "FLMaintenance_info"
-              }
-            },
-            "Property": "IssueCategory"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "3e45a98094d6354cccad",
+        "name": "683af671e6b191ccfa04",
         "field": {
           "Aggregation": {
             "Expression": {
@@ -198,10 +240,10 @@
                     "Entity": "FLMaintenance_info"
                   }
                 },
-                "Property": "IssueCategory"
+                "Property": "MaintenanceCost"
               }
             },
-            "Function": 5
+            "Function": 0
           }
         },
         "type": "Advanced"

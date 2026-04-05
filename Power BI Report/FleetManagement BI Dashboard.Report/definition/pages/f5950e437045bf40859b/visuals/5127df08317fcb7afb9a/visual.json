@@ -5,7 +5,7 @@
     "x": 667.23404255319156,
     "y": 488.26747720364745,
     "z": 2000,
-    "height": 224.68085106382981,
+    "height": 223,
     "width": 602.06686930091189,
     "tabOrder": 2000
   },
@@ -248,6 +248,20 @@
             }
           ]
         }
+      },
+      {
+        "name": "b6f35915d7b627d9a760",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Measures to calculate Techinician performance"
+              }
+            },
+            "Property": "Technician_Performance"
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }

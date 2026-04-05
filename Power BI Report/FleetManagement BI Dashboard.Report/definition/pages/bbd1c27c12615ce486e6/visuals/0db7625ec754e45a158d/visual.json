@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "0db7625ec754e45a158d",
   "position": {
-    "x": 671.68316831683171,
-    "y": 193.55535553555356,
+    "x": 671.702786377709,
+    "y": 193.1888544891641,
     "z": 7000,
-    "height": 92.169216921692168,
-    "width": 406.69666966696673,
+    "height": 88.1733746130031,
+    "width": 406.19195046439631,
     "tabOrder": 6000
   },
   "visual": {
@@ -137,6 +137,13 @@
       "title": [
         {
           "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Top 5 Best Performing Vehicles'"
+                }
+              }
+            },
             "show": {
               "expr": {
                 "Literal": {
@@ -144,10 +151,10 @@
                 }
               }
             },
-            "text": {
+            "titleWrap": {
               "expr": {
                 "Literal": {
-                  "Value": "'Best Performing Vehicle'"
+                  "Value": "true"
                 }
               }
             },
@@ -162,6 +169,39 @@
               "expr": {
                 "Literal": {
                   "Value": "12D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "width": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
                 }
               }
             }

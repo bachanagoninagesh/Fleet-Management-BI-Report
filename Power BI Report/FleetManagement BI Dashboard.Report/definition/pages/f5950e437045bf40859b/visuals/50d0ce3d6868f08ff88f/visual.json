@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Vehicle_Info"
+                      "Entity": "Fleet_Maintenance_Info(XL)"
                     }
                   },
-                  "Property": "Vehicle_Name"
+                  "Property": "Technician"
                 }
               },
-              "queryRef": "Vehicle_Info.Vehicle_Name",
-              "nativeQueryRef": "Vehicle_Name",
+              "queryRef": "Fleet_Maintenance_Info(XL).Technician",
+              "nativeQueryRef": "Technician",
               "active": true
             }
           ]
@@ -172,5 +172,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "7e7e13647caeee43c65f",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fleet_Maintenance_Info(XL)"
+              }
+            },
+            "Property": "Technician"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

@@ -1,38 +1,19 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
-  "name": "04912b6c35355a98a5e1",
+  "name": "2f6a80f622fd31fbe5b4",
   "position": {
-    "x": 8.7537993920972657,
-    "y": 493.13069908814595,
-    "z": 3000,
-    "height": 218,
-    "width": 511.61094224924017,
-    "tabOrder": 3000
+    "x": 10.699088145896656,
+    "y": 56.413373860182375,
+    "z": 9004,
+    "height": 107.96352583586626,
+    "width": 171.1854103343465,
+    "tabOrder": 9005
   },
   "visual": {
-    "visualType": "funnel",
+    "visualType": "cardVisual",
     "query": {
       "queryState": {
-        "Category": {
-          "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "FLMaintenance_info"
-                    }
-                  },
-                  "Property": "IssueCategory"
-                }
-              },
-              "queryRef": "FLMaintenance_info.IssueCategory",
-              "nativeQueryRef": "IssueCategory",
-              "active": true
-            }
-          ]
-        },
-        "Y": {
+        "Data": {
           "projections": [
             {
               "field": {
@@ -41,17 +22,18 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "FLMaintenance_info"
+                          "Entity": "Fleet_Maintenance_Info(XL)"
                         }
                       },
-                      "Property": "Vehicle_Name"
+                      "Property": "RepairTimeHours"
                     }
                   },
-                  "Function": 5
+                  "Function": 0
                 }
               },
-              "queryRef": "CountNonNull(FLMaintenance_info.Vehicle_Name)",
-              "nativeQueryRef": "Count of Vehicle_Name"
+              "queryRef": "Sum(Fleet_Maintenance_Info(XL).RepairTimeHours)",
+              "nativeQueryRef": "Sum of RepairTimeHours",
+              "format": "#,0.00"
             }
           ]
         }
@@ -65,13 +47,13 @@
                   "Column": {
                     "Expression": {
                       "SourceRef": {
-                        "Entity": "FLMaintenance_info"
+                        "Entity": "Fleet_Maintenance_Info(XL)"
                       }
                     },
-                    "Property": "Vehicle_Name"
+                    "Property": "RepairTimeHours"
                   }
                 },
-                "Function": 5
+                "Function": 0
               }
             },
             "direction": "Descending"
@@ -80,8 +62,87 @@
         "isDefaultSort": true
       }
     },
+    "objects": {
+      "label": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ],
+      "outline": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ],
+      "divider": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ],
+      "fillCustom": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "value": [
+        {
+          "properties": {
+            "horizontalAlignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'center'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ]
+    },
     "visualContainerObjects": {
-      "title": [
+      "dropShadow": [
         {
           "properties": {
             "show": {
@@ -90,35 +151,36 @@
                   "Value": "true"
                 }
               }
-            },
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
             "titleWrap": {
               "expr": {
                 "Literal": {
                   "Value": "true"
                 }
               }
-            },
-            "alignment": {
+            }
+          }
+        }
+      ],
+      "spacing": [
+        {
+          "properties": {
+            "verticalSpacing": {
               "expr": {
                 "Literal": {
-                  "Value": "'center'"
-                }
-              }
-            },
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "12D"
-                }
-              }
-            },
-            "text": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Number of Vehicles Affected by Issue Category'"
+                  "Value": "2D"
                 }
               }
             }
+          },
+          "selector": {
+            "id": "default"
           }
         }
       ],
@@ -154,19 +216,6 @@
             }
           }
         }
-      ],
-      "dropShadow": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            }
-          }
-        }
       ]
     },
     "drillFilterOtherVisuals": true
@@ -174,34 +223,20 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "d95b553a9ccefaecf200",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "FLMaintenance_info"
-              }
-            },
-            "Property": "IssueCategory"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "cc5605047bbf7a8ec87a",
+        "name": "7cf428a98c91ca812d1a",
         "field": {
           "Aggregation": {
             "Expression": {
               "Column": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "FLMaintenance_info"
+                    "Entity": "Fleet_Maintenance_Info(XL)"
                   }
                 },
-                "Property": "Vehicle_Name"
+                "Property": "RepairTimeHours"
               }
             },
-            "Function": 5
+            "Function": 0
           }
         },
         "type": "Advanced"

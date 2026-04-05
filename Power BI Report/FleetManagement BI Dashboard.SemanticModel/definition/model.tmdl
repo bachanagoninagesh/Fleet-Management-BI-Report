@@ -25,5 +25,11 @@ ref table LocalDateTable_dae4be3b-bf5c-4b1c-915d-0ea18ead9e90
 ref table 'Measures to calculate Performing Vehicles'
 ref table 'Measures to calculate Techinician performance'
 
+ref role MD
+ref role 'North Regional  Manager'
+ref role 'South Regional  Manager'
+ref role 'East Regional  Manager'
+ref role 'West Regional  Manager'
+
 ref cultureInfo en-US
 

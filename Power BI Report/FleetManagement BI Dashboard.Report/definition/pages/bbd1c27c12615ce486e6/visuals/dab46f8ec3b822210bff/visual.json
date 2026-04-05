@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "dab46f8ec3b822210bff",
   "position": {
-    "x": 245.4005400540054,
-    "y": 193.55535553555356,
+    "x": 245.69659442724461,
+    "y": 193.1888544891641,
     "z": 8000,
-    "height": 92.169216921692168,
-    "width": 407.84878487848789,
+    "height": 88,
+    "width": 407.18266253869973,
     "tabOrder": 7000
   },
   "visual": {
@@ -57,6 +57,13 @@
                   "Value": "1D"
                 }
               }
+            },
+            "outlineWeight": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
             }
           }
         }
@@ -95,6 +102,26 @@
               "expr": {
                 "Literal": {
                   "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "items": [
+        {
+          "properties": {
+            "textSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            },
+            "padding": {
+              "expr": {
+                "Literal": {
+                  "Value": "4D"
                 }
               }
             }
@@ -150,7 +177,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Best Performing Technician'"
+                  "Value": "'Top 5 Best Performing Technicians'"
                 }
               }
             }
@@ -190,6 +217,11 @@
           }
         }
       ]
+    },
+    "syncGroup": {
+      "groupName": "Technician",
+      "fieldChanges": true,
+      "filterChanges": true
     },
     "drillFilterOtherVisuals": true
   },

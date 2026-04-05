@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
-  "name": "a894169a66c5df52222a",
+  "name": "c752c857ff5814eb973a",
   "position": {
     "x": 0,
     "y": 0,
     "z": 0,
     "height": 105.994599459946,
     "width": 215.44554455445547,
-    "tabOrder": 1000
+    "tabOrder": 9003
   },
   "visual": {
     "visualType": "cardVisual",
@@ -113,22 +113,6 @@
             }
           }
         }
-      ],
-      "value": [
-        {
-          "properties": {
-            "showBlankAs": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Use Date Filter'"
-                }
-              }
-            }
-          },
-          "selector": {
-            "id": "default"
-          }
-        }
       ]
     },
     "visualContainerObjects": {
@@ -161,11 +145,11 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "527498ae5c62e46a586d",
+  "parentGroupName": "f3307a638762559e313d",
   "filterConfig": {
     "filters": [
       {
-        "name": "beedf8749ba745fa66fe",
+        "name": "b900ef5f90b8cbc91ad4",
         "field": {
           "Measure": {
             "Expression": {

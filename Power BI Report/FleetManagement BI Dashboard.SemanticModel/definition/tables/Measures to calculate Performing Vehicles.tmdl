@@ -21,14 +21,14 @@ table 'Measures to calculate Performing Vehicles'
 			    var min_score = MINX(ALL(Vehicle_Info[Vehicle_Name]),[Downtime/km])
 			    return 
 			        1-DIVIDE([Downtime/km]-min_score,max_socre-min_score,0)
-			-- calculating vehicle maintenance cost score
+			-- calculating vehicle maintenance cost score 
 			var Cost_Score = 
 			    var maxcost = maxx(ALL(Vehicle_Info[Vehicle_Name]),[Cost Per Mile])
 			    var mincost = MINX(ALL(Vehicle_Info[Vehicle_Name]),[Cost Per Mile])
 			
 			    return 
 			        1-DIVIDE(([Cost Per Mile]-mincost),(maxcost-mincost),0)
-			-- calculating vehicle km driven score and also inverting the final score since best km is the best performing score
+			-- calculating vehicle km driven score
 			var KM_Score = 
 			    var maxscore = MAXX(ALL(Vehicle_Info[Vehicle_Name]),CALCULATE(SUM(Fleet_SharePoint_Trips_2020_2022[DistanceKM])))
 			    var minscore =  MINX(ALL(Vehicle_Info[Vehicle_Name]),CALCULATE(SUM(Fleet_SharePoint_Trips_2020_2022[DistanceKM])))
@@ -37,6 +37,18 @@ table 'Measures to calculate Performing Vehicles'
 			
 			return 
 			    (costweight*Cost_Score)+(downtimeweight*Downtime_Score)+(kmweight*KM_Score)
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
 			```
 		formatString: 0.00
 		lineageTag: 260c1d44-5be0-4eba-91d0-aaffca0e6d39

@@ -1,0 +1,7 @@
+role 'East Regional  Manager'
+	modelPermission: read
+
+	tablePermission Workshop_info = [WorkshopName] == "East Hub"
+
+	annotation PBI_Id = f43d0ebfaa39472f9f0dd65a190cbf91
+

@@ -1,57 +1,35 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
-  "name": "de6864f2632e12c4314d",
+  "name": "43ec2fe0e41df4dc1f1d",
   "position": {
     "x": 8.7537993920972657,
-    "y": 52.52279635258359,
-    "z": 9000,
-    "height": 188.69300911854103,
-    "width": 438.66261398176295,
-    "tabOrder": 9000
+    "y": 153.67781155015197,
+    "z": 11000,
+    "height": 87.537993920972653,
+    "width": 439.63525835866261,
+    "tabOrder": 11000
   },
   "visual": {
-    "visualType": "donutChart",
+    "visualType": "slicer",
     "query": {
       "queryState": {
-        "Category": {
+        "Values": {
           "projections": [
             {
               "field": {
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "FLMaintenance_info"
+                      "Entity": "Vehicle_Info"
                     }
                   },
                   "Property": "Vehicle_Name"
                 }
               },
-              "queryRef": "FLMaintenance_info.Vehicle_Name",
-              "nativeQueryRef": "Vehicle_Name",
-              "active": true
-            }
-          ]
-        },
-        "Y": {
-          "projections": [
-            {
-              "field": {
-                "Aggregation": {
-                  "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "FLMaintenance_info"
-                        }
-                      },
-                      "Property": "IssueCategory"
-                    }
-                  },
-                  "Function": 5
-                }
-              },
-              "queryRef": "CountNonNull(FLMaintenance_info.IssueCategory)",
-              "nativeQueryRef": "Count of IssueCategory"
+              "queryRef": "Vehicle_Info.Vehicle_Name",
+              "nativeQueryRef": "Best Performing Vehicle by kmdriven, maintenancecost and dwontimehrs",
+              "active": true,
+              "displayName": "Best Performing Vehicle by kmdriven, maintenancecost and dwontimehrs"
             }
           ]
         }
@@ -60,37 +38,105 @@
         "sort": [
           {
             "field": {
-              "Aggregation": {
+              "Column": {
                 "Expression": {
-                  "Column": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "FLMaintenance_info"
-                      }
-                    },
-                    "Property": "IssueCategory"
+                  "SourceRef": {
+                    "Entity": "Vehicle_Info"
                   }
                 },
-                "Function": 5
+                "Property": "Vehicle_Name"
               }
             },
             "direction": "Descending"
           }
-        ],
-        "isDefaultSort": true
+        ]
       }
     },
-    "visualContainerObjects": {
-      "title": [
+    "objects": {
+      "data": [
+        {
+          "properties": {
+            "mode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Basic'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "orientation": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "selection": [
+        {
+          "properties": {
+            "selectAllCheckboxEnabled": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "strictSingleSelect": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "header": [
         {
           "properties": {
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Vehicle Maintenance Repair count'"
+                  "Value": "''"
                 }
               }
             },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "dropShadow": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
             "show": {
               "expr": {
                 "Literal": {
@@ -98,10 +144,10 @@
                 }
               }
             },
-            "titleWrap": {
+            "text": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "'Best Performing Vehicles'"
                 }
               }
             },
@@ -121,65 +167,24 @@
             }
           }
         }
-      ],
-      "dropShadow": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "background": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "transparency": {
-              "expr": {
-                "Literal": {
-                  "Value": "0D"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "border": [
-        {
-          "properties": {
-            "width": {
-              "expr": {
-                "Literal": {
-                  "Value": "1D"
-                }
-              }
-            }
-          }
-        }
       ]
+    },
+    "syncGroup": {
+      "groupName": "Vehicle_Name",
+      "fieldChanges": true,
+      "filterChanges": true
     },
     "drillFilterOtherVisuals": true
   },
   "filterConfig": {
     "filters": [
       {
-        "name": "d3544d9c9a325694b5f2",
+        "name": "5c08c13df2882d9d546a",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "FLMaintenance_info"
+                "Entity": "Vehicle_Info"
               }
             },
             "Property": "Vehicle_Name"
@@ -197,8 +202,13 @@
                     "Version": 2,
                     "From": [
                       {
-                        "Name": "f",
-                        "Entity": "FLMaintenance_info",
+                        "Name": "v",
+                        "Entity": "Vehicle_Info",
+                        "Type": 0
+                      },
+                      {
+                        "Name": "m",
+                        "Entity": "Measures to calculate Performing Vehicles",
                         "Type": 0
                       }
                     ],
@@ -207,7 +217,7 @@
                         "Column": {
                           "Expression": {
                             "SourceRef": {
-                              "Source": "f"
+                              "Source": "v"
                             }
                           },
                           "Property": "Vehicle_Name"
@@ -219,18 +229,13 @@
                       {
                         "Direction": 2,
                         "Expression": {
-                          "Aggregation": {
+                          "Measure": {
                             "Expression": {
-                              "Column": {
-                                "Expression": {
-                                  "SourceRef": {
-                                    "Source": "f"
-                                  }
-                                },
-                                "Property": "IssueCategory"
+                              "SourceRef": {
+                                "Source": "m"
                               }
                             },
-                            "Function": 5
+                            "Property": "Vehicle Performance Score"
                           }
                         }
                       }
@@ -242,8 +247,8 @@
               "Type": 2
             },
             {
-              "Name": "f",
-              "Entity": "FLMaintenance_info",
+              "Name": "v",
+              "Entity": "Vehicle_Info",
               "Type": 0
             }
           ],
@@ -256,7 +261,7 @@
                       "Column": {
                         "Expression": {
                           "SourceRef": {
-                            "Source": "f"
+                            "Source": "v"
                           }
                         },
                         "Property": "Vehicle_Name"

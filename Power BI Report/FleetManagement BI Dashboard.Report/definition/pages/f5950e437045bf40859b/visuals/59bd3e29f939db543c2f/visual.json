@@ -10,7 +10,7 @@
     "tabOrder": 4000
   },
   "visual": {
-    "visualType": "clusteredColumnChart",
+    "visualType": "funnel",
     "query": {
       "queryState": {
         "Category": {
@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Vehicle_Info"
+                      "Entity": "Fleet_Maintenance_Info(XL)"
                     }
                   },
-                  "Property": "Vehicle_Name"
+                  "Property": "Technician"
                 }
               },
-              "queryRef": "Vehicle_Info.Vehicle_Name",
-              "nativeQueryRef": "Vehicle_Name",
+              "queryRef": "Fleet_Maintenance_Info(XL).Technician",
+              "nativeQueryRef": "Technician",
               "active": true
             }
           ]
@@ -41,17 +41,17 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "FLMaintenance_info"
+                          "Entity": "Fleet_Maintenance_Info(XL)"
                         }
                       },
-                      "Property": "IssueCategory"
+                      "Property": "Vehicle_Name"
                     }
                   },
                   "Function": 5
                 }
               },
-              "queryRef": "CountNonNull(FLMaintenance_info.IssueCategory)",
-              "nativeQueryRef": "IssueCategory"
+              "queryRef": "CountNonNull(Fleet_Maintenance_Info(XL).Vehicle_Name)",
+              "nativeQueryRef": "Count of Vehicle_Name"
             }
           ]
         }
@@ -65,10 +65,10 @@
                   "Column": {
                     "Expression": {
                       "SourceRef": {
-                        "Entity": "FLMaintenance_info"
+                        "Entity": "Fleet_Maintenance_Info(XL)"
                       }
                     },
-                    "Property": "IssueCategory"
+                    "Property": "Vehicle_Name"
                   }
                 },
                 "Function": 5
@@ -87,7 +87,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Top 10 Vehicles by maintenance visits'"
+                  "Value": "'Top 5 Technicians by Repair Count'"
                 }
               }
             },
@@ -174,15 +174,15 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "212cdb6059816b97f467",
+        "name": "6e2883a96b0c11a8f1f0",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "Vehicle_Info"
+                "Entity": "Fleet_Maintenance_Info(XL)"
               }
             },
-            "Property": "Vehicle_Name"
+            "Property": "Technician"
           }
         },
         "type": "TopN",
@@ -197,13 +197,8 @@
                     "Version": 2,
                     "From": [
                       {
-                        "Name": "v",
-                        "Entity": "Vehicle_Info",
-                        "Type": 0
-                      },
-                      {
-                        "Name": "f",
-                        "Entity": "FLMaintenance_info",
+                        "Name": "f1",
+                        "Entity": "Fleet_Maintenance_Info(XL)",
                         "Type": 0
                       }
                     ],
@@ -212,10 +207,10 @@
                         "Column": {
                           "Expression": {
                             "SourceRef": {
-                              "Source": "v"
+                              "Source": "f1"
                             }
                           },
-                          "Property": "Vehicle_Name"
+                          "Property": "Technician"
                         },
                         "Name": "field"
                       }
@@ -229,10 +224,10 @@
                               "Column": {
                                 "Expression": {
                                   "SourceRef": {
-                                    "Source": "f"
+                                    "Source": "f1"
                                   }
                                 },
-                                "Property": "IssueCategory"
+                                "Property": "Vehicle_Name"
                               }
                             },
                             "Function": 5
@@ -247,8 +242,8 @@
               "Type": 2
             },
             {
-              "Name": "v",
-              "Entity": "Vehicle_Info",
+              "Name": "f1",
+              "Entity": "Fleet_Maintenance_Info(XL)",
               "Type": 0
             }
           ],
@@ -261,10 +256,10 @@
                       "Column": {
                         "Expression": {
                           "SourceRef": {
-                            "Source": "v"
+                            "Source": "f1"
                           }
                         },
-                        "Property": "Vehicle_Name"
+                        "Property": "Technician"
                       }
                     }
                   ],
@@ -280,17 +275,17 @@
         }
       },
       {
-        "name": "b1735469488c8d44157e",
+        "name": "6ba270bcda9180f350d5",
         "field": {
           "Aggregation": {
             "Expression": {
               "Column": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "FLMaintenance_info"
+                    "Entity": "Fleet_Maintenance_Info(XL)"
                   }
                 },
-                "Property": "IssueCategory"
+                "Property": "Vehicle_Name"
               }
             },
             "Function": 5

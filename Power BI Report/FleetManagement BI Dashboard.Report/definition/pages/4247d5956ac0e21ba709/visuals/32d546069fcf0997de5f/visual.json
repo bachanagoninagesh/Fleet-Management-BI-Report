@@ -5,7 +5,7 @@
     "x": 532.03647416413378,
     "y": 493.13069908814595,
     "z": 2000,
-    "height": 219.81762917933131,
+    "height": 218,
     "width": 740.18237082066878,
     "tabOrder": 2000
   },
@@ -183,7 +183,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "3b72de38832fd9183265",
+        "name": "86160efb4ad014899b71",
         "field": {
           "HierarchyLevel": {
             "Expression": {
@@ -208,7 +208,7 @@
         "type": "Advanced"
       },
       {
-        "name": "9cdc42e9dc2cedea4468",
+        "name": "f9d1ce9ff9856ce71619",
         "field": {
           "HierarchyLevel": {
             "Expression": {
@@ -233,7 +233,7 @@
         "type": "Categorical"
       },
       {
-        "name": "e222c0e4159b02375f36",
+        "name": "540f10dddb4ee21fa533",
         "field": {
           "Measure": {
             "Expression": {

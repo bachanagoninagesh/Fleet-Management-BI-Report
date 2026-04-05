@@ -1,0 +1,7 @@
+role MD
+	modelPermission: read
+
+	tablePermission Workshop_info = [WorkshopName] <> Blank()
+
+	annotation PBI_Id = f92f61dea470403080e90b602841a506
+

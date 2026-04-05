@@ -1,0 +1,7 @@
+role 'West Regional  Manager'
+	modelPermission: read
+
+	tablePermission Workshop_info = [WorkshopName] == "West Hub"
+
+	annotation PBI_Id = 4374b27023524530b864cf40bb6d5297
+
