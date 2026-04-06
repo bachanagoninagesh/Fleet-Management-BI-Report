@@ -273,6 +273,25 @@
             }
           ]
         }
+      },
+      {
+        "name": "1ad7b48555f2fdf59d48",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Fleet_SharePoint_Trips_2020_2022"
+                  }
+                },
+                "Property": "DistanceKM"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }
