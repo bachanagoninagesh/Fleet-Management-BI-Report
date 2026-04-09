@@ -20,7 +20,7 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Date_Table"
+                      "Entity": "Measures to effeciecy"
                     }
                   },
                   "Property": "Reduced Vehicle Downtime in %"
@@ -39,7 +39,7 @@
               "Measure": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "Date_Table"
+                    "Entity": "Measures to effeciecy"
                   }
                 },
                 "Property": "Reduced Vehicle Downtime in %"
@@ -224,7 +224,7 @@
           "Measure": {
             "Expression": {
               "SourceRef": {
-                "Entity": "Date_Table"
+                "Entity": "Measures to effeciecy"
               }
             },
             "Property": "Reduced Vehicle Downtime in %"

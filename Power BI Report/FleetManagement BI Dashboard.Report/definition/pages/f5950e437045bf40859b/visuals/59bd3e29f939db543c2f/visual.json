@@ -272,7 +272,8 @@
               }
             }
           ]
-        }
+        },
+        "howCreated": "User"
       },
       {
         "name": "6ba270bcda9180f350d5",
@@ -292,6 +293,20 @@
           }
         },
         "type": "Advanced"
+      },
+      {
+        "name": "1bea099102cfefbd86c1",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fleet_Maintenance_Info(XL)"
+              }
+            },
+            "Property": "Technician"
+          }
+        },
+        "type": "Categorical"
       }
     ]
   }

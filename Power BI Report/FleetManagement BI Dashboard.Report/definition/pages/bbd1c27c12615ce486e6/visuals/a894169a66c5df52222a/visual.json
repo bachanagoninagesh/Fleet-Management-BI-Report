@@ -20,7 +20,7 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Date_Table"
+                      "Entity": "Measures to effeciecy"
                     }
                   },
                   "Property": "Workshop Efficiency in %"
@@ -40,7 +40,7 @@
               "Measure": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "Date_Table"
+                    "Entity": "Measures to effeciecy"
                   }
                 },
                 "Property": "Workshop Efficiency in %"
@@ -170,7 +170,7 @@
           "Measure": {
             "Expression": {
               "SourceRef": {
-                "Entity": "Date_Table"
+                "Entity": "Measures to effeciecy"
               }
             },
             "Property": "Workshop Efficiency in %"

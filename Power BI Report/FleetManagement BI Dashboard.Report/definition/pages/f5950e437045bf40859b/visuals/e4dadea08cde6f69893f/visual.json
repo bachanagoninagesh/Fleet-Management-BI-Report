@@ -44,7 +44,7 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Date_Table"
+                      "Entity": "Measures to effeciecy"
                     }
                   },
                   "Property": "Arrow"
@@ -65,7 +65,7 @@
                                 "Measure": {
                                   "Expression": {
                                     "SourceRef": {
-                                      "Entity": "Date_Table"
+                                      "Entity": "Measures to effeciecy"
                                     }
                                   },
                                   "Property": "Arrow"
@@ -96,7 +96,7 @@
                                 "Measure": {
                                   "Expression": {
                                     "SourceRef": {
-                                      "Entity": "Date_Table"
+                                      "Entity": "Measures to effeciecy"
                                     }
                                   },
                                   "Property": "Arrow"

@@ -1,44 +1,6 @@
 table Date_Table
 	lineageTag: 721b4c24-f256-4050-8ec6-55d4099f3f63
 
-	measure 'sameperiodlastyear repair time hrs' = ```
-			
-			 if (ISFILTERED(Date_Table[Date].[Month])|| ISFILTERED(Date_Table[Date].[Quarter])||ISFILTERED(Date_Table[Date].[Year]) || ISFILTERED(Date_Table[Date].[Day]),CALCULATE(SUM('Fleet_Maintenance_Info(XL)'[RepairTimeHours]), SAMEPERIODLASTYEAR(Date_Table[Date])),BLANK())
-			```
-		formatString: 0
-		lineageTag: 2a9019f9-14e5-4bab-a9df-f5e22dcb4843
-
-	measure 'workshop efficiency in hrs' = ```
-			
-			 if ((ISFILTERED(Date_Table[Date].[Month])|| ISFILTERED(Date_Table[Date].[Quarter])||ISFILTERED(Date_Table[Date].[Year])||ISFILTERED(Date_Table[Date].[Day])),IF(ISBLANK([sameperiodlastyear repair time hrs]),BLANK(), [sameperiodlastyear repair time hrs]-SUM('Fleet_Maintenance_Info(XL)'[RepairTimeHours])),BLANK())
-			```
-		formatString: 0
-		lineageTag: 1216efcf-0a3d-4298-8935-e0a8cf7a2a39
-
-	measure 'Workshop Efficiency in %' = DIVIDE([workshop efficiency in hrs],[sameperiodlastyear repair time hrs])
-		formatString: 0.00%;-0.00%;0.00%
-		lineageTag: c9a40044-d0c1-434e-b532-17946a647423
-
-	measure Arrow = IF(ISBLANK([workshop efficiency in hrs]),BLANK(),if([workshop efficiency in hrs]>0,"🡅","🡇"))
-		lineageTag: 98946d1e-a38e-41b1-95e6-befb6c8abc5b
-
-	measure 'sameperiodlast yr downtimehrs' =
-			
-			IF(ISFILTERED(Date_Table[Date].[Day])||ISFILTERED(Date_Table[Date].[Month])||ISFILTERED(Date_Table[Date].[Quarter])||ISFILTERED(Date_Table[Date].[Year]),CALCULATE(SUM(FLMaintenance_info[DowntimeHours]),SAMEPERIODLASTYEAR(Date_Table[Date])),BLANK())
-		formatString: 0
-		lineageTag: 86e52178-c092-4b6f-84a6-afe5847c72a1
-
-	measure 'reduced vehicle downtime hrs' = if(ISBLANK([sameperiodlast yr downtimehrs]),BLANK(),[sameperiodlast yr downtimehrs]-SUM(FLMaintenance_info[DowntimeHours]))
-		formatString: 0
-		lineageTag: 0db007fc-6e92-4ebe-83df-8be27f7dad47
-
-	measure 'Reduced Vehicle Downtime in %' = DIVIDE([reduced vehicle downtime hrs],[sameperiodlast yr downtimehrs])
-		formatString: 0.00%;-0.00%;0.00%
-		lineageTag: cf8bb6a6-89d5-418a-a0b8-5ce4d16bc758
-
-	measure 'Arrow For Vehicle DwontimeHrs' = IF(ISBLANK([reduced vehicle downtime hrs]),BLANK(),if([reduced vehicle downtime hrs]>0,"🡅","🡇"))
-		lineageTag: f27347eb-7e4d-430a-8f29-4fa121cfff44
-
 	column Date
 		formatString: Long Date
 		lineageTag: 67ebe016-a038-4a53-b8ec-16325284ddd3

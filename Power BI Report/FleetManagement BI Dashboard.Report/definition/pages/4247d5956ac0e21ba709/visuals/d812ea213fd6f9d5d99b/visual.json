@@ -36,7 +36,7 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Date_Table"
+                      "Entity": "Measures to effeciecy"
                     }
                   },
                   "Property": "Arrow For Vehicle DwontimeHrs"
@@ -78,7 +78,7 @@
                                 "Measure": {
                                   "Expression": {
                                     "SourceRef": {
-                                      "Entity": "Date_Table"
+                                      "Entity": "Measures to effeciecy"
                                     }
                                   },
                                   "Property": "Arrow For Vehicle DwontimeHrs"
@@ -109,7 +109,7 @@
                                 "Measure": {
                                   "Expression": {
                                     "SourceRef": {
-                                      "Entity": "Date_Table"
+                                      "Entity": "Measures to effeciecy"
                                     }
                                   },
                                   "Property": "Arrow For Vehicle DwontimeHrs"
