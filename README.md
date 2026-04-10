@@ -8,6 +8,18 @@ This project focuses on building an end-to-end **Fleet Management Dashboard** us
 
 ---
 
+## 🗄️ Data Modeling
+- Designed a **multi-fact star schema** with multiple fact and dimension tables
+- Connected `Fleet_Maintenance_Info(Excel)`, `Fleet_SharePoint_Trips_2022` and `FLMaintenance_info` as fact tables
+- Shared dimensions like `Vehicle_Info`, `Date_Table`, and `Workshop_info` across all facts
+- Applied data transformation and cleaning using Power Query
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/417ef30b-ecc4-4204-b942-c6da5232c948" />
+
+
+---
+
+
 ## 🎥 Demo Video
 
 <a href="https://drive.google.com/file/d/11GpVjfZysm_ZPhs31gWY9yB1elzZkulZ/view?usp=sharing" target="_blank">
