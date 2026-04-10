@@ -3,7 +3,8 @@
 ## 📋 Project Overview
 This project focuses on building an end-to-end **Fleet Management Dashboard** using Power BI to deliver actionable insights for fleet operations and maintenance teams. The report helps monitor workshop efficiency, reduce vehicle downtime, and support data-driven decision-making across a multi-source data environment.
 
-<img width="1920" height="1080" alt="Fleet Management Dashboard" src="dashboard_home.png" />
+<img width="1526" height="852" alt="image" src="https://github.com/user-attachments/assets/5a137c09-e717-4585-83a7-709c8aea6bd9" />
+
 
 ---
 
