@@ -10,8 +10,10 @@ This project focuses on building an end-to-end **Fleet Management Dashboard** us
 
 ## 🎬 Dashboard Demo
 
-[![Watch Demo](https://img.shields.io/badge/▶%20Watch%20Demo-Click%20Here-blue?style=for-the-badge)](YOUR_VIDEO_LINK_HERE)
-https://drive.google.com/file/d/1aVZDX6h8A3V_wFyH8DOUQn3KLadSMx-G/view?usp=sharing
+<a href="https://drive.google.com" target="_blank">
+  <img width="1920" height="1080" alt="Watch Demo Video" src="https://drive.google.com/file/d/1aVZDX6h8A3V_wFyH8DOUQn3KLadSMx-G/view?usp=sharing"/>
+</a>
+
 ---
 
 ## 🎯 Business Impact
