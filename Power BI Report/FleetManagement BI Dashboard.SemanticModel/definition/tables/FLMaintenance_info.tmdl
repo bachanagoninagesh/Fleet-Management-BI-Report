@@ -37,7 +37,7 @@ table FLMaintenance_info
 
 	column DowntimeHours
 		dataType: int64
-		formatString: 0
+		formatString: 0.0
 		lineageTag: 547e916f-f367-405e-ba09-045220fdae42
 		summarizeBy: sum
 		sourceColumn: DowntimeHours

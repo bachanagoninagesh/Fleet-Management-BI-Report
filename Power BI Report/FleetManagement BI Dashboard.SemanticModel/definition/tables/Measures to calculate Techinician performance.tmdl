@@ -54,6 +54,39 @@ table 'Measures to calculate Techinician performance'
 		formatString: 0.00
 		lineageTag: 573b00c0-fc66-4982-8577-c065c79e5f50
 
+	measure '1st best technician' =
+			
+			VAR WorstVehicleTable =
+			    TOPN(
+			        1,
+			        ALL('Fleet_Maintenance_Info(XL)'[Technician]),
+			        [Technician_Performance],
+			        DESC
+			    )
+			RETURN
+			    CONCATENATEX(
+			        WorstVehicleTable,
+			        'Fleet_Maintenance_Info(XL)'[Technician],
+			        ", "
+			    )
+		lineageTag: 343d4eda-fdf4-4dd2-ade2-788c5fd6a8be
+
+	measure '2nd best technician' =
+			
+			VAR WorstVehicleTable =
+			    TOPN(
+			        2,
+			        ALL('Fleet_Maintenance_Info(XL)'[Technician]),
+			        [Technician_Performance],
+			        DESC
+			    )
+			RETURN
+			    CONCATENATEX(
+			        WorstVehicleTable,'Fleet_Maintenance_Info(XL)'[Technician],
+			        ", "
+			    )
+		lineageTag: ebdf9959-3899-44f1-b568-8352d9739445
+
 	column Column
 		formatString: 0
 		lineageTag: 224a4edc-e228-486a-b405-09caecf17e60

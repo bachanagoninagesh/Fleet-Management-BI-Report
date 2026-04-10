@@ -4,10 +4,10 @@
   "position": {
     "x": 855.92705167173256,
     "y": 56.413373860182375,
-    "z": 8000,
+    "z": 7000,
     "height": 213,
     "width": 413.37386018237083,
-    "tabOrder": 8000
+    "tabOrder": 7000
   },
   "visual": {
     "visualType": "donutChart",
@@ -272,25 +272,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "597d78fa00af5c77dc7d",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Fleet_Maintenance_Info(XL)"
-                  }
-                },
-                "Property": "Vehicle_Name"
-              }
-            },
-            "Function": 5
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

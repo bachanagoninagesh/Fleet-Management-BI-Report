@@ -7,7 +7,7 @@
     "z": 0,
     "height": 105.994599459946,
     "width": 215.44554455445547,
-    "tabOrder": 9003
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -145,23 +145,5 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "f3307a638762559e313d",
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "b900ef5f90b8cbc91ad4",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Measures to effeciecy"
-              }
-            },
-            "Property": "Workshop Efficiency in %"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
-  }
+  "parentGroupName": "f3307a638762559e313d"
 }

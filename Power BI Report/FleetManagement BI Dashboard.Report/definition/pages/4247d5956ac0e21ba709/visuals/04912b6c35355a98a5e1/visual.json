@@ -170,42 +170,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "d95b553a9ccefaecf200",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "FLMaintenance_info"
-              }
-            },
-            "Property": "IssueCategory"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "cc5605047bbf7a8ec87a",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "FLMaintenance_info"
-                  }
-                },
-                "Property": "Vehicle_Name"
-              }
-            },
-            "Function": 5
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

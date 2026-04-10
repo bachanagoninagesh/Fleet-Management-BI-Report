@@ -7,7 +7,7 @@ table 'Measures to effeciecy'
 	measure Arrow = IF(ISBLANK([workshop efficiency in hrs]),BLANK(),if([workshop efficiency in hrs]>0,"🡅","🡇"))
 		lineageTag: 98946d1e-a38e-41b1-95e6-befb6c8abc5b
 
-	measure 'reduced vehicle downtime hrs' = if(ISBLANK([sameperiodlast yr downtimehrs]),BLANK(),[sameperiodlast yr downtimehrs]-SUM(FLMaintenance_info[DowntimeHours]))
+	measure 'reduced vehicle downtime hrs' = if(ISBLANK([sameperiodlast yr downtimehrs]),BLANK(),SUM(FLMaintenance_info[DowntimeHours])-[sameperiodlast yr downtimehrs])
 		formatString: 0
 		lineageTag: 0db007fc-6e92-4ebe-83df-8be27f7dad47
 
@@ -38,6 +38,44 @@ table 'Measures to effeciecy'
 			```
 		formatString: 0
 		lineageTag: 1216efcf-0a3d-4298-8935-e0a8cf7a2a39
+
+	measure 'Arrow For Mant Cst' = IF(ISBLANK([MaintenanceCostCOmparison in %]),BLANK(),if([MaintenanceCostCOmparison in %]>0,"🡅","🡇"))
+		lineageTag: b3864959-c60a-4152-b896-dfa20d441ae4
+
+	measure SamePeriodLastYrMntCst = ```
+			IF(ISFILTERED(Date_Table[Date].[Day])||ISFILTERED(Date_Table[Date].[Month])||ISFILTERED(Date_Table[Date].[Quarter])||ISFILTERED(Date_Table[Date].[Year]),CALCULATE(SUM(FLMaintenance_info[MaintenanceCost]),SAMEPERIODLASTYEAR(Date_Table[Date])),BLANK())
+			
+			
+			```
+		formatString: 0
+		lineageTag: e795181e-3c57-4c3b-afce-ed81508dacff
+
+	measure 'Maitanancecost comparison' = SUM(FLMaintenance_info[MaintenanceCost]) -[SamePeriodLastYrMntCst]
+		formatString: 0
+		lineageTag: a4262b26-1ed5-4fd2-a94b-8ba78f9d6a4c
+
+	measure 'MaintenanceCostCOmparison in %' = DIVIDE([Maitanancecost comparison],[SamePeriodLastYrMntCst])
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: f48a66ee-9d3e-4705-9485-b618767b9ae6
+
+	measure SamePeriodLastYrRepairTimeHrs = IF(ISFILTERED(Date_Table[Date].[Day])||ISFILTERED(Date_Table[Date].[Month])||ISFILTERED(Date_Table[Date].[Quarter])||ISFILTERED(Date_Table[Date].[Year]),CALCULATE(SUM('Fleet_Maintenance_Info(XL)'[RepairTimeHours]),SAMEPERIODLASTYEAR(Date_Table[Date])))
+		formatString: 0
+		lineageTag: 4ad2f7b8-aa55-4fb0-a93a-ccf70805932c
+
+	measure RepairTimeHrsComparison = SUM('Fleet_Maintenance_Info(XL)'[RepairTimeHours]) - [sameperiodlastyear repair time hrs]
+		formatString: 0
+		lineageTag: 8b2b2bb4-2aa6-4155-8dc8-b1496ad1f658
+
+	measure 'RepairTimeHrsComparison in %' = DIVIDE([RepairTimeHrsComparison],[sameperiodlastyear repair time hrs])
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 952946c0-d60e-4af3-92a6-3ff59d2e7ddd
+
+	measure ArrowForRepairTimeHrs = IF(ISBLANK([RepairTimeHrsComparison in %]),BLANK(),if([RepairTimeHrsComparison in %]>0,"🡅","🡇"))
+		lineageTag: 5dd13229-55cb-421d-9547-9c81a1c4c6fa
+
+	measure '6 months ago downtime' = DIVIDE(CALCULATE(SUM(FLMaintenance_info[DowntimeHours]),DATEADD(Date_Table[Date],-6,MONTH)),6)
+		formatString: 0
+		lineageTag: bc9168e0-1203-407d-896d-2a557aece3c2
 
 	column Column
 		formatString: 0

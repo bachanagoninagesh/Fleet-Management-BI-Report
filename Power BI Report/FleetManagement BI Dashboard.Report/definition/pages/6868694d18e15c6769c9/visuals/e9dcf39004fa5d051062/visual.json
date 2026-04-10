@@ -1,0 +1,16 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "e9dcf39004fa5d051062",
+  "position": {
+    "x": 29.948006932409012,
+    "y": 337.19237435008665,
+    "z": 21000,
+    "height": 187.45233968804155,
+    "width": 380.45060658578853,
+    "tabOrder": 19000
+  },
+  "visualGroup": {
+    "displayName": "Fleet Summary in Home Page",
+    "groupMode": "ScaleMode"
+  }
+}

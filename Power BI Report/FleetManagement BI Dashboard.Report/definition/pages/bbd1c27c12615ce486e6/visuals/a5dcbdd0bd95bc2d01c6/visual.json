@@ -215,23 +215,5 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "5e4be7235b63aa872a66",
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "8f51af9473ef92503605",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Measures to effeciecy"
-              }
-            },
-            "Property": "Reduced Vehicle Downtime in %"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
-  }
+  "parentGroupName": "5e4be7235b63aa872a66"
 }

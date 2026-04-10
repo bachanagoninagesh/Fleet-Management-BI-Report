@@ -1,6 +1,23 @@
 table Date_Table
 	lineageTag: 721b4c24-f256-4050-8ec6-55d4099f3f63
 
+	measure '1st worst technician' =
+			
+			VAR WorstVehicleTable =
+			    TOPN(
+			        1,
+			        ALL('Fleet_Maintenance_Info(XL)'[Technician]),
+			        [Technician_Performance],
+			        ASC
+			    )
+			RETURN
+			    CONCATENATEX(
+			        WorstVehicleTable,
+			        'Fleet_Maintenance_Info(XL)'[Technician],
+			        ", "
+			    )
+		lineageTag: ce72c4ea-5c9b-4bd6-90e9-a0ebd05d14fa
+
 	column Date
 		formatString: Long Date
 		lineageTag: 67ebe016-a038-4a53-b8ec-16325284ddd3

@@ -99,6 +99,62 @@ table 'Measures to calculate Performing Vehicles'
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	measure 'Vehicle Rank By Performance' = RANKX(ALL(Vehicle_Info[Vehicle_Name]), [Vehicle Performance Score],,ASC,Dense)
+		formatString: 0
+		lineageTag: 3e1c6587-e3d7-4b07-a811-acef173ce531
+
+	measure '1st Vehicle Worst Vehicle' = ```
+			
+			VAR WorstVehicleTable =
+			    TOPN(
+			        1,
+			        ALL(Vehicle_Info[Vehicle_Name]),
+			        [Vehicle Performance Score],
+			        ASC
+			    )
+			RETURN
+			    CONCATENATEX(
+			        WorstVehicleTable,
+			        Vehicle_Info[Vehicle_Name],", "
+			        
+			    )
+			```
+		lineageTag: 26c4d9cc-3ee8-4268-ad66-f630d83bad79
+
+	measure '2nd Vehicle Worst Vehicle' =
+			
+			VAR WorstVehicleTable =
+			    TOPN(
+			        2,
+			        ALL(Vehicle_Info[Vehicle_Name]),
+			        [Vehicle Performance Score],
+			        ASC
+			    )
+			RETURN
+			    CONCATENATEX(
+			        WorstVehicleTable,
+			        Vehicle_Info[Vehicle_Name],
+			        ", "
+			    )
+		lineageTag: 093d6129-cab3-4344-abb1-ac7a2321cddf
+
+	measure '3rd Vehicle Worst Vehicle' =
+			
+			VAR WorstVehicleTable =
+			    TOPN(
+			        3,
+			        ALL(Vehicle_Info[Vehicle_Name]),
+			        [Vehicle Performance Score],
+			        ASC
+			    )
+			RETURN
+			    CONCATENATEX(
+			        WorstVehicleTable,
+			        Vehicle_Info[Vehicle_Name],
+			        ", "
+			    )
+		lineageTag: b031460e-80fe-4f00-9b8a-948af5f02933
+
 	column Column
 		formatString: 0
 		lineageTag: e5bbc75b-36ab-4643-b5f6-8f0a07e5b236

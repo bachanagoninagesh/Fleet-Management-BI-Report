@@ -1,0 +1,16 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "240d31e82ee0aff8b492",
+  "position": {
+    "x": 451.43847487001733,
+    "y": 334.97400346620446,
+    "z": 24000,
+    "height": 189.67071057192373,
+    "width": 378.23223570190646,
+    "tabOrder": 20000
+  },
+  "visualGroup": {
+    "displayName": "Vehicle Performance in Home Page",
+    "groupMode": "ScaleMode"
+  }
+}

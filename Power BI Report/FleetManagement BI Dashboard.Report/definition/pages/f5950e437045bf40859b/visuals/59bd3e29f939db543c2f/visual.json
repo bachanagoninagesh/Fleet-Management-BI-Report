@@ -4,10 +4,10 @@
   "position": {
     "x": 600.12158054711244,
     "y": 279.14893617021278,
-    "z": 4000,
+    "z": 3000,
     "height": 200,
     "width": 510.63829787234044,
-    "tabOrder": 4000
+    "tabOrder": 3000
   },
   "visual": {
     "visualType": "funnel",
@@ -274,39 +274,6 @@
           ]
         },
         "howCreated": "User"
-      },
-      {
-        "name": "6ba270bcda9180f350d5",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Fleet_Maintenance_Info(XL)"
-                  }
-                },
-                "Property": "Vehicle_Name"
-              }
-            },
-            "Function": 5
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "1bea099102cfefbd86c1",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Fleet_Maintenance_Info(XL)"
-              }
-            },
-            "Property": "Technician"
-          }
-        },
-        "type": "Categorical"
       }
     ]
   }

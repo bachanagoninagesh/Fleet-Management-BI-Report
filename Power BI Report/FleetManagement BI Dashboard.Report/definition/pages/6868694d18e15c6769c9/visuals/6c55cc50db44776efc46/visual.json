@@ -1,0 +1,16 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "6c55cc50db44776efc46",
+  "position": {
+    "x": 1039.7538461538461,
+    "y": 102.4,
+    "z": 14000,
+    "height": 89.15794320798156,
+    "width": 211.75804947163348,
+    "tabOrder": 23000
+  },
+  "visualGroup": {
+    "displayName": "workshop Effieciency",
+    "groupMode": "ScaleMode"
+  }
+}

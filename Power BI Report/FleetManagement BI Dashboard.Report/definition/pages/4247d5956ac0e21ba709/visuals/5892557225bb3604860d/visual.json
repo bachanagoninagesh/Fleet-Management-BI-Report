@@ -165,23 +165,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "ddd9f5172042c3897d48",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Vehicle_Info"
-              }
-            },
-            "Property": "Vehicle_Name"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

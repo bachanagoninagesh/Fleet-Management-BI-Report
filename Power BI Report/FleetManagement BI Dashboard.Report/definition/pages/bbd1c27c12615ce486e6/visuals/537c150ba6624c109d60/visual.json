@@ -184,6 +184,11 @@
         }
       ]
     },
+    "syncGroup": {
+      "groupName": "WorkshopName",
+      "fieldChanges": true,
+      "filterChanges": true
+    },
     "drillFilterOtherVisuals": true
   },
   "filterConfig": {

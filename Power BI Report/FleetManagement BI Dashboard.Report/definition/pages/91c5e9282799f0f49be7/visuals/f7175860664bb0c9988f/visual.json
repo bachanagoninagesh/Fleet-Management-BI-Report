@@ -1,0 +1,61 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "f7175860664bb0c9988f",
+  "position": {
+    "x": 790.79048349961624,
+    "y": 40.276285495011507,
+    "z": 1000,
+    "height": 263.26937835763619,
+    "width": 476.43898695318489,
+    "tabOrder": 1000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Needs to work on "
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "maintenance hrs "
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "repair time hrs "
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "arrows needs to change thery are sample arrows"
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

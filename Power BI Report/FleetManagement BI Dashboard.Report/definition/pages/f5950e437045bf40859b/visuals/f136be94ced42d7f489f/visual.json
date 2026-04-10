@@ -263,20 +263,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "c3878b669e403f00ad77",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Measures to calculate Techinician performance"
-              }
-            },
-            "Property": "Technician_Performance"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

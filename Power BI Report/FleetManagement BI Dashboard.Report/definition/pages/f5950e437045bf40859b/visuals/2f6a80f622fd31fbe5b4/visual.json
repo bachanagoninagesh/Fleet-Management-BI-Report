@@ -4,10 +4,10 @@
   "position": {
     "x": 10.699088145896656,
     "y": 56.413373860182375,
-    "z": 9004,
+    "z": 12000,
     "height": 107.96352583586626,
     "width": 171.1854103343465,
-    "tabOrder": 9005
+    "tabOrder": 11000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -219,28 +219,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "7cf428a98c91ca812d1a",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Fleet_Maintenance_Info(XL)"
-                  }
-                },
-                "Property": "RepairTimeHours"
-              }
-            },
-            "Function": 0
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

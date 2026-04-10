@@ -4,10 +4,10 @@
   "position": {
     "x": 1122.4316109422493,
     "y": 379.3313069908815,
-    "z": 6000,
+    "z": 5000,
     "height": 98.2370820668693,
     "width": 146.86930091185411,
-    "tabOrder": 6000
+    "tabOrder": 5000
   },
   "visual": {
     "visualType": "slicer",
@@ -172,23 +172,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "7e7e13647caeee43c65f",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Fleet_Maintenance_Info(XL)"
-              }
-            },
-            "Property": "Technician"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

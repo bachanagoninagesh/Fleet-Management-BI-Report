@@ -1,0 +1,31 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "1795357a09550f8ac0da",
+  "position": {
+    "x": 982.24281742354026,
+    "y": 0,
+    "z": 21000,
+    "height": 90.1575532900834,
+    "width": 189.80537534754401,
+    "tabOrder": 19000
+  },
+  "visualGroup": {
+    "displayName": "Reduced Vehicle Downtime",
+    "groupMode": "ScaleMode",
+    "objects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}
