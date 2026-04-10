@@ -10,9 +10,11 @@ This project focuses on building an end-to-end **Fleet Management Dashboard** us
 
 ## 🎥 Demo Video
 
-<a href="" target="_blank">
+<a href="YOUR_VIDEO_LINK" target="_blank">
   <img width="1920" height="1080" alt="Watch Demo Video" src="https://drive.google.com/thumbnail?id=1aVZDX6h8A3V_wFyH8DOUQn3KLadSMx-G&sz=w1920"/>
 </a>
+
+
 ---
 
 ## 🎯 Business Impact
