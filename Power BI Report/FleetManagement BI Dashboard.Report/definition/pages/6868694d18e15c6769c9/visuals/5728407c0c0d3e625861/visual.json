@@ -55,7 +55,29 @@
                     }
                   },
                   {
-                    "value": "— combined 144 downtime hours this month. Prioritize root-cause analysis on these three before everything else.",
+                    "value": "— combined ",
+                    "textStyle": {
+                      "fontSize": "8pt",
+                      "color": "#ffffff"
+                    }
+                  },
+                  {
+                    "value": {
+                      "propertyIdentifier": {
+                        "objectName": "values",
+                        "propertyName": "expr"
+                      },
+                      "selector": {
+                        "id": "Value 2"
+                      }
+                    },
+                    "textStyle": {
+                      "fontSize": "8pt",
+                      "color": "#ffffff"
+                    }
+                  },
+                  {
+                    "value": " downtime hours this month. Prioritize root-cause analysis on these three before everything else.",
                     "textStyle": {
                       "fontSize": "8pt",
                       "color": "#ffffff"
@@ -94,7 +116,7 @@
                                       "Source": "m"
                                     }
                                   },
-                                  "Property": "3rd Vehicle Worst Vehicle"
+                                  "Property": "3 Worst Vehicle Vehicle"
                                 },
                                 "Name": "Measures to calculate Performing Vehicles.3rd Vehicle Worst Vehicle"
                               }
@@ -122,6 +144,62 @@
           },
           "selector": {
             "id": "Value"
+          }
+        },
+        {
+          "properties": {
+            "expr": {
+              "expr": {
+                "Min": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "Subquery": {
+                          "Query": {
+                            "Version": 2,
+                            "From": [
+                              {
+                                "Name": "m",
+                                "Entity": "Measures to calculate Performing Vehicles",
+                                "Type": 0
+                              }
+                            ],
+                            "Select": [
+                              {
+                                "Measure": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "m"
+                                    }
+                                  },
+                                  "Property": "3 Worst Vehicles downtitme"
+                                },
+                                "Name": "Measures to calculate Performing Vehicles.3rd worst vehicl total downtime hrs"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      "Property": "Measures to calculate Performing Vehicles.3rd worst vehicl total downtime hrs"
+                    }
+                  },
+                  "IncludeAllTypes": 1
+                },
+                "Annotations": {
+                  "NaturalLanguage": {
+                    "version": 1,
+                    "kind": "NaturalLanguage",
+                    "annotation": {
+                      "name": "Value 2",
+                      "utterance": "3rd worst vehicl total downtime hrs"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "Value 2"
           }
         }
       ]

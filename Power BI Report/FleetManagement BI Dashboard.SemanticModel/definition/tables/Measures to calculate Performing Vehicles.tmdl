@@ -138,7 +138,7 @@ table 'Measures to calculate Performing Vehicles'
 			    )
 		lineageTag: 093d6129-cab3-4344-abb1-ac7a2321cddf
 
-	measure '3rd Vehicle Worst Vehicle' =
+	measure '3 Worst Vehicle Vehicle' =
 			
 			VAR WorstVehicleTable =
 			    TOPN(
@@ -154,6 +154,23 @@ table 'Measures to calculate Performing Vehicles'
 			        ", "
 			    )
 		lineageTag: b031460e-80fe-4f00-9b8a-948af5f02933
+
+	measure '3 Worst Vehicles downtitme' =
+			
+			VAR WorstVehicleTable =
+			    TOPN(
+			        3,
+			        ALL(Vehicle_Info[Vehicle_Name]),
+			        [Vehicle Performance Score],
+			        ASC
+			    )
+			RETURN
+			CALCULATE(
+			    SUM(FLMaintenance_info[DowntimeHours]),
+			    KEEPFILTERS(WorstVehicleTable)
+			)
+		formatString: 0
+		lineageTag: 385d8b79-6d4a-41d0-829d-6546b374820b
 
 	column Column
 		formatString: 0

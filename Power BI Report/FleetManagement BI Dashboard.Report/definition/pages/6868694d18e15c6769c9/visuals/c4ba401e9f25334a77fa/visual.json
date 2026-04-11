@@ -65,7 +65,7 @@
               },
               "queryRef": "Date_Table.Date.Variation.Date Hierarchy.Month",
               "nativeQueryRef": "Date Month",
-              "active": true
+              "active": false
             }
           ]
         }
@@ -104,20 +104,7 @@
             "isPinned": true
           }
         ],
-        "root": {
-          "children": [
-            {
-              "identityValues": [
-                {
-                  "Literal": {
-                    "Value": "2022L"
-                  }
-                }
-              ],
-              "isToggled": true
-            }
-          ]
-        }
+        "root": {}
       }
     ],
     "objects": {
