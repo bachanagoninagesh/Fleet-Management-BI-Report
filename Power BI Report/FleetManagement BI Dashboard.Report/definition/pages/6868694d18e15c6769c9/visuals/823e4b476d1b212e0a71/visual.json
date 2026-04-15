@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "823e4b476d1b212e0a71",
   "position": {
-    "x": 40.565471270497262,
-    "y": 0.47950939874681353,
+    "x": 35.655458314140951,
+    "y": 0.41538461538456506,
     "z": 21000,
-    "height": 33.275563258232232,
-    "width": 241.80242634315422,
+    "height": 35.449101796407184,
+    "width": 289.34131736526945,
     "tabOrder": 30000
   },
   "visual": {
@@ -19,7 +19,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Down Time Trend By Month",
+                    "value": "Vehicle Down Time(Hrs.) Trend By Month",
                     "textStyle": {
                       "fontSize": "10.5pt",
                       "color": "#ffffff"
