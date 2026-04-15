@@ -130,7 +130,7 @@ fleet-management-dashboard/
 
 **Nagesh Bachanagoni** — Data Engineer / BI Developer
 📧 nageshbachanagoni@gmail.com
-🔗 [LinkedIn](www.linkedin.com/in/nagesh-bachanagoni-b84346153) · [Portfolio](www.linkedin.com/in/nagesh-bachanagoni-b84346153)
+🔗 [LinkedIn](www.linkedin.com/in/nagesh-bachanagoni-b84346153) · [Portfolio](https://bachanagoninagesh.github.io/)
 
 ---
 
